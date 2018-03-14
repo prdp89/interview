@@ -115,6 +115,18 @@ public class ChunkMerge {
             index++;
         }
     }
+
+    public void createPriorityQueue(List<Integer> list) {
+        PriorityQueue<Triplet> priorityQueue = new PriorityQueue<>();
+        for (int i = 0; i < list.size(); i++) {
+            {
+                Triplet p = new Triplet();
+                p.val = list.get(i);
+                priorityQueue.add(p);
+            }
+        }
+    }
+
     public static void main(String args[]){
         Integer arr1[] = {1,5,6,9,21};
         Integer arr2[] = {4,6,11,14};
@@ -133,7 +145,7 @@ public class ChunkMerge {
         List<Integer> list7 = Arrays.asList(arr7);
         
         
-        List<List<Integer>> chunks = new ArrayList<List<Integer>>();
+        List<List<Integer>> chunks = new ArrayList<>();
         chunks.add(list1);
         chunks.add(list2);
         chunks.add(list3);
@@ -154,5 +166,13 @@ public class ChunkMerge {
         for(Integer r : result){
             System.out.print(r + " ");
         }
+
+        List<Integer> list = new ArrayList<>();
+        list.add(200);
+        list.add(100);
+        list.add(500);
+        list.add(50);
+        list.add(300);
+        cm.createPriorityQueue(list);
     }
 }

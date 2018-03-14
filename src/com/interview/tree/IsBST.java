@@ -39,6 +39,40 @@ public class IsBST {
         }
         return isBST(root.left, min, root.data) && isBST(root.right, root.data, max);
     }
+    
+    // To keep tract of previous node in Inorder Traversal
+//    Node prev;
+    
+    /* Returns true if given search tree is binary
+    search tree (efficient version) */
+    //10 15 -10 17 20 0
+	 // This tree is:
+	    // head1 = 10
+	    //        / \
+	    //     -10   15
+	    //       \    \
+	    //        0    17
+       //				\
+    	//				 20
+    //inorder traversal : -10 0 10 15 17 20
+
+//	 public boolean isBSTTree(Node node)
+//	 {
+//	     // traverse the tree in inorder fashion and
+//	     // keep a track of previous node
+//	     if (node != null)
+//	     {
+//	         if (!isBSTTree(node.left))
+//	             return false;
+//
+//	         // allows only distinct values node
+//	         if (prev != null && node.data <= prev.data )
+//	             return false;
+//	         prev = node;
+//	         return isBSTTree(node.right);
+//	     }
+//	     return true;
+//	 }
 
 
     public boolean isBSTIterative(Node root) {
@@ -83,5 +117,7 @@ public class IsBST {
         IsBST isBST = new IsBST();
         assert isBST.isBST(root);
         assert isBST.isBSTIterative(root);
+        
+     //  Boolean bool = isBST.isBSTTree(root);
     }
 }

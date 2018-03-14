@@ -49,7 +49,7 @@ public class Combination {
 
     public void combinationEasy(char[] input) {
         List<Character> r = new ArrayList<>();
-        Arrays.sort(input);
+        //Arrays.sort(input);
         combinationEasy(input, 0, r);
     }
 
@@ -69,8 +69,8 @@ public class Combination {
 
     public static void main(String args[]){
         Combination c = new Combination();
-        c.combination("aabbc".toCharArray());
-        c.combinationEasy("aabbc".toCharArray());
+        c.combination("aabc".toCharArray());
+        c.combinationEasy("aacb".toCharArray());
 
     }
     

@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ConvertAnArrayIntoDecreaseIncreaseFashion {
 
     public void convert(int arr[]){
-        int k = 0;
+        int k;
         if(arr.length % 2 ==0){
             k = arr.length/2 ;
         }else{

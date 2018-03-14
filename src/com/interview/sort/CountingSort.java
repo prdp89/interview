@@ -43,7 +43,7 @@ public class CountingSort {
     }
 
     public static void main(String args[]) {
-        int arr[] = { 6, 1, 6, 7, 3, 1 };
+        int arr[] = {0,3,2,3,3,0,5,2,3};//{ 6, 1, 6, 7, 3, 1 };
         CountingSort cs = new CountingSort();
         cs.sort1(arr);
         for (int i = 0; i < arr.length; i++) {

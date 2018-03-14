@@ -14,7 +14,7 @@ import java.math.BigInteger;
  */
 public class AdditiveNumber {
 
-    public boolean isAdditiveNumber(String num) {
+    private boolean isAdditiveNumber(String num) {
         if (num.length() < 3) {
             return false;
         }
@@ -44,5 +44,12 @@ public class AdditiveNumber {
         BigInteger x3 = x1.add(x2);
         //if num starts with x3 from offset start means x3 is found. So look for next number.
         return num.startsWith(x3.toString(), start) && isValid(num, start + x3.toString().length(), x2, x3);
+    }
+
+    public static void main(String args[])
+    {
+        AdditiveNumber additiveNumber = new AdditiveNumber();
+        //System.out.println(additiveNumber.isAdditiveNumber("112358"));
+        System.out.println(additiveNumber.isAdditiveNumber("199100199"));
     }
 }

@@ -61,7 +61,7 @@ public class LinkList {
         Node front = null;
         Node middle = head;
         Node end = null;
-        while(middle != null){
+        while(middle != null){  //1,2,3,4
             end = middle.next;
             middle.next = front;
             front = middle;
@@ -75,7 +75,7 @@ public class LinkList {
             return head;
         }
         
-        Node reversedList = reverseRecursiveEasy(head.next);
+        Node reversedList = reverseRecursiveEasy(head.next); //1,2,3,4,5,6
         head.next.next = head;
         head.next = null;
         return reversedList;
@@ -120,7 +120,6 @@ public class LinkList {
         return null;
     }
     
-    
     public int size(Node head){
         int size =0;
         while(head != null){
@@ -129,6 +128,7 @@ public class LinkList {
         }
         return size;
     }
+    
     public static void main(String args[]){
         LinkList ll = new LinkList();
         Node head = null;

@@ -32,7 +32,7 @@ public class DuplicateNumberDetection {
     }
 
     public static void main(String args[]) {
-        int[] input = {2,1,3,4,3};
+        int[] input = {2,1,3,4,3,3};
         DuplicateNumberDetection dd = new DuplicateNumberDetection();
         System.out.println(dd.findDuplicate(input));
     }

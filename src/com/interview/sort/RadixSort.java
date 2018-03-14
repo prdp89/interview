@@ -42,7 +42,24 @@ public class RadixSort {
             countSort(arr,exp);
         }
     }
-    
+
+    public void radixSortNew(int arr[])
+    {
+        int max = max(arr);
+        int length = (int)(Math.log10(max)+1);
+        for(int i=0; i < length; i++)
+        {
+            countSortNew(arr, i);
+        }
+    }
+
+    private void countSortNew(int[] arr, int i) {
+        for(int j=0; j < arr.length; j++)
+        {
+           // arr[j]
+        }
+    }
+
     public static void main(String args[]){
         int arr[] = {101,10,11,66,94,26,125};
         RadixSort rs = new RadixSort();
@@ -53,3 +70,4 @@ public class RadixSort {
 
     }
 }
+
