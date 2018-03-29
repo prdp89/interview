@@ -9,6 +9,13 @@ import java.util.Arrays;
  * Sorted array
  * Reverse sorted array
  */
+
+//Also read k largest : https://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/
+
+// or read Kth largest or smallest : https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
+
+//This program runs in O(N) due to quickselect approach and limited traversal on right/left array.
+
 public class KthElementInArray {
     
     public int kthElement(int arr[],int k){

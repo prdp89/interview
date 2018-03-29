@@ -77,6 +77,6 @@ public class KadaneWrapArray {
         int input[] = {12, -2, -6, 5, 9, -7, 3};
         int input1[] = {8, -8, 9, -9, 10, -11, 12};
         System.out.println(kwa.kadaneWrap(input));
-        System.out.println(kwa.kadaneWrap(input1));
+       // System.out.println(kwa.kadaneWrap(input1));
     }
 }

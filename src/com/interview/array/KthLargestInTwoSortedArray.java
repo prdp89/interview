@@ -4,6 +4,17 @@ package com.interview.array;
  * http://stackoverflow.com/questions/4686823/given-2-sorted-arrays-of-integers-find-the-nth-largest-number-in-sublinear-time
  * http://articles.leetcode.com/2011/01/find-k-th-smallest-element-in-union-of.html
  */
+
+//todo : need to understand this whole program later
+
+// First read this (merge K sorted Arrays) using min-heap :
+//https://www.geeksforgeeks.org/merge-k-sorted-arrays/
+
+
+//Also read solution at : https://www.geeksforgeeks.org/k-th-element-two-sorted-arrays/
+
+    //This video will give some insight to understand : https://www.youtube.com/watch?v=Q3JUfHpffIg&t=24s
+
 public class KthLargestInTwoSortedArray {
 
     
@@ -40,8 +51,6 @@ public class KthLargestInTwoSortedArray {
         return kthLargest(arr1, arr2, low1, high1, low2, high2, k);
     }
 
-    
-    
     public int kthLargest(int input1[],int input2[],int k){
         return kthLargest(input1, input2, 0, input1.length-1, 0, input2.length-1, k);
     }
@@ -65,7 +74,7 @@ public class KthLargestInTwoSortedArray {
         //handle the situation where only one element is left
         //in either of array.
         //e.g k =2 and arr1 = 8 arr2 = 1,9,11
-        //we try to find if 8 is before 9 betweenn 1 and 9
+        //we try to find if 8 is before 9 between 1 and 9
         //or before 1. In all these cases k will be either
         //1 8 or 9 
         if(l2 == h2 || l1 == h1){

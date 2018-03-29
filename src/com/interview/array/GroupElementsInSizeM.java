@@ -9,9 +9,14 @@ import java.util.PriorityQueue;
  * http://www.careercup.com/question?id=6026101998485504
  * This answer two questions.
  * Group elements in size m such that in every group only unique elements are possible.
+ *
  * It also answers question where rearrange array such that same elements are exactly m
  * distance from each other
  */
+
+//check this : https://www.youtube.com/watch?v=1tjyR-IvbsU
+
+
 class Pair{
     int num;
     int count;
@@ -46,8 +51,11 @@ public class GroupElementsInSizeM {
             }
             count.put(i, c);
         }
-        
-        PriorityQueue<Pair> maxHeap = new PriorityQueue<Pair>(count.size(),new Comparators());
+
+        //This priority queue auto. assign priority to elements or based on the comparator conditions.
+        // Poll : function returns top priority element from queue.
+
+        PriorityQueue<Pair> maxHeap = new PriorityQueue<>(count.size(),new Comparators());
         for(Integer s : count.keySet()){
             int c = count.get(s);
             //if any count is greater than len/m then this arrangement is not possible
@@ -63,7 +71,11 @@ public class GroupElementsInSizeM {
             int i =0;
             while(i < p.count){
                 input[start] = p.num;
+
+                //shifting next elememnt to 'm' distance
                 start = start + m;
+
+                //resetting start position
                 if(start >= input.length){
                     current++;
                     start = current;
@@ -75,13 +87,13 @@ public class GroupElementsInSizeM {
     }
     
     public static void main(String args[]){
-        int input[] = {2,1,5,1,3,5,3,3,4};
+        int input[] = {1,1,2,2,3,3,4,4}; //{2,1,5,1,3,5,3,3,4};
         int input1[] = {1,2,3,8,8,8,7,8};
         GroupElementsInSizeM gps = new GroupElementsInSizeM();
-        boolean r = gps.group(input1, 3);
+        boolean r = gps.group(input, 2);
         System.out.println(r);
-        for(int i=0; i < input1.length; i++){
-            System.out.println(input1[i]);
+        for(int i=0; i < input.length; i++){
+            System.out.println(input[i]);
         }
     }
 }

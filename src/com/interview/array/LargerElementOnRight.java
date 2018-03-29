@@ -12,6 +12,9 @@ import java.util.LinkedList;
  * It is also different from find next higher number on right side which can
  * be found by keeping AVL tree and finding ceiling.
  */
+
+// Read this first : https://www.geeksforgeeks.org/next-greater-element/
+    //watch time complexity at the end of video.
 public class LargerElementOnRight {
 
     public int[] larger(int input[]){

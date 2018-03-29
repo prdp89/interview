@@ -9,6 +9,13 @@ package com.interview.array;
  * Check that there exists a path after kadane wrap responds
  * Check that there is at least one positive difference before you call kadane
  */
+
+
+//https://allaboutalgorithms.wordpress.com/2011/10/15/petrol-pumps-in-circle-problem/
+
+    //In THis problem we have to find from which Petrol pump we have to start to complete the loop such that we visit
+    // all petrol pump at-least once.
+
 public class GasStationCircle {
 
     public int startTour(int gasAvailable[],int gasRequired[]){
@@ -80,6 +87,6 @@ public class GasStationCircle {
         int[] gasAvailable = {4, 4, 6};
         int[] gasRequired = {5, 6, 1};
         System.out.println(gsc.startTour(gasAvailable, gasRequired));
-        System.out.println(gsc.startTour1(gasAvailable, gasRequired));
+      //  System.out.println(gsc.startTour1(gasAvailable, gasRequired));
     }
 }

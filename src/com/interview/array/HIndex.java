@@ -5,10 +5,24 @@ package com.interview.array;
  * write a function to compute the researcher's h-index.
  * https://leetcode.com/problems/h-index/
  */
+
+//H-index is the number of h papers, in which each paper has at least h citations.
+//e.g. If there are 2 papers, and each of the 2 papers has at least 2 citations, the h-index is 2.
+
+    //For better understanding read algo steps in below page.
+//http://buttercola.blogspot.in/2015/09/leetcode-h-index.html
+
+
 public class HIndex {
     public int hIndex(int[] citations) {
         int[] count = new int[citations.length + 1];
         for (int c : citations) {
+
+            //this condition checks if Paper published by researcher published more than once or not.
+
+            // if cited more than once : then its index count will increase.
+            // else : if cited paper is greater than length then we'll increase last index count
+
             if (c <= citations.length) {
                 count[c]++;
             } else {
@@ -32,10 +46,40 @@ public class HIndex {
         return max;
     }
 
+
+    //explanation of H-Index : https://www.researchgate.net/post/How_to_calculate_h_index_for_an_author
+
+    public int GetHIndex(int[] m)
+    {
+        int[] s = new int[m.length + 1];
+
+        //this loop is similar to bucket sort.
+        for (int i = 0; i < m.length; i++)
+            s[Math.min(m.length, m[i])]++;
+
+        int sum = 0;
+        for (int i = s.length - 1; i >= 0; i--)
+        {
+            //this checks : How many total citations count are greater than 'i' element or not
+            //or How many citations are qualify for H-index.
+
+            sum += s[i];
+            if (sum >= i)
+                return i;
+        }
+
+        return 0;
+    }
+
     public static void main(String args[]) {
         HIndex hi = new HIndex();
-        int[] input = {0, 1, 1, 1, 1, 6, 7 ,8};
-        System.out.print(hi.hIndex(input));
+
+        int[] input = {4,8,1,1}; //{0, 1, 1, 1, 1, 6, 7 ,8};
+
+       // System.out.print(hi.hIndex(input));
+
+        System.out.print(hi.GetHIndex(input));
+
     }
 }
 

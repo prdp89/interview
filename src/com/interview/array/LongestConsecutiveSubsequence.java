@@ -15,6 +15,8 @@ import java.util.Map;
  * Reference
  * https://leetcode.com/problems/longest-consecutive-sequence/
  */
+
+// Read from this link : https://www.youtube.com/watch?v=VeJOswJTDos
 public class LongestConsecutiveSubsequence {
     public int longestConsecutive(int[] nums) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();

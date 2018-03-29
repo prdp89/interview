@@ -2,8 +2,9 @@ package com.interview.array;
 
 /**
  * http://www.geeksforgeeks.org/increasing-subsequence-of-length-three-with-maximum-product/
- * Keep two arrays which keeps max from current position to right side
- * Other array keeps max on left size which is smaller than current element
+ * Keep two arrays which keeps : max from current position to right side : वर्तमान स्थिति से दाहिनी तरफ  se अधिकतम
+ * Other array keeps : max on left side which is smaller than current element. : बाईं तरफ ko अधिकतम जो मौजूदा तत्व(element) से छोटा है
+ *
  * Once you have these two arrays from 2nd to 2nd last position keep multiplying
  * elements at 3 arrays index position to get max product
  * Test cases
@@ -61,7 +62,7 @@ public class IncreasingSubsequnceOfLength3WithMaxProduct {
     public static void main(String args[]){
         int arr[] = {6, 7, 8, 1, 2, 3, 9, 10};
         IncreasingSubsequnceOfLength3WithMaxProduct iss = new IncreasingSubsequnceOfLength3WithMaxProduct();
-        System.out.println(iss.maxProduct(arr));
+        //System.out.println(iss.maxProduct(arr));
         int arr1[] = {1, 5, 10, 8, 9};
         System.out.println(iss.maxProduct(arr1));
     }

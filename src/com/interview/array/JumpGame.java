@@ -22,13 +22,23 @@ package com.interview.array;
  *
  * https://leetcode.com/problems/jump-game-ii/
  */
+
+//refer this video : https://www.youtube.com/watch?v=vBdo7wtwlXs
+
+
+    // or this video : https://www.youtube.com/watch?v=cETfFsSTGJI
+
 public class JumpGame {
 
     public boolean canJump(int[] nums) {
         int jump = 0;
         int i;
-        for (i = 0; i < nums.length && i <= jump; i++) {
-            jump = Math.max(jump, i + nums[i]);
+        for (i = 0; i < nums.length && i <= jump; i++) //
+        {
+            // jump = Math.max(jump, i + nums[i]);
+
+            if(jump < i+ nums[i])
+                jump = i+ nums[i];
         }
         return i == nums.length;
     }
@@ -49,9 +59,9 @@ public class JumpGame {
 
     public static void main(String args[]) {
         JumpGame jumpGame = new JumpGame();
-        int[] nums = {3, 2, 3, 0, 2, 1};
-        System.out.println(jumpGame.jump(nums));
-        int[] nums1 = {3, 0, 2, 0, 0, 1};
+       /* int[] nums = {3, 2, 3, 0, 2, 1};
+        System.out.println(jumpGame.jump(nums));*/
+        int[] nums1 = {3, 0, 2, 0, 0, 1}; //{2,3,1,1,4};
         System.out.println(jumpGame.canJump(nums1));
     }
 }
