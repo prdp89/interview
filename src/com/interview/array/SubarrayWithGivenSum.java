@@ -18,17 +18,25 @@ public class SubarrayWithGivenSum {
         Pair p = new Pair();
         p.start = 0;
         for(int i=0; i < input.length; i++){
+
             currentSum += input[i];
             p.end = i;
+
             if(currentSum == sum){
                 return p;
-            }else if(currentSum > sum){
+            }
+            else if(currentSum > sum){  //if current sum greater than required then decrement the currentSum.
                 int s = p.start;
+
                 while(currentSum  > sum){
                     currentSum -= input[s];
                     s++;
                 }
+
+                //set start to the new calculated index after decrementing currentSum
                 p.start = s;
+
+                //if currentSum equals to required sum then return P object
                 if(currentSum == sum){
                     return p;
                 }
