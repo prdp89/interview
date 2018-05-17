@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class CoinChanging {
 
-    public int numberOfSolutions(int total, int coins[]){
+    private int numberOfSolutions( int total, int coins[] ){
         int temp[][] = new int[coins.length+1][total+1];
         for(int i=0; i <= coins.length; i++){
             temp[i][0] = 1;
@@ -36,7 +36,7 @@ public class CoinChanging {
     /**
      * Space efficient DP solution
      */
-    public int numberOfSolutionsOnSpace(int total, int arr[]){
+    private int numberOfSolutionsOnSpace( int total, int arr[] ){
 
         int temp[] = new int[total+1];
 

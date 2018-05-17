@@ -115,7 +115,7 @@ public class Knapsack01 {
         Knapsack01 k = new Knapsack01();
         int val[] = {22, 20, 15, 30, 24, 54, 21, 32, 18, 25};
         int wt[] = {4, 2, 3, 5, 5, 6, 9, 7, 8, 10};
-        int r = k.bottomUpDP(val, wt, 30);
+        int r = k.bottomUpDP(val, wt, 10);
         int r1 = k.topDownRecursive(val, wt, 30);
         System.out.println(r);
         System.out.println(r1);
