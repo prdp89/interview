@@ -19,7 +19,7 @@ public class lifeuniverse {
                 arr.add(i);
             }
             else
-                break;;
+                break;
         }
 
         for(int i =0 ; i< arr.size(); i++)

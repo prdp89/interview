@@ -9,6 +9,9 @@ public class CuttingRod {
         int max[] = new int[price.length+1];
         for(int i=1; i <= price.length; i++){
             for(int j=i; j <= price.length; j++){
+
+                //this logic is similiar to Unbounded Knapsack Problem done in notes + also look program
+                // in GFG website.
                 max[j] = Math.max(max[j], max[j-i] + price[i-1]);
             }
         }
@@ -17,9 +20,8 @@ public class CuttingRod {
     
     public int maxValue1(int price[]){
         int max[] = new int[price.length+1];
-        for(int i=1; i <= price.length; i++){
-            max[i] = price[i-1];
-        }
+        System.arraycopy(price, 0, max, 1, price.length);
+
         for(int i=1 ; i <= price.length; i++){
             for(int j=1; j < i ; j++){
                 max[i] = Math.max(max[i], max[i-j] + max[j]);

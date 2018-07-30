@@ -44,8 +44,8 @@ public class CountAs {
     
     public static void main(String args[]){
         CountAs ca =new CountAs();
-        System.out.println(ca.countAsRec(25));
-        System.out.println(ca.countAs(25));
+        System.out.println(ca.countAsRec(14));
+       // System.out.println(ca.countAs(25));
               
     }
 }

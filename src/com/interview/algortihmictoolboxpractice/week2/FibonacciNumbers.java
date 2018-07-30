@@ -4,19 +4,17 @@ import java.util.Scanner;
 
 public class FibonacciNumbers {
     public static void main(String[] args) {
-/*
         final FibonacciFinder fibonacciFinder = new FibonacciFinder();
         for (int i = 0; i < 15; i++) {
             System.out.println(fibonacciFinder.fib(i));
         }
-*/
 
       /*  Scanner s = new Scanner(System.in);
         int a = s.nextInt();
         System.out.println(fibNumber(a));*/
 
-        Scanner s = new Scanner(System.in);
-        System.out.println(getFibonacciLastDigit(s.nextLong()));
+       /* Scanner s = new Scanner(System.in);
+        System.out.println(getFibonacciLastDigit(s.nextLong()));*/
     }
 
     //this gets only last digit of large Fabonacii number
