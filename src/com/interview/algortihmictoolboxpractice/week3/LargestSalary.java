@@ -74,7 +74,7 @@ public class LargestSalary {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        /*Vector<String> vector = new Vector<>();*/
+        /*Vector<StringProblem> vector = new Vector<>();*/
         String[] strings = new String[n];
 
         for (int i = 0; i < n; i++) {

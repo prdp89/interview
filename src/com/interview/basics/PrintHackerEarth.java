@@ -59,13 +59,13 @@ import java.util.Scanner;
       /*  *
          * @param args*/
 
-        /*public static void main(String[] args) {
+        /*public static void main(StringProblem[] args) {
             // TODO Auto-generated method stub
             InputReader in=new InputReader(System.in);
             OutputWriter out=new OutputWriter (System.out);
 
             int n=in.readInt();
-            String s=in.readString();
+            StringProblem s=in.readString();
             int arr[]=new int[26];
             for(int i=0;i<n;i++){
                 arr[s.charAt(i)-'a']++;

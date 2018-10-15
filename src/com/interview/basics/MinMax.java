@@ -35,12 +35,12 @@ public class MinMax {
 
     //----------------correct solution--------------------------
 
-    /*public static void main(String[] args) throws IOException {
+    /*public static void main(StringProblem[] args) throws IOException {
 
         BufferedReader bi = new BufferedReader(new InputStreamReader(System.in));
 
         int num=Integer.parseInt(bi.readLine());
-        String[] strNums;
+        StringProblem[] strNums;
 
         strNums = bi.readLine().split("\\s");
         int[] n = new int[strNums.length];

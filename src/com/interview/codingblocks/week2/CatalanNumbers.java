@@ -36,7 +36,7 @@ public class CatalanNumbers {
         //for picking each i from 1... N
         for (int i = 1; i <= n; i++) {
 
-            ans += catalanNumbers(i - 1) * catalanNumbers(n - i);
+            ans += catalanNumbersDPMethod(i - 1) * catalanNumbersDPMethod(n - i);
 
         }
 

@@ -33,7 +33,7 @@ public class SubsequenceWithBitMasking {
             i++;
             no= no>>1;
         }
-        System.out.println("\n");
+        System.out.print("\n");
     }
 
     public static void main( String[] args ) {

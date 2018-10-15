@@ -34,6 +34,7 @@ public class Knapsack01 {
                     K[i][j] = 0;
                     continue;
                 }
+
                 if(j - wt[i-1] >= 0){
                     K[i][j] = Math.max(K[i-1][j], K[i-1][j-wt[i-1]] + val[i-1]);
                 }else{

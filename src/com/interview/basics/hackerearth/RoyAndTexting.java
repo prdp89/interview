@@ -40,15 +40,15 @@ public class RoyAndTexting {
     }
 
     //solve using recursive approach
-  /*  String[] cellPhoneButton = {"_0",".,?!1","abc2","def3","ghi4","jkl5","mno6","pqrs7","tuv8","wxyz9"};
+  /*  StringProblem[] cellPhoneButton = {"_0",".,?!1","abc2","def3","ghi4","jkl5","mno6","pqrs7","tuv8","wxyz9"};
     int noOfTestCases;
 		if(int.TryParse(Console.ReadLine(),out noOfTestCases)) {
-        String[] testcases = new String[noOfTestCases];
+        StringProblem[] testcases = new StringProblem[noOfTestCases];
         for(int i=0;i<noOfTestCases;i++)
         {
             testcases[i] = Console.ReadLine() ;
         }
-        foreach(String testcase in testcases)
+        foreach(StringProblem testcase in testcases)
         {
             int pointer = 1;
             int val=0;

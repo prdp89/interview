@@ -5,7 +5,7 @@ public class LinearSearch {
     public static void main( String[] args ) {
 
         int a[] = {1, 3, 6, 34, 2, 0, 9};
-        int keyItem = 6;
+        int keyItem = 9;
         System.out.println(linearSearch(a, 0, keyItem, a.length));
     }
 
