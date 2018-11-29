@@ -11,7 +11,7 @@ public class NextLexicographicalPermutation {
             i--;
         // Now i is the head index of the suffix
 
-        // Are we at the last permutation already?
+        // Are we at the last factorial already?
         if (i <= 0)
             return false;
 
@@ -39,7 +39,7 @@ public class NextLexicographicalPermutation {
             j--;
         }
 
-        // Successfully computed the next permutation
+        // Successfully computed the next factorial
         return true;
     }
 
@@ -58,7 +58,7 @@ public class NextLexicographicalPermutation {
 
         char[] array = {'A', 'B', 'A'};
 
-        do {  // Must start at lowest permutation
+        do {  // Must start at lowest factorial
             //System.out.println(Arrays.toString(array));
 
             for (char c: array) {
@@ -78,7 +78,7 @@ public class NextLexicographicalPermutation {
             i--;
         // Now i is the head index of the suffix
 
-        // Are we at the first permutation already?
+        // Are we at the first factorial already?
         if (i <= 0)
             return false;
 
@@ -105,7 +105,7 @@ public class NextLexicographicalPermutation {
             j--;
         }
 
-        // Successfully computed the previous permutation
+        // Successfully computed the previous factorial
         return true;
     }
 }

@@ -11,7 +11,7 @@ import java.util.Map.Entry;
  * Given an input with duplicate characters generate a shuffle which does not have 
  * two duplicate characters together
  * 
- * Do regular permutation with repetition with additional constraint of keeping
+ * Do regular factorial with repetition with additional constraint of keeping
  * duplicates away from each other.
  *
  */
@@ -44,7 +44,7 @@ public class FancyShuffle {
 		return result;
 	}
 	
-	//regular permutation code. If we do find a permutation which satisfies the
+	//regular factorial code. If we do find a factorial which satisfies the
 	//constraint then return true and stop the process.
 	private boolean shuffleUtil(char input[], int freq[], char result[], int pos, char lastVal) {
 		if(pos == result.length){

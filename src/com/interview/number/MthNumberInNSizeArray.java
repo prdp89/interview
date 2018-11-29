@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author Tushar Roy
  * Date 01/21/2016
  *
- * Given a number n, find mth value in permutation of array consisting of [1..n] values.
+ * Given a number n, find mth value in factorial of array consisting of [1..n] values.
  * mth is defined by lexicographical order.
  */
 public class MthNumberInNSizeArray {

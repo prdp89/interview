@@ -1,9 +1,11 @@
 package com.interview.hackerrank.recursion;
 
+import java.util.Arrays;
+
 public class ThePowerSum {
 
     private static void solve() {
-        int X = 13, N = 2;
+        int X = 10, N = 2;
 
         System.out.println(recurse(X, N, 1));
     }
@@ -12,10 +14,10 @@ public class ThePowerSum {
     This is one of the best solutions.
 
     For a better understanding we can visualize it for X = 10 and N = 2.
-
+                      X, N, i
                      (10,2,1)                   ->1^2
                     /        \
-                   /          \
+excl. the x        /          \  incl. the x [i increments at every step]
              (10,2,2)        (9,2,2)            ->2^2
              /     \         /     \
             /       \       /       \
@@ -45,7 +47,7 @@ public class ThePowerSum {
 
         if (i_pow > x)
             return 0;
-        else if (i_pow == x)
+        else if (i_pow == x) //3^2 == 9
             return 1;
         else
             // subproblem
@@ -55,5 +57,20 @@ public class ThePowerSum {
     //https://www.hackerrank.com/challenges/the-power-sum/problem
     public static void main( String[] args ) {
         solve();
+
+       // solveDummy();
+    }
+
+    private static void solveDummy() {
+        int x = 13, n = 2;
+
+        int[] arr = new int[x];
+
+        for (int i = 0; i <= Math.pow(x, 1.0 / n); i++) {
+
+            arr[i] = i;
+        }
+
+        System.out.println(Arrays.toString(arr));
     }
 }

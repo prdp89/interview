@@ -11,9 +11,9 @@ public class Permutation {
     }
 
     /**
-     * permutation function
+     * factorial function
      *
-     * @param str string to calculate permutation for
+     * @param str string to calculate factorial for
      * @param l   starting index
      * @param r   end index
      */

@@ -8,7 +8,7 @@ public class AbsolutePermutation {
 
     //https://www.hackerrank.com/challenges/absolute-permutation/problem
     //https://www.geeksforgeeks.org/k-difference-permutation/
-    //lexicographically permutation with K difference
+    //lexicographically factorial with K difference
 
     public static void main( String[] args ) {
         solve();
@@ -32,7 +32,7 @@ public class AbsolutePermutation {
 
     Step 1: k == 0: print all the numbers from 1 to N
 
-    Step 2 : if (n / k) % 2 is not ZERO, print -1 (as this must be zero to be absolute permutation)
+    Step 2 : if (n / k) % 2 is not ZERO, print -1 (as this must be zero to be absolute factorial)
 
     Otherwise, follow the pattern below:
 

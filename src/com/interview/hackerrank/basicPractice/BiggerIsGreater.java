@@ -13,7 +13,7 @@ public class BiggerIsGreater {
             i--;
         // Now i is the head index of the suffix
 
-        // Are we at the last permutation already?
+        // Are we at the last factorial already?
         if (i <= 0)
             return "no answer";
 
@@ -41,7 +41,7 @@ public class BiggerIsGreater {
             j--;
         }
 
-        // Successfully computed the next permutation
+        // Successfully computed the next factorial
         return String.valueOf(array);
     }
 

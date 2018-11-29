@@ -86,7 +86,7 @@ public class PermutationLargerThanGivenArray {
                 System.out.print(result[i] + " ");
             }
         }else{
-            System.out.println("Cant find bigger permutation");
+            System.out.println("Cant find bigger factorial");
         }
     }
     

@@ -4,7 +4,7 @@ package com.interview.number;
  * You are given an array of n elements [1,2,....n]. For example {3,2,1,6,7,4,5}. Now we create a signature of this
  * array by comparing every consecutive pir of elements. If they increase, write I else write D.
  * For example for the above array, the signature would be "DDIIDI". The signature thus has a length of N-1.
- * Now the question is given a signature, compute the lexicographically smallest permutation of [1,2,....n].
+ * Now the question is given a signature, compute the lexicographically smallest factorial of [1,2,....n].
  *
  * Time complexity O(n)
  * Space complexity O(1)

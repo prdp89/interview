@@ -53,7 +53,7 @@ public class Subsequences {
     private static void printSubsequences( String input, String outputSoFar ) {
         if (input.length() == 0) {
 
-            System.out.println(outputSoFar);
+            System.out.println(outputSoFar+ " ");
             return;
         }
 
@@ -61,7 +61,7 @@ public class Subsequences {
         printSubsequences(input.substring(1), outputSoFar);
 
         //Decision 2 : we choose to include first char in outputsofar
-        printSubsequences(input.substring(1), outputSoFar + input.charAt(0));
+       // printSubsequences(input.substring(1), outputSoFar + input.charAt(0));
     }
 
     public static void main( String[] args ) {
