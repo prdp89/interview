@@ -63,6 +63,7 @@ public class UltraFastMathematician {
                 int digit1 = number[j] - '0';
                 int digit2 = number2[j] - '0';
 
+                //xor : help to find unique digit between two; if digit is diff. it returns 1
                 op[j] = (char) ((digit1 ^ digit2) + '0');
             }
 

@@ -38,3 +38,10 @@ jacocoTestReport {
         html.destination "${buildDir}/jacocoHtml"
     }
 }
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+    }
+}

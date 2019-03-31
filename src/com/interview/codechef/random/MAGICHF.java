@@ -1,4 +1,4 @@
-package com.interview.codechef;
+package com.interview.codechef.random;
 
 import com.interview.codingblocks.week7Greedy.GRANDTEMPLE;
 

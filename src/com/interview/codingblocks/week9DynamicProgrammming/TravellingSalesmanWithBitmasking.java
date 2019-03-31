@@ -25,7 +25,6 @@ public class TravellingSalesmanWithBitmasking {
     public static void main( String[] args ) {
         // System.out.println(tsp(1, 0));
 
-
         for (int[] row : dp)
             Arrays.fill(row, -1);
 
@@ -41,7 +40,6 @@ public class TravellingSalesmanWithBitmasking {
 
         if (mask == MASK_VISITED_ALL)
             return dist[currentCityIndexOrPosition][0];
-
 
         int ans = Integer.MAX_VALUE;
 

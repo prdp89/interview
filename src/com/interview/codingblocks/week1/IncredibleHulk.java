@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class IncredibleHulk {
 
+    //https://codingblocks.com/resources/incredible-hulk/
     private static void solve() {
         Scanner scanner = new Scanner(System.in);
 

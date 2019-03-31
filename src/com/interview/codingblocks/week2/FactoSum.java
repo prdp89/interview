@@ -1,6 +1,5 @@
 package com.interview.codingblocks.week2;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 //source: https://hack.codingblocks.com/contests/c/452/56
@@ -38,7 +37,7 @@ public class FactoSum {
         long mult = 1;
         for (int i = 0; i <= index-1; i++) {
             finalResult += result[i] * mult;
-            mult = mult *10;
+            mult = mult * 10;
         }
 
         return finalResult;

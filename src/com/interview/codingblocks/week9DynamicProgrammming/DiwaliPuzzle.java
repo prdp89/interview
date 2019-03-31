@@ -82,7 +82,7 @@ public class DiwaliPuzzle {
             }
         }
 
-        System.out.println(solveTopDownDP(1, 0, 0) + solveRecursive(1, 1, 0) % MOD);
+        System.out.println(solveRecursive(1, 0, 0) +  solveRecursive(1, 1, 0) % MOD);
     }
 
     private static long solveRecursive( long index, long prev, long count ) {

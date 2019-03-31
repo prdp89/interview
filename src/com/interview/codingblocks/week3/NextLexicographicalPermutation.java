@@ -1,7 +1,5 @@
 package com.interview.codingblocks.week3;
 
-import java.util.Arrays;
-
 public class NextLexicographicalPermutation {
 
     private static boolean nextPermutation( char[] array ) {
@@ -61,7 +59,7 @@ public class NextLexicographicalPermutation {
         do {  // Must start at lowest factorial
             //System.out.println(Arrays.toString(array));
 
-            for (char c: array) {
+            for (char c : array) {
                 System.out.print(c);
             }
 

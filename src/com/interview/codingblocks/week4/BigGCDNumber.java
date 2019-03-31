@@ -42,7 +42,7 @@ public class BigGCDNumber {
     }
 
     public static void main( String[] args ) {
-        //solveGCDIterative();
+        //solveGCDIterative(12, 15);
 
         solveBigGCD();
     }

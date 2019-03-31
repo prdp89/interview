@@ -39,6 +39,13 @@ public class ChunkMerge {
             p.index = 1;
             queue.add(p);
         }
+
+        /*
+        Replace heap root with next element from the array from which the element is extracted.
+
+        If the array doesn’t have any more elements, then replace root with infinite.
+        After replacing the root, heapify the tree.
+         */
         
         while(!queue.isEmpty()){
             Triplet p = queue.poll();

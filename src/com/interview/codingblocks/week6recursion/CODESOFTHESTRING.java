@@ -5,6 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+    Take as input str, a string. Assume that value of a=1, b=2, c=3, d=4, …. z=26.
+    Write a recursive function (return type Arraylist) to print all possible codes for the string.
+    E.g. for “1123” possible codes are aabc, kbc, alc, aaw, kw.
+
+    Sample Input:
+    1125
+
+    Sample Output:
+    [aabe, aay, ale, kbe, ky]
+ */
 public class CODESOFTHESTRING {
 
     private static final String[] keys;

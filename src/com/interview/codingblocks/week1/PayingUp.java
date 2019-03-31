@@ -39,7 +39,16 @@ public class PayingUp {
         int i = 0, sum = 0;
         while (number > 0) {
 
-            //if last bit of number is set
+            //if last bit of number is set :
+
+            /*
+            If we consider that 1 means that we have selected object at that position and 0 means
+            that we have not selected the object at that position, we can get all possible subsets
+
+            of ‘n’ objects by looping over numbers from 1 to 2^n.
+
+            In this way, we can get the sum for all possible subsets of the ‘n’ objects.
+             */
             if ((number & 1) != 0) {
                 sum += arr[i];
             }

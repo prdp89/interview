@@ -17,7 +17,7 @@ public class Exponentiation {
     }
 
     //Fast Power using Bitmasking
-    static int fastPowerBitmasks( int a, int b ) {
+    private static int fastPowerBitmasks( int a, int b ) {
 
         int res = 1;
         while (b > 0) {

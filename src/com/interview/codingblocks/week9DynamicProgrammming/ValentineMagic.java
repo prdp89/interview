@@ -97,6 +97,4 @@ public class ValentineMagic {
 
         return dp[i][j] = Math.min(ops, ops1);
     }
-
-
 }

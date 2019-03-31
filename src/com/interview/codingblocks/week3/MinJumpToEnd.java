@@ -43,6 +43,7 @@ public class MinJumpToEnd {
         int min = Integer.MAX_VALUE;
         for (int i = l + 1; i <= h && i <= l + arr[l]; i++) {
             int jumps = minJumpsRecursive(arr, i, h);
+
             if (jumps != Integer.MAX_VALUE &&
                     jumps + 1 < min)
                 min = jumps + 1;

@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class XORProfit {
 
+    //XOR profit : https://hack.codingblocks.com/contests/c/101/498
+
     public static void main( String[] args ) {
         solve();
     }

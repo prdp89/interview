@@ -34,14 +34,14 @@ public class LightsNewCar {
             return 1;
 
         //recursive x ^ y / 2
-        long smallPower = power(x, y/2);
+        long smallPower = power(x, y / 2);
 
-        smallPower%=MOD;
+        smallPower %= MOD;
 
         smallPower = (smallPower * smallPower) % MOD;
 
         //if y is odd or last digit is not equals to zero..
-        if((y&1) != 0)
+        if ((y & 1) != 0)
             return (x * smallPower) % MOD;
 
         return smallPower;

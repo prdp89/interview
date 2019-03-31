@@ -115,6 +115,7 @@ public class SubSums {
 
         //to generate 2^n combinations..if N=3 the 2^3 = 8 combinations
         int totalLength = 1 << size;
+        boolean isFound = false;
 
         Long[] subSetList = new Long[totalLength];
 
@@ -133,8 +134,19 @@ public class SubSums {
                 j++;
             }
 
+            /*if(sum == 0)
+            {
+                isFound = true;
+                System.out.println("Yes");
+                break;
+            }*/
+
             subSetList[i] = sum;
         }
+
+        /*if(!isFound)
+            System.out.println("No");*/
+
         return subSetList;
     }
 

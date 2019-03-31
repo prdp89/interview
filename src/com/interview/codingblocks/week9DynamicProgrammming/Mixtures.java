@@ -34,8 +34,22 @@ public class Mixtures {
 
             System.out.println(solveTopDownDP(0, n - 1));
 
+            System.out.println("Recurrence relation sum :" + solveRecursive(0, n - 1));
             // System.out.println(Arrays.toString(arr));
         }
+    }
+
+    //This function is to just recurrence relation {solveTopDownDP(i, k) + solveTopDownDP(k + 1, j)}
+    private static long solveRecursive( int i, int j ) {
+        if (i >= j)
+            return 0;
+
+        long x = Integer.MAX_VALUE;
+
+        for (int k = i; k <= j; k++) {
+            x = Math.min(x, solveTopDownDP(i, k) + solveTopDownDP(k + 1, j));
+        }
+        return x;
     }
 
     private static long solveTopDownDP( int i, int j ) {

@@ -25,8 +25,8 @@ Output: 2 0 -1 0 -1
 public class BinarySearch {
 
     // Like public version, but without range checks.
-    private static int binarySearch(int[] a,
-                                     int key) {
+    private static int binarySearch( int[] a,
+                                     int key ) {
         int low = 0;
         int high = a.length - 1;
 
@@ -34,15 +34,27 @@ public class BinarySearch {
             int mid = (low + high) >>> 1;
             int midVal = a[mid];
 
-            if (midVal < key)
+            if (midVal < key)//element to search is greater than than mid value; Move the START index
                 low = mid + 1;
-            else if (midVal > key)
+            else if (midVal > key) //element to search is less than than mid value; Move the END index
                 high = mid - 1;
             else
                 return mid; // key found
         }
         return -1;  // key not found.
     }
+
+    /*
+    Time complexity : At each step we divide array into half as : n, n/2, n/4, n/8 .....  1
+
+    To be generic : n/2^1 , n/2^2 , n/2^3 ..... n/2^k
+
+    n / 2 ^ k = 1
+    n = 2 ^ k
+    Log 2 (n) = Log 2 (2 ^ k) {take log on both sides}
+    K = Log 2 (n) which is: O ( Log N )
+
+     */
 
     public static void main( String[] args ) {
         FastScanner scanner = new FastScanner(System.in);
@@ -65,7 +77,7 @@ public class BinarySearch {
         BufferedReader br;
         StringTokenizer st;
 
-        FastScanner(InputStream stream) {
+        FastScanner( InputStream stream ) {
             try {
                 br = new BufferedReader(new InputStreamReader(stream));
             } catch (Exception e) {

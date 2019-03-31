@@ -32,7 +32,7 @@ public class PermuationOfString {
             //So to restore the original string ABC we need to swap again.
             //This is also called backtracking....
 
-            swap(input, i , j);
+            swap(input, i, j);
         }
     }
 

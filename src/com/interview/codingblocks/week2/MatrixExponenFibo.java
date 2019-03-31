@@ -53,7 +53,6 @@ public class MatrixExponenFibo {
         return multiply(X, X);
     }
 
-
     private static long[][] multiply( final long[][] matrix1, final long[][] matrix2 ) {
         final long[][] result = new long[matrix1[0].length][matrix2.length];
         for (int i = 0; i < matrix1.length; i++) {

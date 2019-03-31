@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class KOrderedLCS {
 
+    //https://www.geeksforgeeks.org/longest-common-subsequence-with-at-most-k-changes-allowed/
     static int dp[][][] = new int[2005][2005][8];
 
     //Input:
@@ -34,13 +35,13 @@ public class KOrderedLCS {
             b[i] = scanner.nextInt();
         }
 
-       /* long startTime = System.nanoTime();
+        long startTime = System.nanoTime();
 
         System.out.println(solveRecursive(a, b, 0, 0, charsLeft));
 
         long endTime = System.nanoTime();
         long totalTime = endTime - startTime;
-        System.out.println("Time Recursive: " + totalTime);*/
+        System.out.println("Time Recursive: " + totalTime);
 
         //------------------------------------------------------------------------------
 
@@ -79,14 +80,16 @@ public class KOrderedLCS {
         if (j > b.length - 1)
             return 0;
 
-        if (charLeft == 0)
-            return 0;
+       /* if (charLeft == 0)
+            return 0;*/
 
         if (a[i] == b[j])
             return 1 + solveRecursive(a, b, i + 1, j + 1, charLeft); //+1 to include the current character
         else {
 
-            int x = 1 + solveRecursive(a, b, i + 1, j + 1, charLeft - 1); //replacing char of first string and increase index of both string
+            int x = 0;
+            if (charLeft > 0)
+                x = 1 + solveRecursive(a, b, i + 1, j + 1, charLeft - 1); //replacing char of first string and increase index of both string
 
             //same as LCS program
             int y = solveRecursive(a, b, i + 1, j, charLeft);
@@ -105,8 +108,8 @@ public class KOrderedLCS {
         if (j > b.length - 1)
             return 0;
 
-        if (charLeft == 0)
-            return 0;
+       /* if (charLeft == 0)
+            return 0;*/
 
         String key = i + "-" + j;
         if (map.containsKey(key))

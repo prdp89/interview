@@ -9,7 +9,7 @@ public class ConstructTheArray {
     }
 
     // Complete the countArray function below.
-    static long countArray( int n, int k, int x, int start, int currElement, int ways ) {
+    private static long countArray( int n, int k, int x, int start, int currElement, int ways ) {
         // Return the number of ways to fill in the array.
 
         if (start >= n && currElement == x)

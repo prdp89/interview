@@ -5,7 +5,7 @@ package com.interview.number;
  */
 public class SquareRoot {
 
-    double findRoot(int num){
+    private double findRoot( int num ){
         double start =0;
         double end = num;
         while(Math.abs(start - end) > 0.01){

@@ -24,7 +24,6 @@ public class SmartKeypad {
             if (digitIndex == 1 || digitIndex == 0)
                 solve(input, out, i + 1, j);
 
-
             //checking until K reaches end of mapped input length. e.g 2 = abc
             for (int k = 0; k < table1[digitIndex].length(); k++) {
 
