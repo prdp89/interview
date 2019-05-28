@@ -62,13 +62,10 @@ public class LongestIncreasingSubsequence {
             k = parent[k];
         }
 
-
         for(int i=0; i<length; i++)
         {
             System.out.println(LIS[i]);
         }
-
-
     }
 
     public static void main(String args[])

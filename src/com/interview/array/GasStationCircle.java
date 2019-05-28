@@ -13,44 +13,53 @@ package com.interview.array;
 
 //https://allaboutalgorithms.wordpress.com/2011/10/15/petrol-pumps-in-circle-problem/
 
-    //In THis problem we have to find from which Petrol pump we have to start to complete the loop such that we visit
-    // all petrol pump at-least once.
+//In THis problem we have to find from which Petrol pump we have to start to complete the loop such that we visit
+// all petrol pump at-least once.
 
 public class GasStationCircle {
 
-    public int startTour(int gasAvailable[],int gasRequired[]){
+    public static void main( String args[] ) {
+        GasStationCircle gsc = new GasStationCircle();
+        int[] gasAvailable = {4, 4, 6};
+        int[] gasRequired = {5, 6, 1};
+        System.out.println(gsc.startTour(gasAvailable, gasRequired));
+        //  System.out.println(gsc.startTour1(gasAvailable, gasRequired));
+    }
+
+    private int startTour( int gasAvailable[], int gasRequired[] ) {
         int start = -1;
         int end = 0;
         int currentGas = 0;
         boolean visitedOnce = false;
-        while(start != end){
+        while (start != end) {
             currentGas += gasAvailable[end] - gasRequired[end];
-            if(start == -1){
+            if (start == -1) {
                 start = end;
             }
-            if(end == gasAvailable.length-1 && visitedOnce == false){
+            if (end == gasAvailable.length - 1 && visitedOnce == false) {
                 visitedOnce = true;
-            }else if(end == gasAvailable.length-1 && visitedOnce == true){
+            } else if (end == gasAvailable.length - 1 && visitedOnce == true) {
                 return -1;
             }
-            if(currentGas < 0){
+            if (currentGas < 0) {
                 start = -1;
                 currentGas = 0;
             }
-            end = (end + 1)%gasAvailable.length;
+            end = (end + 1) % gasAvailable.length;
         }
-        
+
         return end;
     }
-    
+
     /**
      * If it is not guaranteed that tour exists then once you get
      * result of kadanewrap make an actual trip to see if value is positive
+     *
      * @return -1 if no solution exists otherwise returns gas station at which to start.
      */
-    public int startTour1(int gasAvailable[], int gasRequired[]){
+    public int startTour1( int gasAvailable[], int gasRequired[] ) {
         int diff[] = new int[gasAvailable.length];
-        for(int i=0; i < diff.length; i++){
+        for (int i = 0; i < diff.length; i++) {
             diff[i] = gasAvailable[i] - gasRequired[i];
         }
 
@@ -73,20 +82,12 @@ public class GasStationCircle {
         int netGas = 0;
         do {
             netGas += diff[i];
-            i = (i + 1)%diff.length;
+            i = (i + 1) % diff.length;
             if (netGas < 0) {
                 return -1;
             }
         } while (i != t.start);
 
         return t.start;
-    }
-
-    public static void main(String args[]){
-        GasStationCircle gsc = new GasStationCircle();
-        int[] gasAvailable = {4, 4, 6};
-        int[] gasRequired = {5, 6, 1};
-        System.out.println(gsc.startTour(gasAvailable, gasRequired));
-      //  System.out.println(gsc.startTour1(gasAvailable, gasRequired));
     }
 }

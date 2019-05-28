@@ -2,6 +2,7 @@ package com.interview.hackerrank.recursion.advance;
 
 public class GroupSum {
 
+    //https://codingbat.com/prob/p145416
     public static void main( String[] args ) {
         System.out.println(groupSum(0, new int[]{2, 4, 8}, 8, ""));
     }

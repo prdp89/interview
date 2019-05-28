@@ -6,6 +6,17 @@ public class LongestCommonSubsequence {
 
     private static int memo[][] = new int[100][100];
 
+    //Read this a variant of this problem : Shortest common subsequence : https://www.geeksforgeeks.org/shortest-common-supersequence/
+    //aNOTHER VARIANT OF lcs : https://www.geeksforgeeks.org/longest-repeating-subsequence/
+
+    //Another variant : https://www.geeksforgeeks.org/lcs-longest-common-subsequence-three-strings/
+
+    //Another Variant: https://www.spoj.com/problems/AIBOHP/
+    //solution: http://spoj-solutions.blogspot.com/2015/09/aibohp-aibohphobia.html
+    //Find LCS (original, reverse) then subtract from result.
+
+    //Another variant: com.interview.codechef.ccdsapfoundation_1.DP.GFG.DistinctSubsequence2Strings
+
     public static void main( String[] args ) {
 
         /* String s = "nematode";
@@ -35,6 +46,7 @@ public class LongestCommonSubsequence {
 
         long endTimeMemoization = System.nanoTime();
         long totalTimeMemoization = endTimeMemoization - startTimeMemoization;
+
         System.out.println("Time Top Down DP : " + totalTimeMemoization);
 
         //for Bottom up DP

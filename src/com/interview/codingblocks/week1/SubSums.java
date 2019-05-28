@@ -151,11 +151,12 @@ public class SubSums {
     }
 
     public static void main( String[] args ) {
-        //solve();
+        solve();
 
-        solveCodingBlocks();
+        //solveCodingBlocks();
     }
 
+    //upper bound is last occurance of element x in an array
     static int bs_upper_bound( Long a[], int n, int x ) {
         int l = 0;
         int h = n; // Not n - 1
@@ -170,6 +171,8 @@ public class SubSums {
         return l;
     }
 
+    //https://codingblocks.com/resources/binary-search-upper-lower-bound/
+    //lower bound is first occurance of element x in an array
     static int bs_lower_bound( Long a[], int n, int x ) {
         int l = 0;
         int h = n; // Not n - 1

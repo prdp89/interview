@@ -13,6 +13,8 @@ import java.util.Arrays;
  *
  * http://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
  */
+
+//check easy soltn : https://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
 public class RearrangeArrayPerIndex {
 
     public void rearrange(int input[]) {

@@ -15,7 +15,7 @@ public class MinimumStepToOne {
     //          /2          -1          /2       /2
     //But it can solved in 3 steps:
     // 10 : 10--------> 9----------->3---------->1 == 3 steps
-    //          /3          /3          /3
+    //          /-1      /3          /3
     //This means we have to try all the possible combinations....
 
     //https://www.youtube.com/watch?v=AjR5QBk5Si4

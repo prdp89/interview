@@ -15,6 +15,9 @@ import java.util.List;
  */
 public class StringEncoderDecoder {
 
+    //check easy 2nd solution here: http://buttercola.blogspot.com/2015/09/leetcode-encode-and-decode-strings.html?_sm_au_=itVfj0JWnFk1rrcH
+
+
     // Encodes a list of strings to a single string.
     public String encode(List<String> strs) {
         StringBuffer buff = new StringBuffer();

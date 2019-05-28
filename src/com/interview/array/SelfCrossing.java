@@ -5,7 +5,13 @@ package com.interview.array;
  */
 public class SelfCrossing {
 
-    public boolean isSelfCrossing(int[] x) {
+    public static void main( String args[] ) {
+        SelfCrossing sc = new SelfCrossing();
+        int input[] = {3, 3, 4, 2, 2};
+        System.out.print(sc.isSelfCrossing(input));
+    }
+
+    private boolean isSelfCrossing( int[] x ) {
         if (x.length < 4) {
             return false;
         }
@@ -35,11 +41,5 @@ public class SelfCrossing {
             i++;
         }
         return false;
-    }
-
-    public static void main(String args[]) {
-        SelfCrossing sc = new SelfCrossing();
-        int input[] = {3, 3, 4, 2, 2};
-        System.out.print(sc.isSelfCrossing(input));
     }
 }

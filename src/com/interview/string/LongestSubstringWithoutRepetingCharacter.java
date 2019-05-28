@@ -10,13 +10,16 @@ import java.util.Set;
  */
 public class LongestSubstringWithoutRepetingCharacter {
 
+    //easiest one...
     public int lengthOfLongestSubstring(String s) {
         Set<Character> uniqueSet = new HashSet<>();
         int maxSize = 0;
         int start = 0;
+
         for(int i = 0; i < s.length(); i++) {
             if(!uniqueSet.contains(s.charAt(i))) {
                 uniqueSet.add(s.charAt(i));
+
                 if(uniqueSet.size() > maxSize) {
                     maxSize = uniqueSet.size();
                 }

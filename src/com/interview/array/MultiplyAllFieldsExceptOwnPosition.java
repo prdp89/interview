@@ -6,7 +6,9 @@ package com.interview.array;
  */
 public class MultiplyAllFieldsExceptOwnPosition {
 
-    public int[] multiply(int nums[]) {
+    //Very easy solution desc: https://www.youtube.com/watch?v=vB-81TB6GUc
+
+    public int[] multiply( int nums[] ) {
         if (nums.length == 0) {
             return new int[0];
         }

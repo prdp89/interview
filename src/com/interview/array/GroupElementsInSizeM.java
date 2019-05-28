@@ -14,7 +14,7 @@ import java.util.PriorityQueue;
  * distance from each other
  */
 
-//check this : https://www.youtube.com/watch?v=1tjyR-IvbsU
+//check this, its helpful : https://www.youtube.com/watch?v=1tjyR-IvbsU
 
 
 class Pair{
@@ -72,7 +72,7 @@ public class GroupElementsInSizeM {
             while(i < p.count){
                 input[start] = p.num;
 
-                //shifting next elememnt to 'm' distance
+                //shifting next element to 'm' distance
                 start = start + m;
 
                 //resetting start position

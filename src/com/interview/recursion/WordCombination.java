@@ -5,8 +5,9 @@ import java.util.List;
 
 /**
  * Date 07/20/2015
- * @author Tushar Roy
  *
+ * @author Tushar Roy
+ * <p>
  * Given a list of list of Strings. Print cartesian product of lists.
  * input -> {"Hello", "World"} , {"Game"}, {"Go","Home"}
  * output ->
@@ -17,29 +18,7 @@ import java.util.List;
  */
 public class WordCombination {
 
-    public void printCombinations(List<List<String>> input) {
-        int[] result = new int[input.size()];
-        print(input,result, 0);
-    }
-
-    private void print(List<List<String>> input, int[] result, int pos) {
-
-        if(pos == result.length){
-            for (int i = 0; i < input.size(); i++) {
-                System.out.print(input.get(i).get(result[i]) + " ");
-            }
-            System.out.println();
-            return;
-        }
-
-        for(int i=0; i < input.get(pos).size(); i++){
-            result[pos] = i;
-            print(input,result, pos+1);
-
-        }
-    }
-
-    public static void main(String args[]){
+    public static void main( String args[] ) {
         List<String> l1 = new ArrayList<>();
         l1.add("quick");
         l1.add("slow");
@@ -60,5 +39,28 @@ public class WordCombination {
         WordCombination wc = new WordCombination();
         wc.printCombinations(input);
 
+    }
+
+    public void printCombinations( List<List<String>> input ) {
+        int[] result = new int[input.size()];
+        print(input, result, 0);
+    }
+
+    //similar to LockFreeStack : codechef -> ccdsapfoundation_1 -> recursion
+    private void print( List<List<String>> input, int[] result, int pos ) {
+
+        if (pos == result.length) {
+            for (int i = 0; i < input.size(); i++) {
+                System.out.print(input.get(i).get(result[i]) + " ");
+            }
+            System.out.println();
+            return;
+        }
+
+        for (int i = 0; i < input.get(pos).size(); i++) {
+            result[pos] = i;
+            print(input, result, pos + 1);
+
+        }
     }
 }

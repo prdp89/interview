@@ -2,6 +2,7 @@ package com.interview.hackerrank.recursion.advance;
 
 public class GroupSumClump {
 
+    //https://codingbat.com/prob/p105136
     public static void main( String[] args ) {
         System.out.println(groupSumClump(0, new int[]{2, 4, 4, 8}, 14));
     }

@@ -44,7 +44,7 @@ public class SimplyPath {
     }
     
     public static void main(String args[]){
-        String absCurrentFolder = "/home/tusroy";
+        String absCurrentFolder = "/home/tusroy/";
         SimplyPath mfc = new SimplyPath();
         System.out.println(mfc.simplifyPath(absCurrentFolder));
     }

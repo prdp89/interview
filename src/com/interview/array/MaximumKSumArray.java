@@ -39,7 +39,7 @@ public class MaximumKSumArray {
     // Driver code
     public static void main(String[] args)
     {
-        int arr[] = {100, 200, 300, 400}; //{1, 4, 2, 10, 2, 3, 1, 0, 20};
+        int arr[] = {300, 400, 100, 200}; //{1, 4, 2, 10, 2, 3, 1, 0, 20};
         int k = 2;
         int n = arr.length;
         System.out.println(maxSum(arr, n, k));

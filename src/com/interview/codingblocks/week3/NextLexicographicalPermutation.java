@@ -55,6 +55,13 @@ public class NextLexicographicalPermutation {
         //int[] array = {0, 1, 1, 1, 4};
 
         char[] array = {'A', 'B', 'A'};
+       /* char[] array = {'1', '5', '4', '8', '3'};
+
+        nextPermutation(array);
+
+        for (char c : array) {
+            System.out.print(c);
+        }*/
 
         do {  // Must start at lowest factorial
             //System.out.println(Arrays.toString(array));

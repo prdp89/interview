@@ -17,6 +17,9 @@ import java.util.Map;
  * https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
  */
 public class LongestSubstringWithKDistinctCharacters {
+
+    //Using hashMap : https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
+
     public int lengthOfLongestSubstringKDistinct(String s, int k) {
         if (k == 0 || s.length() == 0) {
             return 0;
@@ -25,6 +28,7 @@ public class LongestSubstringWithKDistinctCharacters {
         int count = 0;
         int start = 0;
         int max = 0;
+
         for (int i = 0; i < s.length(); i++) {
             int ch = s.charAt(i);
             if (count < k) {

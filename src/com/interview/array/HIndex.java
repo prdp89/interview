@@ -49,7 +49,7 @@ public class HIndex {
 
     //explanation of H-Index : https://www.researchgate.net/post/How_to_calculate_h_index_for_an_author
 
-    public int GetHIndex(int[] m)
+    private int GetHIndex( int[] m )
     {
         int[] s = new int[m.length + 1];
 
@@ -76,10 +76,9 @@ public class HIndex {
 
         int[] input = {4,8,1,1}; //{0, 1, 1, 1, 1, 6, 7 ,8};
 
-       // System.out.print(hi.hIndex(input));
+        System.out.print(hi.hIndex(input));
 
-        System.out.print(hi.GetHIndex(input));
-
+      //  System.out.print(hi.GetHIndex(input));
     }
 }
 

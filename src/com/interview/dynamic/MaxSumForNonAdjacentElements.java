@@ -2,24 +2,33 @@ package com.interview.dynamic;
 
 /**
  * Date 11/03/2016
- * @author Tushar Roy
  *
+ * @author Tushar Roy
+ * <p>
  * Find maximum sum for non adjacent elements.
  * Variation is finding maximum sum non adjacent elements assuming its a circular array.
  * So first element cannot be with last element.
- *
+ * <p>
  * Time complexity O(n)
  * Space complexity O(1)
- *
+ * <p>
  * https://leetcode.com/problems/house-robber/
  * https://leetcode.com/problems/house-robber-ii/
  */
 public class MaxSumForNonAdjacentElements {
 
+    public static void main( String args[] ) {
+        MaxSumForNonAdjacentElements msn = new MaxSumForNonAdjacentElements();
+        int arr[] = {2, 10, 13, 4, 2, 15, 10};
+        System.out.println(msn.maxSum(arr));
+        System.out.println(msn.maxSum(arr, arr.length - 1));
+
+    }
+
     /**
      * Fast DP solution.
      */
-    public int maxSum(int arr[]) {
+    public int maxSum( int arr[] ) {
         int excl = 0;
         int incl = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -33,7 +42,7 @@ public class MaxSumForNonAdjacentElements {
     /**
      * Recursive slow solution.
      */
-    public int maxSum(int arr[], int index) {
+    public int maxSum( int arr[], int index ) {
         if (index == 0) {
             return arr[0];
         } else if (index == 1) {
@@ -48,7 +57,7 @@ public class MaxSumForNonAdjacentElements {
      * Maximum of two will be the answer. It gurantees that both first and last element
      * will be not selected together.
      */
-    public int maxSumCircularArray(int[] nums) {
+    public int maxSumCircularArray( int[] nums ) {
         if (nums.length == 0) {
             return 0;
         }
@@ -71,13 +80,5 @@ public class MaxSumForNonAdjacentElements {
             with1 = Math.max(with1, newWith1);
         }
         return Math.max(with, with1);
-    }
-
-    public static void main(String args[]) {
-        MaxSumForNonAdjacentElements msn = new MaxSumForNonAdjacentElements();
-        int arr[] = { 2, 10, 13, 4, 2, 15, 10 };
-        System.out.println(msn.maxSum(arr));
-        System.out.println(msn.maxSum(arr, arr.length-1));
-
     }
 }

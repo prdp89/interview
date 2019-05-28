@@ -2,6 +2,7 @@ package com.interview.hackerrank.recursion.advance;
 
 public class GroupNoAdj {
 
+    //https://codingbat.com/prob/p169605
     public static void main( String[] args ) {
         System.out.println(groupNoAdj(0, new int[]{2, 5, 10, 4}, 12));
     }

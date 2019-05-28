@@ -15,6 +15,7 @@ public class SmallestIntegerNotRepresentedBySubsetSum {
 
     public int findSmallestInteger(int input[]) {
         int result = 1;
+
         for (int i = 0; i < input.length; i++) {
             if (input[i] <= result) {
                 result += input[i];
@@ -28,6 +29,9 @@ public class SmallestIntegerNotRepresentedBySubsetSum {
     /**
      * Leetcode variation https://leetcode.com/problems/patching-array/
      */
+
+    //Easy explaination here : https://leetcode.com/problems/patching-array/discuss/78488/Solution-%2B-explanation
+
     public int minPatches(int[] nums, int n) {
         int patch = 0;
         long t = 1;

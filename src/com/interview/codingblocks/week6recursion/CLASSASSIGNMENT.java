@@ -8,7 +8,8 @@ public class CLASSASSIGNMENT {
     //https://hack.codingblocks.com/contests/c/452/875
     public static void main( String[] args ) {
         Scanner scanner = new Scanner(System.in);
-       // solve(scanner.nextInt() + 1, "", 0);
+
+        solve(scanner.nextInt() + 1, "", 0);
 
         System.out.println(solvOptimal(scanner.nextInt()));
     }

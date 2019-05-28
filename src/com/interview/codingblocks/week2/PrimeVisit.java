@@ -67,7 +67,7 @@ public class PrimeVisit {
         Vector<Integer> primes = new Vector<>();
         primes.add(2);
 
-        for (int i = 3; i < max; i += 2) {
+        for (int i = 3; i < max; i += 2) { //same as PrimeFactorizationSieve
             if (isPrime[i])
                 primes.add(i);
         }

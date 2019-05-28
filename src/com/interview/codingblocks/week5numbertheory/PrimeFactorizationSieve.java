@@ -16,10 +16,10 @@ public class PrimeFactorizationSieve {
         List<Integer> primes = new ArrayList();
 
         p[0] = p[1] = false;
-        p[1] = true;
+        p[2] = true;
 
         //for initialization : simply marking all odd numbers as Prime.
-        for (int i = 3; i <= N; i += 2) {
+        for (int i = 3; i <= N; i += 2) { //THis uses prime method of 'isPrime_Sqrt_Odd' mentioned in 'com.interview.codingblocks.week2.PrimeNumbers'
             p[i] = true;
         }
 

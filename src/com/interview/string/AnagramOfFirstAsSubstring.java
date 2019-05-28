@@ -9,13 +9,20 @@ import java.util.Map;
  * Keep map of characters in array1 and keep checking if array2 has these characters.
  * main string : a b a c a b b and looking for a a b b c when 3rd a is encountered
  * we move index to second a and start from there.
- * 
+ * <p>
  * Another idea is to keep a sorted linklist of string in comparison. Whenever a new character
  * is to be added remove last character from linklist and add this new one.
  */
 public class AnagramOfFirstAsSubstring {
 
-    public boolean isSubString(char str1[], char str2[]) {
+    public static void main( String args[] ) {
+        char str1[] = "aaabccde".toCharArray();
+        char str2[] = "tbcdaacaaecbd".toCharArray();
+        AnagramOfFirstAsSubstring ana = new AnagramOfFirstAsSubstring();
+        System.out.println(ana.isSubString(str1, str2));
+    }
+
+    public boolean isSubString( char str1[], char str2[] ) {
         int index = 0;
         int curLen = 0;
         Map<Character, Integer> count = new HashMap<Character, Integer>();
@@ -46,11 +53,11 @@ public class AnagramOfFirstAsSubstring {
         return false;
     }
 
-    private boolean containsAndUpdate(Map<Character, Integer> currentCount,
-            Map<Character, Integer> count, Character ch,
-            Map<Character, Integer> pos, int index) {
+    private boolean containsAndUpdate( Map<Character, Integer> currentCount,
+                                       Map<Character, Integer> count, Character ch,
+                                       Map<Character, Integer> pos, int index ) {
         if (count.containsKey(ch)) {
-            if(currentCount.containsKey(ch)) {
+            if (currentCount.containsKey(ch)) {
                 if (currentCount.get(ch) < count.get(ch)) {
                     if (currentCount.get(ch) == 1) {
                         pos.put(ch, index);
@@ -58,28 +65,21 @@ public class AnagramOfFirstAsSubstring {
                     currentCount.put(ch, currentCount.get(ch) + 1);
                     return true;
                 }
-            }else{
+            } else {
                 currentCount.put(ch, 1);
-                pos.put(ch,index);
+                pos.put(ch, index);
                 return true;
             }
         }
         return false;
     }
 
-    private void incrementCount(Character ch, Map<Character, Integer> count) {
+    private void incrementCount( Character ch, Map<Character, Integer> count ) {
         if (count.containsKey(ch)) {
             int c = count.get(ch);
             count.put(ch, c + 1);
         } else {
             count.put(ch, 1);
         }
-    }
-    
-    public static void main(String args[]){
-        char str1[] = "aaabccde".toCharArray();
-        char str2[] = "tbcdaacaaecbd".toCharArray();
-        AnagramOfFirstAsSubstring ana = new AnagramOfFirstAsSubstring();
-        System.out.println(ana.isSubString(str1, str2));
     }
 }

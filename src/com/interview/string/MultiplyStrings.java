@@ -5,18 +5,50 @@ package com.interview.string;
  */
 public class MultiplyStrings {
 
-    public String multiply(String num1, String num2) {
+    public static void main( String args[] ) {
+        MultiplyStrings ms = new MultiplyStrings();
+        //System.out.print(ms.multiply("6752716719037375654442652725945722915786612669126862029212", "2840271321219335147"));
+        // System.out.print(ms.multiplyEasier("6752716719037375654442652725945722915786612669126862029212", "2840271321219335147"));
+
+        System.out.println(ms.multiplyEasier("12", "11"));
+    }
+
+    //https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
+    //If we are multiply  : 12 * 111 => consider reverse : 11 * 12
+    public String multiplyEasier( String num1, String num2 ) {
+        int m = num1.length(), n = num2.length();
+        int[] pos = new int[m + n];
+
+        for (int i = m - 1; i >= 0; i--) {
+
+            for (int j = n - 1; j >= 0; j--) {
+
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int p1 = i + j, p2 = i + j + 1;
+                int sum = mul + pos[p2];
+
+                pos[p1] += sum / 10;
+                pos[p2] = (sum) % 10;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int p : pos) if (!(sb.length() == 0 && p == 0)) sb.append(p);
+        return sb.length() == 0 ? "0" : sb.toString();
+    }
+
+    public String multiply( String num1, String num2 ) {
         String output = multiply(num1, num2, 0, num1.length() - 1, 0, num2.length() - 1);
         return output;
     }
 
-    private String multiply(String num1, String num2, int start1, int end1, int start2, int end2) {
+    private String multiply( String num1, String num2, int start1, int end1, int start2, int end2 ) {
         if (end1 - start1 == 0 || end2 - start2 == 0) {
             return simpleMultiply(num1.substring(start1, end1 + 1), num2.substring(start2, end2 + 1));
         }
 
-        int mid1 = (start1 + end1)/2;
-        int mid2 = (start2 + end2)/2;
+        int mid1 = (start1 + end1) / 2;
+        int mid2 = (start2 + end2) / 2;
 
         int count1 = end1 - mid1;
         int count2 = end2 - mid2;
@@ -35,7 +67,7 @@ public class MultiplyStrings {
         return add(v1.toCharArray(), v3.toCharArray());
     }
 
-    private String simpleMultiply(String num1, String num2) {
+    private String simpleMultiply( String num1, String num2 ) {
         String smaller;
         String larger;
         if (num1.length() == 1) {
@@ -54,7 +86,7 @@ public class MultiplyStrings {
         for (int i = larger.length() - 1; i >= 0; i--) {
             int r1 = larger.charAt(i) - '0';
             int r = r1 * r2 + carry;
-            stringBuffer.append(r%10);
+            stringBuffer.append(r % 10);
             carry = r / 10;
         }
         if (carry != 0) {
@@ -63,7 +95,7 @@ public class MultiplyStrings {
         return stringBuffer.reverse().toString();
     }
 
-    private String append0s(String v1, int count ) {
+    private String append0s( String v1, int count ) {
         StringBuffer buff = new StringBuffer(v1);
         for (int i = 0; i < count; i++) {
             buff.append("0");
@@ -71,42 +103,37 @@ public class MultiplyStrings {
         return buff.toString();
     }
 
-    public String add(char[] num1,char[] num2){
-        int index1 = num1.length -1;
-        int index2 = num2.length -1;
+    public String add( char[] num1, char[] num2 ) {
+        int index1 = num1.length - 1;
+        int index2 = num2.length - 1;
         int carry = 0;
         StringBuffer buffer = new StringBuffer();
-        while(index1 >= 0 && index2 >= 0){
+        while (index1 >= 0 && index2 >= 0) {
             int r1 = num1[index1] - '0';
             int r2 = num2[index2] - '0';
             int r = r1 + r2 + carry;
-            buffer.append(r%10);
-            carry = r/10;
+            buffer.append(r % 10);
+            carry = r / 10;
             index1--;
             index2--;
         }
-        while(index1 >= 0){
+        while (index1 >= 0) {
             int r1 = num1[index1] - '0';
             int r = r1 + carry;
-            buffer.append(r%10);
-            carry = r/10;
+            buffer.append(r % 10);
+            carry = r / 10;
             index1--;
         }
-        while(index2 >= 0){
+        while (index2 >= 0) {
             int r2 = num2[index2] - '0';
             int r = r2 + carry;
-            buffer.append(r%10);
-            carry = r/10;
+            buffer.append(r % 10);
+            carry = r / 10;
             index2--;
         }
         if (carry != 0) {
             buffer.append(carry);
         }
         return buffer.reverse().toString();
-    }
-
-    public static void main(String args[]) {
-        MultiplyStrings ms = new MultiplyStrings();
-        System.out.print(ms.multiply("6752716719037375654442652725945722915786612669126862029212","2840271321219335147"));
     }
 }

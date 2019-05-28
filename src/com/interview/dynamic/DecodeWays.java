@@ -10,12 +10,13 @@ import java.util.Map;
  * 3 -> C
  * 26-> Z
  * Given an encoded message containing digits, determine the total number of ways to decode it.
- *
+ * <p>
  * https://leetcode.com/problems/decode-ways/
  */
 public class DecodeWays {
 
-    public int numDecodings(String s) {
+    //same as: codeofstring at : com.interview.codingblocks.week6recursion
+    public int numDecodings( String s ) {
         if (s.length() == 0) {
             return 0;
         }
@@ -23,7 +24,7 @@ public class DecodeWays {
         return numDecodingsUtil(s, 0, count);
     }
 
-    public int numDecodingsUtil(String s, int start, Map<Integer, Integer> count) {
+    private int numDecodingsUtil( String s, int start, Map<Integer, Integer> count ) {
         if (s.length() == start) {
             return 1;
         }

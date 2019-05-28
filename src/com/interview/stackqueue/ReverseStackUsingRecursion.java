@@ -15,7 +15,7 @@ public class ReverseStackUsingRecursion {
         }
         int temp = stack.pollFirst();
         reverse(stack);
-        
+
         pushAtBottom(stack,temp);
     }
     
@@ -45,7 +45,8 @@ public class ReverseStackUsingRecursion {
         
         ReverseStackUsingRecursion rsu = new ReverseStackUsingRecursion();
         rsu.reverse(stack);
-        
+
+        System.out.println("Reverse stack is:");
         itr =  stack.iterator();
         while(itr.hasNext()){
             System.out.println(itr.next());

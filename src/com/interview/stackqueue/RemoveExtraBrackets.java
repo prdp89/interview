@@ -58,7 +58,7 @@ public class RemoveExtraBrackets {
                 if(!dq.isEmpty() && input[dq.peekFirst()] == '('){
                     dq.pollFirst();
                 }else{
-                    dq.addFirst(i);
+                    dq.addFirst(i); //maintaining wrrong brackets, so that outside we prevent to add in input array
                 }
             }
         }
@@ -128,7 +128,8 @@ public class RemoveExtraBrackets {
     
     public static void main(String args[]){
         RemoveExtraBrackets reb = new RemoveExtraBrackets();
-        char input1[] = ")(".toCharArray();
+       // char input1[] = ")(".toCharArray();
+        char input1[] = "((mnq)abc)))".toCharArray();
         int pos = reb.remove(input1);
         printArray(input1, pos);
       

@@ -6,14 +6,23 @@ import java.util.List;
 
 /**
  * Date 03/08/2016
+ *
  * @author Tushar Roy
- *
+ * <p>
  * Reconstruct itinerary based on ticket.
- *
+ * <p>
  * https://leetcode.com/problems/reconstruct-itinerary/
  */
 public class ReconstructItinerary {
-    public List<String> findItinerary(String[][] tickets) {
+    public static void main( String args[] ) {
+        //String input[][] = {{"MUC", "LHR"}, {"JFK", "MUC"}, {"SFO", "SJC"}, {"LHR", "SFO"}};
+        String input[][] = {{"JFK", "SFO"}, {"JFK", "ATL"}, {"SFO", "ATL"}, {"ATL", "JFK"}, {"ATL", "SFO"}};
+        ReconstructItinerary ri = new ReconstructItinerary();
+        List<String> output = ri.findItinerary(input);
+        output.forEach(r -> System.out.print(r + " "));
+    }
+
+    private List<String> findItinerary( String[][] tickets ) {
         List<Itinerary> input = new ArrayList<>();
         for (String[] ticket : tickets) {
             input.add(new Itinerary(ticket[0], ticket[1]));
@@ -25,7 +34,7 @@ public class ReconstructItinerary {
         return output;
     }
 
-    boolean findItineraryUtil(List<Itinerary> input, boolean[] used, String end, List<String> output, int count) {
+    private boolean findItineraryUtil( List<Itinerary> input, boolean[] used, String end, List<String> output, int count ) {
         if (count == used.length) {
             output.add(end);
             return true;
@@ -51,25 +60,19 @@ public class ReconstructItinerary {
     class Itinerary implements Comparable<Itinerary> {
         String start;
         String dest;
-        Itinerary(String start, String dest) {
+
+        Itinerary( String start, String dest ) {
             this.start = start;
             this.dest = dest;
         }
 
         @Override
-        public int compareTo(Itinerary other) {
+        public int compareTo( Itinerary other ) {
             if (this.start.equals(other.start)) {
                 return this.dest.compareTo(other.dest);
             } else {
                 return this.start.compareTo(other.start);
             }
         }
-    }
-
-    public static void main(String args[]) {
-        String input[][] = {{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"}};
-        ReconstructItinerary ri = new ReconstructItinerary();
-        List<String> output = ri.findItinerary(input);
-        output.forEach(r -> System.out.print(r + " "));
     }
 }

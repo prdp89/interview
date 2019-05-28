@@ -12,10 +12,23 @@ package com.interview.string;
  * https://leetcode.com/problems/valid-palindrome/
  */
 public class ValidPalindrome {
+
+    public static void main( String[] args ) {
+        isPalindromeEasy("A man, a plan, a canal: Panama");
+        //isPalindromeEasy("race a car");
+    }
+
+    public static boolean isPalindromeEasy(String s) {
+        String actual = s.replaceAll("[^A-Za-z0-9]", "").toLowerCase();
+        String rev = new StringBuffer(actual).reverse().toString();
+        return actual.equals(rev);
+    }
+
     public boolean isPalindrome(String s) {
         int start = 0;
         int end = s.length() - 1;
         while (start < end) {
+            //if start or end char is not alphanumeric then move to next index from Start or End
             if (!isAlphaNum(s.charAt(start))) {
                 start++;
             } else if (!isAlphaNum(s.charAt(end))) {

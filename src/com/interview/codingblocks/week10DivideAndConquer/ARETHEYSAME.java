@@ -43,6 +43,7 @@ public class ARETHEYSAME {
             String a = scanner.next();
             String b = scanner.next();
 
+
             if (a.length() == 1 && a.equals(b))
                 System.out.println("YES");
             else if (a.length() == 1)

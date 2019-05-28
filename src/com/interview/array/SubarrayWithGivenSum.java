@@ -13,6 +13,12 @@ public class SubarrayWithGivenSum {
             return start + " " + end;
         }
     }
+
+    //just a thought about sliding window tech https://www.geeksforgeeks.org/window-sliding-technique/
+    //We can calc. sum of First K element upto we get SUM or less than sum.
+    //While start loop from kth element and ignore from start if windows sum exceeds.
+
+
     public Pair findSubArray(int input[],int sum){
         int currentSum = 0;
         Pair p = new Pair();

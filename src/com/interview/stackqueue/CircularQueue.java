@@ -2,6 +2,7 @@ package com.interview.stackqueue;
 
 public class CircularQueue<T> {
 
+    //very easy...
     private int QUEUE_LENGTH;
     private T data[] = null;
     public CircularQueue(int size){

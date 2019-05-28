@@ -33,7 +33,7 @@ public class SubsequencesPart2 {
     }
 
     public static void main( String[] args ) {
-       String [] ans = findSubsequences("xyz");
+       String [] ans = findSubsequences("XYZ");
 
         System.out.println(Arrays.deepToString(ans));
     }

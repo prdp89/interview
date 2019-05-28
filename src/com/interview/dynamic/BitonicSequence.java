@@ -5,6 +5,7 @@ package com.interview.dynamic;
  */
 public class BitonicSequence {
 
+    //Another variant : https://www.geeksforgeeks.org/maximum-sum-bi-tonic-sub-sequence/
     public int longestSequence(int arr[]){
         int lis[] = new int[arr.length];
         int lds[] = new int[arr.length];

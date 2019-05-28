@@ -36,7 +36,6 @@ public class JumpGame {
         for (i = 0; i < nums.length && i <= jump; i++) //
         {
             // jump = Math.max(jump, i + nums[i]);
-
             if(jump < i+ nums[i])
                 jump = i+ nums[i];
         }
@@ -59,9 +58,9 @@ public class JumpGame {
 
     public static void main(String args[]) {
         JumpGame jumpGame = new JumpGame();
-       /* int[] nums = {3, 2, 3, 0, 2, 1};
-        System.out.println(jumpGame.jump(nums));*/
-        int[] nums1 = {3, 0, 2, 0, 0, 1}; //{2,3,1,1,4};
-        System.out.println(jumpGame.canJump(nums1));
+        int[] nums = {3, 0, 2, 0, 0, 1};//{3, 2, 3, 0, 2, 1};
+        System.out.println(jumpGame.jump(nums));
+       /* int[] nums1 = {3, 0, 2, 0, 0, 1}; //{2,3,1,1,4};
+        System.out.println(jumpGame.canJump(nums1));*/
     }
 }

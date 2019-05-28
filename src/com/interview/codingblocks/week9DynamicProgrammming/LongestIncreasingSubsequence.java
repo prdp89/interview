@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class LongestIncreasingSubsequence {
 
+
     public static void main( String args[] ) {
         //int arr[] = {10, 22, 9, 33, 21, 50, 41, 60};
         int arr[] = {10, 22, 9, 33, 21, 50, 41, 60, 80, 6};
@@ -51,7 +52,7 @@ public class LongestIncreasingSubsequence {
 
             //we just need to think for one case, rest recursion will come up with.
             if (arr[i] < arr[n]) {
-                int temp = 1 + _lisRecursive(arr, i);
+                    int temp = 1 + _lisRecursive(arr, i);
 
                 if (temp > m)
                     m = temp;    //   m = max(m, 1 + _lisRecursive(arr, i));

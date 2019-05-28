@@ -18,6 +18,10 @@ package com.interview.dynamic;
  */
 public class BurstBalloons {
 
+
+    //easiest solution:
+    //https://leetcode.com/problems/burst-balloons/discuss/76228/Share-some-analysis-and-explanations
+
     /**
      * Dynamic programming solution.
      */

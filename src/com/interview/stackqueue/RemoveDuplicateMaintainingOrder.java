@@ -13,6 +13,8 @@ import java.util.*;
  * https://leetcode.com/problems/remove-duplicate-letters/
  */
 public class RemoveDuplicateMaintainingOrder {
+
+    //easy problem?L debug and check
     public String removeDuplicateLetters(String s) {
         Deque<Character> stack = new LinkedList<>();
         Map<Character, Integer> count = new HashMap<>();
@@ -30,20 +32,24 @@ public class RemoveDuplicateMaintainingOrder {
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             count.put(ch, count.get(ch) - 1);
-            if (visited.contains(ch)) {
+            if (visited.contains(ch)) { //if character is already present in stack, dont bother
                 continue;
             }
+
+            //if current character is smaller than last character in stack which occurs later in the string again
+            //it can be removed and  added later e.g stack = bc remaining string abc then a can pop b and then c
             while (!stack.isEmpty() && stack.peekFirst() > ch && count.get(stack.peekFirst()) > 0) {
                 visited.remove(stack.peekFirst());
                 stack.pollFirst();
             }
 
-            stack.offerFirst(ch);
+            stack.offerFirst(ch); //add current character and mark it as visited
             visited.add(ch);
         }
 
         StringBuffer buff = new StringBuffer();
         while (!stack.isEmpty()) {
+            //pop character from stack and build answer string from back
             buff.append(stack.pollLast());
         }
         return buff.toString();
@@ -51,6 +57,8 @@ public class RemoveDuplicateMaintainingOrder {
 
     public static void main(String args[]) {
         RemoveDuplicateMaintainingOrder rm = new RemoveDuplicateMaintainingOrder();
-        System.out.println(rm.removeDuplicateLetters("cbacdcbc"));
+        //System.out.println(rm.removeDuplicateLetters("cbacdcbc"));
+       // System.out.println(rm.removeDuplicateLetters("bca")); //op : bca
+        System.out.println(rm.removeDuplicateLetters("bcabc")); //op : abc
     }
 }

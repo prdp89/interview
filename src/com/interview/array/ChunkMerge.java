@@ -50,6 +50,7 @@ public class ChunkMerge {
         while(!queue.isEmpty()){
             Triplet p = queue.poll();
             result.add(p.val);
+
             if(p.index < chunks.get(p.pos).size()){
                 p.val = chunks.get(p.pos).get(p.index);
                 p.index += 1;

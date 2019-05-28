@@ -12,6 +12,7 @@ public class ConstructTheArray {
     private static long countArray( int n, int k, int x, int start, int currElement, int ways ) {
         // Return the number of ways to fill in the array.
 
+        //it means start reach to the end and last element is X
         if (start >= n && currElement == x)
             return ways;
 

@@ -46,14 +46,14 @@ public class GroupSum5 {
         if (start >= nums.length)
             return target == 0;
 
-        //give priority to 5, check if element divisible by 5
+        //give priority to 6, check if element divisible by 6
         if (nums[start] % 6 == 0) {
 
             //otherwise include the element that divide by 5.
             return groupSum6(start + 1, nums, target - nums[start]);
         }
 
-        //include the element that doesn't divide by 5.
+        //include the element that doesn't divide by 6.
         if (groupSum6(start + 1, nums, target - nums[start]))
             return true;
 

@@ -1,7 +1,10 @@
 package com.interview.string;
 
 /**
-.Given an input string S write a function which returns true if it satisfies S = nT. Basically you have to find if a given string can be represented from a substring by iterating it �n� times. n >= 2
+.Given an input string S write a function which returns true if it satisfies S = nT.
+Basically you have to find if a given string can be represented from a substring by iterating it �n� times.
+ n >= 2
+
 An example would suffice 
 Function should return true if
 1) S = abab
