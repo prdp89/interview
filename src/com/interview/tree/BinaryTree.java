@@ -18,29 +18,6 @@ enum Color{
     BLACK
 }
 
-class Node{
-    Node left;
-    Node right;
-    Node next;
-    int data;
-    int lis;
-    int height;
-    int size;
-    Color color;
-    
-    public static Node newNode(int data){
-        Node n = new Node();
-        n.left = null;
-        n.right = null;
-        n.data = data;
-        n.lis = -1;
-        n.height = 1;
-        n.size = 1;
-        n.color = Color.RED;
-        return n;
-    }
-}
-
 public class BinaryTree {
     public Node addNode(int data, Node head){
         Node tempHead = head;
@@ -49,8 +26,8 @@ public class BinaryTree {
             head = n;
             return head;
         }
-        Node prev = null;
-        while(head != null){
+        Node prev = null; //prev is Parent
+        while(head != null){ //head  is current
             prev = head;
             if(head.data < data){
                 head = head.right;
@@ -58,11 +35,14 @@ public class BinaryTree {
                 head = head.left;
             }
         }
+
+        //prev holding last parent node
         if(prev.data < data){
             prev.right = n;
         }else{
             prev.left = n;
         }
+
         return tempHead;
     }
     

@@ -38,7 +38,7 @@ public class PrintAllSubsequence {
 
     public static void main(String args[]) {
         PrintAllSubsequence ps = new PrintAllSubsequence();
-        int[] input = {1, 2, 3, 4};
+        int[] input = {1, 2, 3};
         ps.print(input);
     }
 }

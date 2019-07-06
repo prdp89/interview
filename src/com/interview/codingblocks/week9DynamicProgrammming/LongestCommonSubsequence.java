@@ -25,8 +25,11 @@ public class LongestCommonSubsequence {
        /* String s = "AGGTAB";
         String t = "GXTXAYB";*/ //output : 4
 
-        String s = "abc";
-        String t = "acd";
+        /*String s = "abc";
+        String t = "acd";*/ //op : 2
+
+        String s = "BBBAB";
+        String t = "BABBB";
 
         long startTime = System.nanoTime();
 

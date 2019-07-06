@@ -19,6 +19,8 @@ public class TripletInArray {
         }
     }
 
+    //One more variant : https://www.programcreek.com/2013/02/leetcode-3sum-closest-java/
+
     public Triplet findTriplet(int input[], int sum) {
         Arrays.sort(input);
         for (int i = 0; i < input.length - 2; i++) {
@@ -34,7 +36,7 @@ public class TripletInArray {
                     t.c = input[end];
                     return t;
                 }
-                if (new_sum > input[start] + input[end]) {
+                if (new_sum > input[start] + input[end]) { //new_sum is already greater, so it cannot be on left side.
                     start++;
                 } else {
                     end--;
@@ -71,7 +73,7 @@ public class TripletInArray {
                     while(end >= 0 && nums[end] == nums[end+1]) {
                         end--;
                     }
-                } else if (nums[i] + nums[start] + nums[end] < 0) {
+                } else if (nums[i] + nums[start] + nums[end] < 0) { //means we are on too left bound; Increase from start
                     start++;
                 } else {
                     end--;

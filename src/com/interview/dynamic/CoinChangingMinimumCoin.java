@@ -21,8 +21,12 @@ import java.util.Map;
 public class CoinChangingMinimumCoin {
 
     public static void main( String args[] ) {
-        int total = 13;
-        int coins[] = {7, 3, 2, 6};
+        /*int total = 13;
+        int coins[] = {7, 3, 2, 6};*/
+
+        int total = 285;
+        int coins[] = {384,324,196,481};
+
         CoinChangingMinimumCoin cc = new CoinChangingMinimumCoin();
         Map<Integer, Integer> map = new HashMap<>();
         int topDownValue = cc.minimumCoinTopDown(total, coins, map);

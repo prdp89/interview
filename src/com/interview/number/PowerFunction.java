@@ -2,38 +2,46 @@ package com.interview.number;
 
 /**
  * Date 03/13/2016
+ *
  * @author Tushar Roy
- *
+ * <p>
  * Find power of 2 numbers.
- *
+ * <p>
  * Time complexity O(logn)
  * Space complexity O(1)
- *
+ * <p>
  * https://leetcode.com/problems/powx-n/
  * http://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
  */
 public class PowerFunction {
 
-    public int power(int n, int m){
-        if(m == 0){
+    public static void main( String args[] ) {
+        PowerFunction pf = new PowerFunction();
+        long pow = pf.power(3, 5);
+        System.out.print(pow);
+    }
+
+    public int power( int n, int m ) {
+        if (m == 0) {
             return 1;
         }
-        int pow = power(n,m/2);
-        if(m % 2 ==0){
-            return pow*pow;
-        }else{
-            return n*pow*pow;
+        int pow = power(n, m / 2);
+        if (m % 2 == 0) {
+            return pow * pow;
+        } else if (m < 0) {
+            return pow * pow * (1 / n);
+        } else {
+            return n * pow * pow;
         }
     }
 
-
-    public double powerUsingBit(double x, int n) {
+    public double powerUsingBit( double x, int n ) {
         if (n == 0) {
             return 1;
         }
         long r = n;
         if (r < 0) {
-            x = 1/x;
+            x = 1 / x;
             r = -r;
         }
         double power = x;
@@ -48,11 +56,5 @@ public class PowerFunction {
             power = power * power;
         }
         return result * result1;
-    }
-    
-    public static void main(String args[]){
-        PowerFunction pf = new PowerFunction();
-        long pow = pf.power(3, 5);
-        System.out.print(pow);
     }
 }

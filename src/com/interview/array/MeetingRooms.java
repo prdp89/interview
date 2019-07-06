@@ -18,10 +18,10 @@ import java.util.PriorityQueue;
 public class MeetingRooms {
 
     public static class Interval {
-          int start;
-          int end;
+          public int start;
+          public int end;
           Interval() { start = 0; end = 0; }
-          Interval(int s, int e) { start = s; end = e; }
+          public Interval(int s, int e) { start = s; end = e; }
     }
 
     public int minMeetingRooms1(Interval[] intervals) {

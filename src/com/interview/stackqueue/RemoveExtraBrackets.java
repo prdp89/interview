@@ -54,7 +54,7 @@ public class RemoveExtraBrackets {
                 dq.addFirst(i);
             }
             else if(input[i] == ')'){
-                //if top is opening bracket just remove from stack else add closing bracket
+                //if top is 1 bracket just remove from stack else add closing bracket
                 if(!dq.isEmpty() && input[dq.peekFirst()] == '('){
                     dq.pollFirst();
                 }else{
