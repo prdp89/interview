@@ -1,4 +1,4 @@
-package com.interview.codechef.ccdsap_2.leetcode.arrays.twopointers;
+package com.interview.codechef.ccdsap_2.leetcode.arrays.twopointers.medium;
 
 //Find smallest window in an array which makes entire array sorted in increasing order.
 public class SmallestWindowSorting {

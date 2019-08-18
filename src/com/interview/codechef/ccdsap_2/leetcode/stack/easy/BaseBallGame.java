@@ -33,7 +33,10 @@ public class BaseBallGame {
                 int fir = stack.peek();
                 int cur = fir + sec;
 
+                //push second again in stack
                 stack.push(sec);
+
+                //push total in stack
                 stack.push(cur);
 
                 sum += cur;

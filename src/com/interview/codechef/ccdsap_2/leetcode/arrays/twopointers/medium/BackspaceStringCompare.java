@@ -1,4 +1,4 @@
-package com.interview.codechef.ccdsap_2.leetcode.arrays.twopointers;
+package com.interview.codechef.ccdsap_2.leetcode.arrays.twopointers.medium;
 
 public class BackspaceStringCompare {
 
@@ -23,8 +23,10 @@ public class BackspaceStringCompare {
 
         int i = 1;
 
+        //append first char here
         sb.append(S.charAt(0));
 
+        //delete last char from sb if # occurs
         while (i < S.length()) {
 
             if (S.charAt(i) == '#') {
@@ -55,6 +57,7 @@ public class BackspaceStringCompare {
             i++;
         }
 
+        //remove character # from S and T strings
         i = 0;
         while (i < sb.length()) {
             if (sb.charAt(i) == '#') {

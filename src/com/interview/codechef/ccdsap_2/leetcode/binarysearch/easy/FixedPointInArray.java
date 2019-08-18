@@ -3,6 +3,7 @@ package com.interview.codechef.ccdsap_2.leetcode.binarysearch.easy;
 public class FixedPointInArray {
 
     //https://www.geeksforgeeks.org/find-a-fixed-point-in-a-given-array/
+    // Fixed Point in an array is an index i such that arr[i] is equal to i
     public static void main( String[] args ) {
         //int[] arr = {-10, -5, 0, 3, 7}; //op= 3
 

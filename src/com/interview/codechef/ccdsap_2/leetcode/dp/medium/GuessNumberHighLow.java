@@ -25,7 +25,7 @@ public class GuessNumberHighLow {
             //Given num 1...N
             //Case 1: If we pick 5, we can pick 1...4 or
             //Case 2: Or We can pick in Range from 5...N
-            int tmp = x + Math.max(recurse(t, s, x - 1), recurse(t, x + 1, e));
+            int tmp = x + Math.max(recurse(t, s, x - 1), recurse(t, x + 1, e)); //recurrence similar to UniqueBST2
 
             //Min is taken to Minimize the cost/money
             res = Math.min(res, tmp);

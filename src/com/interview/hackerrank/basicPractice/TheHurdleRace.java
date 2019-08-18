@@ -6,7 +6,7 @@ public class TheHurdleRace {
     private static void solve() {
        /* int k = 4;
 
-        int height[] = {1, 6, 3, 5, 2};*/
+        int heightONOde[] = {1, 6, 3, 5, 2};*/
 
         int k = 7;
 

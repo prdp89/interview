@@ -50,7 +50,8 @@ public class MinimumSizeSubarraySum {
         return ans == Integer.MAX_VALUE ? 0 : ans;
     }
 
-    //Time: O( N )
+    //Time: O( N ) : Sliding Window Technique
+    //compare this to https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
     private static int minSubArrayLen( int s, int[] a ) {
         if (a == null || a.length == 0)
             return 0;

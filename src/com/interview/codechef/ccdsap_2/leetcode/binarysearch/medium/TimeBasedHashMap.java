@@ -61,12 +61,13 @@ public class TimeBasedHashMap {
         System.out.println("Floor Entry of Element 11 is:" + numMap.floorKey(11));
         output:Floor Entry of Element 11 is: 10
          */
-        Integer floor = treeMap.floorKey(timestamp); //it is also called upper_bound of key
 
-        if (floor == null) {
+        //same as onlineElection in this package
+        Map.Entry<Integer, String> entry = treeMap.floorEntry(timestamp);
+
+        if(entry == null)
             return "";
-        }
 
-        return treeMap.get(floor);
+        return entry.getValue();
     }
 }

@@ -10,7 +10,7 @@ import java.util.LinkedList;
  * <p>
  * Video link https://youtu.be/ZmnqCZp9bBs
  * <p>
- * Given an array representing height of bar in bar graph, find max histogram
+ * Given an array representing heightONOde of bar in bar graph, find max histogram
  * area in the bar graph. Max histogram will be max rectangular area in the
  * graph.
  * <p>

@@ -48,6 +48,7 @@ public class StockSpanProblem {
         }
     }
 
+    //very easy: refer : com.interview.codechef.ccdsap_2.leetcode.stack.medium -> DailyTemperature
     private static int[] stockSpan( int[] prices ) {
         Deque<Integer> stack = new ArrayDeque<>();
         int[] stockSpan = new int[prices.length];

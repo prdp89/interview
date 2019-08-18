@@ -4,7 +4,7 @@ package com.interview.tree;
  * Date 10/06/2016
  * @author Tushar Roy
  *
- * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+ * Given an array where elements are sorted in ascending order, convert it to a heightONOde balanced BST.
  *
  * Time complexity O(n)
  * 

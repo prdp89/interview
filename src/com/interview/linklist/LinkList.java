@@ -7,7 +7,7 @@ class NodeRef{
     }
 }
 
-class Node{
+ class Node{
     int data;
     Node next;
     Node before;

@@ -3,6 +3,10 @@ package com.interview.codechef.ccdsap_2.leetcode.dp.easy;
 public class MaximumSubArray {
 
     //https://leetcode.com/problems/maximum-subarray/
+
+    //refer optimal solution here...
+    //https://leetcode.com/problems/maximum-subarray/discuss/20211/Accepted-O(n)-solution-in-java
+
     public static void main( String[] args ) {
         int[] arr = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(recurse(arr, arr.length - 1));

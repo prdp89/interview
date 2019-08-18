@@ -52,7 +52,7 @@ public class CandiesProblem {
             //then all the guys till point of change needs to be given one more candy
             //which is what diff takes care off.
             //if point of change guy is independent then we are cool otherwise
-            //point of change needs to point to one less number if we reach its height.
+            //point of change needs to point to one less number if we reach its heightONOde.
             else {
                 if (currentCandy == 1) {
                     if (!isIndependent) {

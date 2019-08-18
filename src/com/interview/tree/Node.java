@@ -1,16 +1,17 @@
 package com.interview.tree;
 
-public class Node{
+public class Node {
     public Node left;
     public Node right;
     public Node next;
     public int data;
+    public int level;
     int lis;
     int height;
     int size;
     Color color;
 
-    public static Node newNode(int data){
+    public static Node newNode( int data ) {
         Node n = new Node();
         n.left = null;
         n.right = null;

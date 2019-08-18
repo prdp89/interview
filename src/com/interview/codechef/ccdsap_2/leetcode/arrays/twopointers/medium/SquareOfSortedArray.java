@@ -1,4 +1,4 @@
-package com.interview.codechef.ccdsap_2.leetcode.arrays.twopointers;
+package com.interview.codechef.ccdsap_2.leetcode.arrays.twopointers.medium;
 
 import java.util.Arrays;
 import java.util.Comparator;

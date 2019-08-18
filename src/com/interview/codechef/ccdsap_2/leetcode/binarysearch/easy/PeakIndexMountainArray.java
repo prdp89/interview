@@ -8,7 +8,8 @@ public class PeakIndexMountainArray {
     public static void main( String[] args ) {
         int[] arr = {24, 69, 100, 99, 79, 78, 67, 36, 26, 19};
 
-        System.out.println(peakIndexInMountainArray_1(arr));
+        //System.out.println(peakIndexInMountainArray_1(arr));
+        System.out.println(peakIndexInMountainArray_3(arr));
     }
 
     private static int peakIndexInMountainArray_1( int[] A ) {
@@ -41,20 +42,20 @@ public class PeakIndexMountainArray {
         return 0;
     }
 
-    public int peakIndexInMountainArray_3( int[] A ) {
+    private static int peakIndexInMountainArray_3( int[] A ) {
         int l = 0, r = A.length - 1, m;
 
         while (l < r) {
 
             m = (l + r) / 2;
 
-            //low is at-least our answer
+            //compare this line with brute force above, in this case we are moving left to find better position
             if (A[m] < A[m + 1])
                 l = m + 1;
             else
-                r = m;
+                r = m; //here we got out first peak, at-least right is our answer.
         }
 
-        return l;
+        return r;
     }
 }

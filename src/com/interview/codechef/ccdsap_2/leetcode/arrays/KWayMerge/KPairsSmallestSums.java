@@ -44,6 +44,8 @@ public class KPairsSmallestSums {
             if (t.x == m - 1)
                 continue;
 
+            //whatever first smallest we got above, going to next element of first array from that to find next smallest
+
             pq.offer(new Tuple(t.x + 1, t.y, nums1[t.x + 1] + nums2[t.y]));
         }
 

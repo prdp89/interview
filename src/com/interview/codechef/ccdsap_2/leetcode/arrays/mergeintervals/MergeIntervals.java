@@ -7,6 +7,8 @@ import java.util.List;
 public class MergeIntervals {
 
     //https://leetcode.com/problems/merge-intervals/
+
+    //logic is similar to InsertInterval
     public static void main( String[] args ) {
         merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}});
     }

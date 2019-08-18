@@ -7,7 +7,6 @@ public class LongestPalindromicSubstring {
         System.out.println(subString("cbbd".toCharArray(), 4));
     }
 
-
     //region Brute Force O(N^3)
     private static int subString( char[] str, int n ) {
 

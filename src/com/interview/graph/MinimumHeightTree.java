@@ -6,7 +6,7 @@ import java.util.*;
  * Date 03/08/2016
  * @author Tushar Roy
  *
- * Given a graph representing a tree. Find all minimum height trees.
+ * Given a graph representing a tree. Find all minimum heightONOde trees.
  *
  * Time complexity O(n)
  * Space complexity O(n)

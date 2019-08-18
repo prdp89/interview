@@ -26,6 +26,8 @@ public class LowestCommonAncestorInBinaryTree {
     // Root of the Binary Tree
     Node root;
 
+    //https://www.youtube.com/watch?v=F-_1sbnPbWQ
+
     public Node lca(Node root, Node n1, Node n2){
         if(root == null){
             return null;

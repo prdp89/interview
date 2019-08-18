@@ -10,7 +10,7 @@ package com.interview.tree;
  * Recursively find size of left side, right side and add one to them and return that to calling function.
  * 
  * Time complexity - O(n)
- * Space complexity(because of recursion stack) - height of binary tree. Worst case O(n)
+ * Space complexity(because of recursion stack) - heightONOde of binary tree. Worst case O(n)
  * 
  * Test cases:
  * Null tree

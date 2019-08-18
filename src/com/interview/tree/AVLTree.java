@@ -8,7 +8,7 @@ package com.interview.tree;
  *
  * Write a program to insert into an AVL tree.
  * 
- * AVL tree is self balancing binary tree. Difference of height of left or right subtree
+ * AVL tree is self balancing binary tree. Difference of heightONOde of left or right subtree
  * cannot be greater than one.
  * 
  * There are four different use cases to insert into AVL tree
@@ -19,7 +19,7 @@ package com.interview.tree;
  * 
  * Follow rotation rules to keep tree balanced.
  * 
- * At every node we will also keep height of the tree so that we don't
+ * At every node we will also keep heightONOde of the tree so that we don't
  * have to recalculate values again.
  * 
  * Runtime complexity to insert into AVL tree is O(logn).

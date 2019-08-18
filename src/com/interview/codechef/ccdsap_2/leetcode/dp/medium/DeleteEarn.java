@@ -8,7 +8,7 @@ public class DeleteEarn {
 
     //This problem is similar to HouseRobber
     public static void main( String[] args ) {
-       // int[] arr = {3, 4, 2}; //op : 6
+        // int[] arr = {3, 4, 2}; //op : 6
 
         int[] arr = {2, 2, 3, 3, 3, 4};
 
@@ -46,5 +46,23 @@ public class DeleteEarn {
         }
 
         return rob(nums, i - 1, dp);
+    }
+
+    //BOTTOM UP DP CODE LIKE    HouseRobber
+    public int deleteAndEarn( int[] nums ) {
+        int[] buckets = new int[10001];
+        for (int num : nums) {
+            buckets[num] += num;
+        }
+
+        int[] dp = new int[10001];
+
+        dp[0] = buckets[0];
+        dp[1] = buckets[1];
+
+        for (int i = 2; i < buckets.length; i++) {
+            dp[i] = Math.max(buckets[i] + dp[i - 2], dp[i - 1]);
+        }
+        return dp[10000];
     }
 }

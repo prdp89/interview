@@ -164,10 +164,10 @@ public class ChunkMerge {
         
         ChunkMerge cm = new ChunkMerge();
         List<Integer> result = cm.mergeChunksOfDifferentSize(chunks);
-        System.out.println(result.size());
+       /* System.out.println(result.size());
         for(Integer r : result){
             System.out.print(r + " ");
-        }
+        }*/
         
         result = cm.mergeUsingHeap(chunks);
         System.out.println();

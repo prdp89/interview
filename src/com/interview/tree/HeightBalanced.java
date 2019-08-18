@@ -4,7 +4,7 @@ package com.interview.tree;
  * Date 10/06/2016
  * @author Tushar Roy
  *
- * Given a binary tree, determine if it is height-balanced.
+ * Given a binary tree, determine if it is heightONOde-balanced.
  *
  * Time complexity O(logn)
  *

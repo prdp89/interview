@@ -29,8 +29,8 @@ public class SkylineDrawing {
         public int compareTo(BuildingPoint o) {
             //first compare by x.
             //If they are same then use this logic
-            //if two starts are compared then higher height building should be picked first
-            //if two ends are compared then lower height building should be picked first
+            //if two starts are compared then higher heightONOde building should be picked first
+            //if two ends are compared then lower heightONOde building should be picked first
             //if one start and end is compared then start should appear before end
             if (this.x != o.x) {
                 return this.x - o.x;
@@ -68,7 +68,7 @@ public class SkylineDrawing {
         int prevMaxHeight = 0;
         List<int[]> result = new ArrayList<>();
         for(BuildingPoint buildingPoint : buildingPoints) {
-            //if it is start of building then add the height to map. If height already exists then increment
+            //if it is start of building then add the heightONOde to map. If heightONOde already exists then increment
             //the value
             if (buildingPoint.isStart) {
                 queue.compute(buildingPoint.height, (key, value) -> {
@@ -77,20 +77,20 @@ public class SkylineDrawing {
                     }
                     return 1;
                 });
-              //  queue1.add(cp.height);
-            } else { //if it is end of building then decrement or remove the height from map.
+              //  queue1.add(cp.heightONOde);
+            } else { //if it is end of building then decrement or remove the heightONOde from map.
                 queue.compute(buildingPoint.height, (key, value) -> {
                     if (value == 1) {
                         return null;
                     }
                     return value - 1;
                 });
-               // queue1.remove(cp.height);
+               // queue1.remove(cp.heightONOde);
             }
-            //peek the current height after addition or removal of building x.
+            //peek the current heightONOde after addition or removal of building x.
             int currentMaxHeight = queue.lastKey();
             //int currentMaxHeight = queue1.peek();
-            //if height changes from previous height then this building x becomes critcal x.
+            //if heightONOde changes from previous heightONOde then this building x becomes critcal x.
             // So add it to the result.
             if (prevMaxHeight != currentMaxHeight) {
                 result.add(new int[]{buildingPoint.x, currentMaxHeight});

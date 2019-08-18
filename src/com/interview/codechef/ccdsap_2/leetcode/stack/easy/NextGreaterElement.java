@@ -8,6 +8,9 @@ import java.util.Stack;
 public class NextGreaterElement {
 
     //https://leetcode.com/problems/next-greater-element-i/
+
+    //one more variaton: https://leetcode.com/problems/next-greater-node-in-linked-list/
+    // almost same solution: https://leetcode.com/problems/next-greater-node-in-linked-list/discuss/265508/JavaC%2B%2BPython-Next-Greater-Element
     public static void main( String[] args ) {
 
         int[] a = {4, 1, 2}, b = {4, 1, 2};

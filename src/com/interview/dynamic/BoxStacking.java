@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author tusroy
  * 
  * Given different dimensions and unlimited supply of boxes for each dimension, stack boxes
- * on top of each other such that it has maximum height but with caveat that length and width
+ * on top of each other such that it has maximum heightONOde but with caveat that length and width
  * of box on top should be strictly less than length and width of box under it. You can
  * rotate boxes as you like.
  * 
@@ -15,7 +15,7 @@ import java.util.Arrays;
  * 2) Sort boxes by base area in non increasing order (length * width). This is because box
  * with more area will never ever go on top of box with less area.
  * 3) Take T[] and result[] array of same size as total boxes after all rotations are done
- * 4) Apply longest increasing subsequence type of algorithm to get max height.
+ * 4) Apply longest increasing subsequence type of algorithm to get max heightONOde.
  * 
  * If n number of dimensions are given total boxes after rotation will be 3n.
  * So space complexity is O(n)
@@ -58,7 +58,7 @@ public class BoxStacking {
             }
         }
        
-        //find max in T[] and that will be our max height.
+        //find max in T[] and that will be our max heightONOde.
         //Result can also be found using result[] array.
         int max = Integer.MIN_VALUE;
         for(int i=0; i < T.length; i++){
@@ -89,7 +89,7 @@ public class BoxStacking {
         BoxStacking bs = new BoxStacking();
         Dimension input[] = { new Dimension(3, 2, 5), new Dimension(1, 2, 4) };
         int maxHeight = bs.maxHeight(input);
-        System.out.println("Max height is " + maxHeight);
+        System.out.println("Max heightONOde is " + maxHeight);
         assert 11 == maxHeight;
     }
 }
@@ -140,7 +140,7 @@ class Dimension implements Comparable<Dimension> {
 
     @Override
     public String toString() {
-        return "Dimension [height=" + height + ", length=" + length
+        return "Dimension [heightONOde=" + height + ", length=" + length
                 + ", width=" + width + "]";
     }
 }

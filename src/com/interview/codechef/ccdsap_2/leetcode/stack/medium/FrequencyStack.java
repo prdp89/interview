@@ -5,9 +5,9 @@ import java.util.Stack;
 
 public class FrequencyStack {
 
-    HashMap<Integer, Integer> freq = new HashMap<>();
-    HashMap<Integer, Stack<Integer>> m = new HashMap<>();
-    private int maxfreq = 0;
+    private HashMap<Integer, Integer> freq = new HashMap<>();
+    private HashMap<Integer, Stack<Integer>> m = new HashMap<>();
+    private int maxFreq = 0;
 
     //https://leetcode.com/problems/maximum-frequency-stack/
 
@@ -28,7 +28,7 @@ public class FrequencyStack {
         int f = freq.getOrDefault(x, 0) + 1;
         freq.put(x, f);
 
-        maxfreq = Math.max(maxfreq, f);
+        maxFreq = Math.max(maxFreq, f);
 
         if (!m.containsKey(f))
             m.put(f, new Stack<>());
@@ -40,11 +40,11 @@ public class FrequencyStack {
     }
 
     public int pop() {
-        int x = m.get(maxfreq).pop();
-        freq.put(x, maxfreq - 1);
+        int x = m.get(maxFreq).pop();
+        freq.put(x, maxFreq - 1);
 
-        if (m.get(maxfreq).size() == 0)
-            maxfreq--;
+        if (m.get(maxFreq).size() == 0)
+            maxFreq--;
 
         return x;
     }

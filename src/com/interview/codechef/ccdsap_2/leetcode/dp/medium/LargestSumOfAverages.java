@@ -13,8 +13,8 @@ public class LargestSumOfAverages {
         System.out.println(largestSumOfAverages(arr, k));
     }
 
-
     //ref: https://leetcode.com/problems/largest-sum-of-averages/discuss/123536/C%2B%2B-verbose-%2B-concise-solutions-(-EASY-to-understand-)-with-explanation
+    //didn't understood properly.. :(
     private static double largestSumOfAverages( int[] A, int K ) {
 
         int N = A.length;

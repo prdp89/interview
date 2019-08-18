@@ -40,10 +40,10 @@ public class MettingRoomII {
 
             MeetingRooms.Interval it = pq.poll();
 
-            //If next meeting end time is less than previous meeting start time; we can merge both meetings
+            //Whenever an old meeting ends before a new meeting starts, we remove the old meeting.
             if (it.end <= intervals[i].start) {
                 it = new MeetingRooms.Interval(it.start, intervals[i].end);
-            } else {
+            } else { //Otherwise, we need an extra room
                 rooms++;
                 pq.offer(intervals[i]);
             }

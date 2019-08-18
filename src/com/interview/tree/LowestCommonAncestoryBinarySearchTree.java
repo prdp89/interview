@@ -6,8 +6,8 @@ package com.interview.tree;
  *
  * Lowest common ancestor in binary search tree.
  *
- * Time complexity O(height of tree)
- * Space complexity O(height of tree)
+ * Time complexity O(heightONOde of tree)
+ * Space complexity O(heightONOde of tree)
  * 
  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
  */

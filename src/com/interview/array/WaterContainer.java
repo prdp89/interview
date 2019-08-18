@@ -10,7 +10,7 @@ package com.interview.array;
 
 //To understand this go here: https://www.youtube.com/watch?v=cdRaaEYk6tI
     //it's a simple problem where we need to maintain two pointers 'Left and right'
-    //by plotting points in (x,y) axis we can easily calculate area : Width * height
+    //by plotting points in (x,y) axis we can easily calculate area : Width * heightONOde
     // area = (right(J) - left(i)) * min(leftheight * rightheight)
     // maxarea = Max(area1, area1, ...... area-N)
 
