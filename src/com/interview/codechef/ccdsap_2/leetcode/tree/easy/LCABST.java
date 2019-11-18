@@ -6,6 +6,8 @@ import com.interview.tree.Node;
 public class LCABST {
 
     //https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+
+    //check : SmallestSubtreeDeepestNode for LCA of normal tree
     public static void main( String[] args ) {
 
         BinaryTree bt = new BinaryTree();

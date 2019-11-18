@@ -34,8 +34,11 @@ public class LongestUnivaluePath {
         int r = longestUnivaluePath(curr.right, curr.data);
         int count = 0;
 
+        //step2:
+        //Longest-Univalue-Path-Across a node is sum of left + right : see example 2.
         len = Math.max(len, l + r); //l is "valid" connecting edges to me from left
 
+        //step1:
         if (curr.data == val)
             count = 1 + Math.max(l, r); //give it to caller max path with same number, include me
 

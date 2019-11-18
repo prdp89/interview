@@ -1,27 +1,62 @@
-package com.interview.codechef.ccdsap_2.leetcode.tree.easy;
+package com.interview.codechef.ccdsap_2.leetcode.tree.medium;
 
+import com.interview.tree.BinaryTree;
 import com.interview.tree.Node;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class SortedArrayToBST {
+public class SerializeDeserializeBST {
 
-    //https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+    //https://leetcode.com/problems/serialize-and-deserialize-bst/
 
-    //easy but little tricky logic
-    //This program teaches how to create BST from an array.
+    //This program can be easily Solved by Serialising to PreOrder traversal
+    //Then deserialisation using BSTFromPreOrderTraversal {really easy}
     public static void main( String[] args ) {
 
-        int[] arr = {-10, -3, 0, 5, 9};
-        Node node = sortedArrayToBST(arr);
+        BinaryTree bt = new BinaryTree();
 
-        print("", node, false);
+        Node head = null;
+        head = bt.addNode(5, head);
+        head = bt.addNode(2, head);
+        head = bt.addNode(13, head);
+        head = bt.addNode(1, head);
+        head = bt.addNode(3, head);
+        head = bt.addNode(8, head);
+        head = bt.addNode(15, head);
+
+        String str = serialize(head);
+        Node res = deserialize(str);
     }
 
-    //looks like level order traversal
-    //same as AverageLevelsBinaryTree but here we are filling each level first before moving to the next level
-    private static Node sortedArrayToBST( int[] nums ) {
+    //I tried Inorder for Serialization of Tree and
+    // SortedArrayToBST for deSerialization of Tree
+    private static String serialize( Node root ) {
+        StringBuilder sb = new StringBuilder();
+        inOrder(root, sb);
+        return sb.toString();
+    }
+
+    private static void inOrder( Node root, StringBuilder sb ) {
+
+        if (root == null)
+            return;
+
+        inOrder(root.left, sb);
+
+        sb.append(root.data).append(",");
+
+        inOrder(root.right, sb);
+    }
+
+    // Decodes your encoded data to tree.
+    private static Node deserialize( String data ) {
+        String[] str = data.split(",");
+
+        return sortedArrayToBST(str);
+    }
+
+    private static Node sortedArrayToBST( String[] nums ) {
         if (nums == null || nums.length == 0) {
             return null;
         }
@@ -31,10 +66,10 @@ public class SortedArrayToBST {
         int right = nums.length - 1;
 
         //getting mid value from array
-        int val = nums[left + (right - left) / 2];
+        String val = nums[left + (right - left) / 2];
 
         //keeping a root node here...
-        Node root = Node.newNode(val);
+        Node root = Node.newNode(Integer.parseInt(val));
 
         //inserting mid into the queue
         queue.offer(new MyNode(root, left, right));
@@ -55,7 +90,7 @@ public class SortedArrayToBST {
                 if (mid != cur.lb) {
                     //Mid = 2, left = 0 then we are picking (mid - 1) for its left
                     //eg : 0 + (2 - 1 - 0) /2 = 1 => nums[1] = -3
-                    Node leftChild = Node.newNode(nums[cur.lb + (mid - 1 - cur.lb) / 2]);
+                    Node leftChild = Node.newNode(Integer.parseInt(nums[cur.lb + (mid - 1 - cur.lb) / 2]));
 
                     //assigning left node to the root
                     cur.node.left = leftChild;
@@ -66,7 +101,7 @@ public class SortedArrayToBST {
                 }
 
                 if (mid != cur.rb) {
-                    Node rightChild = Node.newNode(nums[mid + 1 + (cur.rb - mid - 1) / 2]);
+                    Node rightChild = Node.newNode(Integer.parseInt(nums[mid + 1 + (cur.rb - mid - 1) / 2]));
                     cur.node.right = rightChild;
                     queue.offer(new MyNode(rightChild, mid + 1, cur.rb));
                 }
@@ -74,14 +109,6 @@ public class SortedArrayToBST {
         }
 
         return root;
-    }
-
-    private static void print( String prefix, Node n, boolean isLeft ) {
-        if (n != null) {
-            System.out.println(prefix + (isLeft ? "|-- " : "\\-- ") + n.data);
-            print(prefix + (isLeft ? "|   " : "    "), n.left, true);
-            print(prefix + (isLeft ? "|   " : "    "), n.right, false);
-        }
     }
 
     private static class MyNode {

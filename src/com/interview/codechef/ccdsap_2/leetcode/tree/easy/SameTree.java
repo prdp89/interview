@@ -31,6 +31,7 @@ public class SameTree {
 
         if (p != null && q != null && p.data == q.data)
             return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+
         return false;
     }
 }

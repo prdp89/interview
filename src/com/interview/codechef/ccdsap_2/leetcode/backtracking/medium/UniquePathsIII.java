@@ -1,0 +1,61 @@
+package com.interview.codechef.ccdsap_2.leetcode.backtracking.medium;
+
+public class UniquePathsIII {
+
+    //https://leetcode.com/problems/unique-paths-iii/
+    public static void main( String[] args ) {
+        int[][] arr = {{1, 0, 0, 0},
+                {0, 0, 0, 0},
+                {0, 0, 2, -1}};
+
+        System.out.println(uniquePathsIII(arr));
+    }
+
+    //ref: https://leetcode.com/problems/unique-paths-iii/discuss/289954/Java-Solution-DFS-With-backtracking
+
+    /*
+    Since the requirement is to touch every empty cell exactly once, we need dfs and maintain a step count count for the
+    recursive path and when we reach destination, we compare how many empty cells we covered.
+
+    To avoid cycles in the path, we mark the cells in the current dfs path as blockers and remove them while coming back
+     */
+    private static int uniquePathsIII( int[][] g ) {
+        int x = 0, y = 0, empty = 0;
+
+        for (int i = 0; i < g.length; i++)
+            for (int j = 0; j < g[0].length; j++)
+                if (g[i][j] == 0)
+                    ++empty;
+                else if (g[i][j] == 1) {
+                    x = i;
+                    y = j;
+                }
+
+        return dfs(g, x, y, -1, empty);
+    }
+
+    private static int dfs( int[][] g, int i, int j, int count, int need ) {
+        if (i < 0 || i == g.length || j < 0 || j == g[0].length || g[i][j] == -1)
+            return 0;
+
+        if (g[i][j] == 2) {
+            if (count == need)
+                return 1;
+            else
+                return 0;
+        }
+
+        g[i][j] = -1;
+
+        int total = dfs(g, i - 1, j, count + 1, need);
+
+        total += dfs(g, i, j + 1, count + 1, need);
+        total += dfs(g, i + 1, j, count + 1, need);
+        total += dfs(g, i, j - 1, count + 1, need);
+
+        //backtrack to undo -1 path to 0.
+        g[i][j] = 0;
+
+        return total;
+    }
+}

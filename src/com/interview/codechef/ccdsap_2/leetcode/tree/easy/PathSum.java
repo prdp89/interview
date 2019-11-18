@@ -96,10 +96,10 @@ public class PathSum {
 
             if (top.left != null) {
                 stack.push(top.left);
+
                 //we need both the copies of current sum while traversing left or right
                 sums.push(value - top.data);
             }
-
         }
 
         return false;

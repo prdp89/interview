@@ -55,4 +55,43 @@ public class AverageLevelsBinaryTree {
 
         return list;
     }
+
+    //https://leetcode.com/contest/weekly-contest-150/problems/maximum-level-sum-of-a-binary-tree/
+    private static int maxOfLevelsSum( Node root ) {
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        List<Integer> list = new ArrayList<>();
+
+        int max = Integer.MIN_VALUE;
+
+        while (!queue.isEmpty()) {
+
+            int size = queue.size();
+
+            int sum = 0;
+            while (size-- > 0) {
+
+                Node child = queue.poll();
+                sum += child.data;
+
+                if (child.left != null)
+                    queue.add(child.left);
+
+                if (child.right != null)
+                    queue.add(child.right);
+            }
+
+            list.add(sum);
+            max = Math.max(max, sum);
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == max)
+                return i + 1;
+        }
+
+        return 0;
+    }
 }

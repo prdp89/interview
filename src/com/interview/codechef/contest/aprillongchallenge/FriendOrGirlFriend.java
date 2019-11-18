@@ -1,4 +1,4 @@
-package com.interview.codechef.aprillongchallenge;
+package com.interview.codechef.contest.aprillongchallenge;
 
 import java.util.Scanner;
 
