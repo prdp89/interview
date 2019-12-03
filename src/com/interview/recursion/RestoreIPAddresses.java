@@ -22,7 +22,7 @@ public class RestoreIPAddresses {
     }
 
     //method---2 : tushar roy----------
-    public static List<String> restoreIpAddressesMethod2( String s ) {
+    public List<String> restoreIpAddressesMethod2( String s ) {
         List<String> result = new ArrayList<>();
         List<String> current = new ArrayList<>();
         restoreIpAddressesUtil(s, 0, 0, result, current);

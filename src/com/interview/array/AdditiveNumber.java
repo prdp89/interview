@@ -14,7 +14,7 @@ import java.math.BigInteger;
  */
 public class AdditiveNumber {
 
-    private boolean isAdditiveNumber(String num) {
+    boolean isAdditiveNumber( String num ) {
         if (num.length() < 3) {
             return false;
         }

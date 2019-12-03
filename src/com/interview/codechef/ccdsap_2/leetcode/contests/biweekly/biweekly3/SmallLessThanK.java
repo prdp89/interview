@@ -1,4 +1,4 @@
-package com.interview.codechef.ccdsap_2.leetcode.contests.biweekly3;
+package com.interview.codechef.ccdsap_2.leetcode.contests.biweekly.biweekly3;
 
 public class SmallLessThanK {
 

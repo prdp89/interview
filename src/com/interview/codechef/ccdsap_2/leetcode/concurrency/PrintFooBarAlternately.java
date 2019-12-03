@@ -43,7 +43,6 @@ public class PrintFooBarAlternately {
 
             printBar.run();
             s2.release();
-
         }
     }
 

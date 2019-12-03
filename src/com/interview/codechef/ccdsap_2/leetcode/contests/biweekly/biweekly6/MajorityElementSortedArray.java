@@ -1,4 +1,4 @@
-package com.interview.codechef.ccdsap_2.leetcode.contests.biweekly6;
+package com.interview.codechef.ccdsap_2.leetcode.contests.biweekly.biweekly6;
 
 public class MajorityElementSortedArray {
 

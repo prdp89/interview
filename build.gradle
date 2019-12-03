@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'kotlin'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: "jacoco"
@@ -7,6 +8,8 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 repositories {
+    jcenter()
+    maven { url "https://kotlin.bintray.com/kotlin-eap" }
     mavenCentral()
 }
 
@@ -15,6 +18,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:+'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.google.guava:guava:16+"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: '1.0.0'
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2"
 }
 
 sourceSets {
@@ -39,9 +49,11 @@ jacocoTestReport {
     }
 }
 buildscript {
+    ext.kotlin_version = '1.3.61'
     repositories {
         mavenCentral()
     }
     dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }

@@ -14,7 +14,7 @@ public class NumberOfTrianglesInUnsortedArray {
     }
 
     //some explaination here : https://www.geeksforgeeks.org/find-number-of-triangles-possible/
-    private int numberOfTriangles( int input[] ) {
+    int numberOfTriangles( int input[] ) {
         Arrays.sort(input);
 
         int count = 0;
