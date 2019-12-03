@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="interviewCloned.main" target="1.8" />
+      <module name="interviewCloned.test" target="1.8" />
       <module name="interviewCloned_main" target="1.8" />
       <module name="interviewCloned_test" target="1.8" />
     </bytecodeTargetLevel>

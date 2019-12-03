@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/interviewCloned.iml" filepath="$PROJECT_DIR$/interviewCloned.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interviewCloned_main.iml" filepath="$PROJECT_DIR$/.idea/modules/interviewCloned_main.iml" group="interviewCloned" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interviewCloned_test.iml" filepath="$PROJECT_DIR$/.idea/modules/interviewCloned_test.iml" group="interviewCloned" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interviewCloned.main.iml" filepath="$PROJECT_DIR$/.idea/modules/interviewCloned.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interviewCloned.test.iml" filepath="$PROJECT_DIR$/.idea/modules/interviewCloned.test.iml" />
     </modules>
   </component>
 </project>
