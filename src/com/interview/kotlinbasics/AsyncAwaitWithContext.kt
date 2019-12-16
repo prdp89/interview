@@ -1,6 +1,6 @@
 package com.interview.kotlinbasics
 
-import kotlinx.coroutines.*
+/*import kotlinx.coroutines.*
 
 fun main() {
     //exampleAsyncAwait()
@@ -57,4 +57,4 @@ fun exampleWithContext() = runBlocking {
 suspend fun calculateValues(num: Int): Int {
     delay(1000)
     return 10 * num
-}
+}*/

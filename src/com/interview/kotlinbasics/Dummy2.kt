@@ -1,6 +1,6 @@
 package com.interview.kotlinbasics
 
-class Dummy2 {
+/*class Dummy2 {
 
     //https://github.com/ResoCoder/coroutines-kotlin-tutorial
 
@@ -11,4 +11,4 @@ class Dummy2 {
 
 fun main(args: Array<String>) {
     print("hello")
-}
+}*/

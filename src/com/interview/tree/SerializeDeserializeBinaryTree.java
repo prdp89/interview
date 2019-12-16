@@ -1,35 +1,48 @@
 package com.interview.tree;
 
-import javax.swing.tree.TreeNode;
 import java.util.Deque;
 import java.util.LinkedList;
 
 /**
  * Date 03/12/2016
+ *
  * @author Tushar Roy
- *
+ * <p>
  * Serialize/Deserialize a binary tree whose data is a number.
- *
- *  Time complexity O(n)
- *  Space complexity O(n)
- *
+ * <p>
+ * Time complexity O(n)
+ * Space complexity O(n)
+ * <p>
  * Reference
  * https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
  */
 public class SerializeDeserializeBinaryTree {
 
+    int index = 0;
+
+    public static void main( String args[] ) {
+        SerializeDeserializeBinaryTree sd = new SerializeDeserializeBinaryTree();
+        Node node = sd.deserialize("10,$,30,15,$,%,20,$,21,16,$,%,18");
+        TreeTraversals tt = new TreeTraversals();
+        tt.inOrder(node);
+        String serializedTree = sd.serializeLevelOrder(node);
+        Node root = sd.deserializeLevelOrder("1,2");
+        tt.inOrder(root);
+    }
+
     /**
      * Serialize Tree using preorder DFS
+     *
      * @param root
      * @return
      */
-    public String serialize(Node root) {
+    public String serialize( Node root ) {
         StringBuffer buff = new StringBuffer();
         serializeUtil(root, buff);
         return buff.toString();
     }
 
-    private void serializeUtil(Node root, StringBuffer buff) {
+    private void serializeUtil( Node root, StringBuffer buff ) {
         if (root == null) {
             buff.append("%,");
             return;
@@ -45,20 +58,20 @@ public class SerializeDeserializeBinaryTree {
         }
 
     }
-    int index = 0;
 
     /**
      * Deserialize Tree using preorder DFS
+     *
      * @param data
      * @return
      */
-    public Node deserialize(String data) {
+    public Node deserialize( String data ) {
         String[] input = data.split(",");
         index = 0;
         return deserializeUtil(input);
     }
 
-    private Node deserializeUtil(String input[]) {
+    private Node deserializeUtil( String input[] ) {
         if (index == input.length) {
             return null;
         }
@@ -84,7 +97,7 @@ public class SerializeDeserializeBinaryTree {
     /**
      * Serialize tree using level order traversal.
      */
-    public String serializeLevelOrder(Node root) {
+    public String serializeLevelOrder( Node root ) {
         if (root == null) {
             return "";
         }
@@ -115,7 +128,7 @@ public class SerializeDeserializeBinaryTree {
     /**
      * Deserialize Tree using level order traversal.
      */
-    public Node deserializeLevelOrder(String data) {
+    public Node deserializeLevelOrder( String data ) {
         if (data == null || data.length() == 0) {
             return null;
         }
@@ -139,17 +152,6 @@ public class SerializeDeserializeBinaryTree {
             index++;
         }
         return root;
-    }
-
-
-    public static void main(String args[]) {
-        SerializeDeserializeBinaryTree sd = new SerializeDeserializeBinaryTree();
-        Node node = sd.deserialize("10,$,30,15,$,%,20,$,21,16,$,%,18");
-        TreeTraversals tt = new TreeTraversals();
-        tt.inOrder(node);
-        String serializedTree= sd.serializeLevelOrder(node);
-        Node root = sd.deserializeLevelOrder("1,2");
-        tt.inOrder(root);
     }
 }
 

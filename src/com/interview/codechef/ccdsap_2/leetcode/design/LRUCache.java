@@ -1,9 +1,15 @@
 package com.interview.codechef.ccdsap_2.leetcode.design;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LRUCache {
 
     //qut : https://leetcode.com/problems/lru-cache/
+    //video : https://www.youtube.com/watch?v=S6IfqDXWa10
     //help: https://github.com/bephrem1/backtobackswe/blob/master/Linked%20Lists/LRUCache/LRUCache.java
+
+    //similar qut : https://leetcode.com/problems/design-circular-deque/
 
     public static void main( String[] args ) {
         LRUCache lruCache = new LRUCache(2);
@@ -26,14 +32,14 @@ public class LRUCache {
     }
 
     // Hashtable backs up the Doubly Linked List for O(1) access to cache items
-    Map<Integer, ListNode> hashtable = new HashMap<Integer, ListNode>();
-    ListNode head;
-    ListNode tail;
+    private Map<Integer, ListNode> hashtable = new HashMap<Integer, ListNode>();
+    private ListNode head;
+    private ListNode tail;
 
-    int totalItemsInCache;
-    int maxCapacity;
+    private int totalItemsInCache;
+    private int maxCapacity;
 
-    public LRUCache(int maxCapacity) {
+    private LRUCache( int maxCapacity ) {
         // Cache starts empty and capacity is set by client
         totalItemsInCache = 0;
         this.maxCapacity = maxCapacity;
