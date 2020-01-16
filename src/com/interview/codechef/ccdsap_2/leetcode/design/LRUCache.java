@@ -11,31 +11,10 @@ public class LRUCache {
 
     //similar qut : https://leetcode.com/problems/design-circular-deque/
 
-    public static void main( String[] args ) {
-        LRUCache lruCache = new LRUCache(2);
-
-        lruCache.put(1,1);
-        lruCache.put(2,2);
-
-        System.out.println(lruCache.get(1));
-
-        lruCache.put(3,3);
-
-        System.out.println(lruCache.get(2));
-
-        lruCache.put(4,4);
-
-        System.out.println(lruCache.get(1));
-        System.out.println(lruCache.get(3));
-        System.out.println(lruCache.get(4));
-
-    }
-
     // Hashtable backs up the Doubly Linked List for O(1) access to cache items
     private Map<Integer, ListNode> hashtable = new HashMap<Integer, ListNode>();
     private ListNode head;
     private ListNode tail;
-
     private int totalItemsInCache;
     private int maxCapacity;
 
@@ -53,7 +32,27 @@ public class LRUCache {
         tail.prev = head;
     }
 
-    public int get(int key) {
+    public static void main( String[] args ) {
+        LRUCache lruCache = new LRUCache(2);
+
+        lruCache.put(1, 1);
+        lruCache.put(2, 2);
+
+        System.out.println(lruCache.get(1));
+
+        lruCache.put(3, 3);
+
+        System.out.println(lruCache.get(2));
+
+        lruCache.put(4, 4);
+
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(3));
+        System.out.println(lruCache.get(4));
+
+    }
+
+    public int get( int key ) {
         ListNode node = hashtable.get(key);
 
         if (node == null) {
@@ -66,7 +65,7 @@ public class LRUCache {
         return node.value;
     }
 
-    public void put(int key, int value) {
+    public void put( int key, int value ) {
         ListNode node = hashtable.get(key);
 
         if (node == null) {
@@ -106,7 +105,7 @@ public class LRUCache {
         return tailItem;
     }
 
-    private void addToFront(ListNode node) {
+    private void addToFront( ListNode node ) {
         // Wire up the new node being to be inserted
         node.prev = head;
         node.next = head.next;
@@ -124,7 +123,7 @@ public class LRUCache {
         head.next = node;
     }
 
-    private void removeFromList(ListNode node) {
+    private void removeFromList( ListNode node ) {
         ListNode savedPrev = node.prev;
         ListNode savedNext = node.next;
 
@@ -132,7 +131,7 @@ public class LRUCache {
         savedNext.prev = savedPrev;
     }
 
-    private void moveToHead(ListNode node) {
+    private void moveToHead( ListNode node ) {
         removeFromList(node);
         addToFront(node);
     }

@@ -12,7 +12,9 @@ public class FirstLastPositionElement {
         /*int[] a = {5, 7, 7, 8, 8, 10};
         int target = 6;*/
 
-        System.out.println(Arrays.toString(searchRange(a, target)));
+        //System.out.println(Arrays.toString(searchRange(a, target)));
+
+        System.out.println(Arrays.toString(searchRangeOPtimal(a, 8)));
     }
 
     //Logic is similiar to this : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14701/A-very-simple-Java-solution-with-only-one-binary-search-algorithm
@@ -66,7 +68,7 @@ public class FirstLastPositionElement {
         int hi = nums.length - 1;
         while (lo < hi) {
             //mid is always biased towards left
-            int mid = lo + (hi - lo) / 2;
+            int mid = (lo+hi) / 2; //lo + (hi - lo) / 2;
             if (nums[mid] < target)
                 lo = mid + 1;
             else
@@ -76,7 +78,7 @@ public class FirstLastPositionElement {
         return lo;
     }
 
-    public int[] searchRangeOPtimal( int[] nums, int target ) {
+    private static int[] searchRangeOPtimal( int[] nums, int target ) {
         if (nums.length == 0)
             return new int[]{-1, -1};
 

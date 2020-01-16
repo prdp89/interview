@@ -3,6 +3,8 @@ package com.interview.codechef.ccdsap_2.leetcode.binarysearch.easy;
 public class ValidPerfectSquare {
 
     //https://leetcode.com/problems/valid-perfect-square/
+
+    //Read this : https://www.geeksforgeeks.org/find-square-root-number-upto-given-precision-using-binary-search/
     public static void main( String[] args ) {
         int n = 39;
 

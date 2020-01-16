@@ -51,7 +51,7 @@ public class KthSmallestSortedMatrix {
     }
 
     public static class Tuple implements Comparable<Tuple> {
-       public int x, y, val;
+        public int x, y, val;
 
         public Tuple( int x, int y, int val ) {
             this.x = x;

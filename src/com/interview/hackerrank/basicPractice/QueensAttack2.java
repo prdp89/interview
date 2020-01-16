@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /*
 
-Don't create the grid. Think mathmatically. Each of the diagonal lines has to have either a slope of 1 or -1.
+Don't create the grid. Think mathematically. Each of the diagonal lines has to have either a slope of 1 or -1.
 The horizontal lines require that the y value be the same and the vertical lines require that the x value be
 the same.
 

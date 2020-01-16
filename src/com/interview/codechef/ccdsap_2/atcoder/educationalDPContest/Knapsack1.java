@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Knapsack1 {
 
+    //https://atcoder.jp/contests/dp/tasks/dp_d
     private static long[][] dp;
     private static int[] w;
     private static int[] v;
@@ -33,6 +34,9 @@ public class Knapsack1 {
         }
 
         System.out.println(nap(n, w1));
+
+        System.out.println("bottom_up : " + bottomUpDP(n, w1));
+
         sc.close();
     }
 
@@ -56,4 +60,27 @@ public class Knapsack1 {
 
         return rem;
     }
+
+    //https://atcoder.jp/contests/dp/tasks/dp_e
+    private static int bottomUpDP( int numberOfItems, int totalWeight ) {
+
+        //bcz we have to calulate for total weight of items
+        int[] dp = new int[totalWeight + 1];
+
+        //Loop until all items are evaluated
+        for (int i = 0; i < numberOfItems; i++) {
+
+            for (int j = totalWeight; j >= w[i]; j--) {
+
+                //calc. by excluding and including the value
+                //if we include the value we have to pick the weights by : dp[j - w[i]]
+                //can compare with CoinChangeMinCoins --> but not exactly same.
+                dp[j] = Math.max(dp[j]
+                        , v[i] + dp[j - w[i]]);
+            }
+        }
+
+        return dp[totalWeight];
+    }
+
 }

@@ -10,7 +10,9 @@ public class SquareOfSortedArray {
     public static void main( String[] args ) {
         int[] arr = {-4, -1, 0, 3, 10};
 
-        System.out.println(Arrays.toString(solveBruteForce(arr)));
+        //System.out.println(Arrays.toString(solveBruteForce(arr)));
+
+        System.out.println(Arrays.toString(sortedSquares(arr)));
     }
 
     //TIme : O ( N LOG N )

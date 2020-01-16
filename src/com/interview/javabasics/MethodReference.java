@@ -20,6 +20,22 @@ public class MethodReference {
         //Calling parameterized method......
         InPredicate predicate = methodReference::saySomethingmore;
         System.out.println(predicate.check(2, 3));
+
+        //Implementation Example:
+
+        /*
+        FollowUpDTOAssembler followUpDTOAssembler;
+        final List<FollowUp> projectList = followUpServiceExt.getAllPostFollowUps();
+        return projectList.stream().map(followUpDTOAssembler::toDTO).collect(Collectors.toList());
+         */
+
+        /*
+        public FollowUpDTO toDTO(FollowUp followUp) {
+        return followUp != null ? FollowUpDTO.builder()
+                .followedByActorType(followUp.getFollowedByActorType())
+                .build() : null;
+    }
+         */
     }
 
     private void saySomething() {

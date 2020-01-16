@@ -19,6 +19,9 @@ public class MinCostClimbingStairs {
         int call_2 = minWays(arr, arr.length - 2, dp);
 
         System.out.println(Math.min(call_1, call_2));
+
+
+        System.out.println(minCostClimbingStairsAgain(arr));
     }
 
     private static int minWays( int[] arr, int index, int[] dp ) {
@@ -36,6 +39,28 @@ public class MinCostClimbingStairs {
         int cost2 = arr[index] + minWays(arr, index - 2, dp);
 
         return dp[index] = Math.min(cost1, cost2);
+    }
+
+    //completely understood..
+    private static int minCostClimbingStairsAgain( int[] cost ) {
+
+        int[] dp = new int[cost.length + 1];
+
+        //if user want to start from zero, pay the price
+        dp[0] = cost[0];
+
+        //if user want to start from one, pay the price
+        dp[1] = cost[1];
+
+        for (int i = 2; i <= cost.length; i++) {
+
+            //bcz person want to reach on top or out of the array
+            int val = i == cost.length ? 0 : cost[i];
+
+            dp[i] = Math.min(val + dp[i - 1], val + dp[i - 2]);
+        }
+
+        return dp[cost.length];
     }
 
     //Bottom-UP Dp solution

@@ -29,6 +29,8 @@ public class RansomNote {
                 hashMapMagazine.put(aMagazine, value + 1);
             } else
                 hashMapMagazine.put(aMagazine, 1);
+
+            //map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
 

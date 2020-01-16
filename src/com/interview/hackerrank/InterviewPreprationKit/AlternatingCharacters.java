@@ -6,6 +6,7 @@ public class AlternatingCharacters {
         solve();
     }
 
+    //https://www.hackerrank.com/challenges/alternating-characters
     private static void solve() {
         //String s = "ABABABAB";
         //String s = "BABABA";

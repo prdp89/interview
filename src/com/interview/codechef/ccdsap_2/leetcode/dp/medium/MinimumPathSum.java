@@ -19,7 +19,9 @@ public class MinimumPathSum {
             Arrays.fill(dsp, -1);
         }
 
-        System.out.println(recurse(grid, grid.length - 1, grid[0].length - 1, dp));
+        //System.out.println(recurse(grid, grid.length - 1, grid[0].length - 1, dp));
+
+        System.out.println(bottomUP(grid));
     }
 
     private static int recurse( int[][] grid, int i, int j, int[][] dp ) {
@@ -37,5 +39,33 @@ public class MinimumPathSum {
             return dp[i][j];
 
         return dp[i][j] = grid[i][j] + Math.min(recurse(grid, i - 1, j, dp), recurse(grid, i, j - 1, dp));
+    }
+
+    private static int bottomUP( int[][] grid ) {
+
+        for (int i = 0; i < grid.length; i++) {
+
+            for (int j = 0; j < grid[i].length; j++) {
+
+                //if first row then only way to go is forward direction.
+                //so current grid[i][j] = previous col path sum
+                if (i == 0 && j != 0)
+                    grid[i][j] += grid[i][j - 1];
+
+
+                //if we are in second row and zero-th col then we can move in downward direction
+                //adding the upper row element with current.
+                if (i != 0 && j == 0)
+                    grid[i][j] += grid[i - 1][j];
+
+                //if we are in second row and > zero-th column then we have 2 options:
+                //either take upper row value or
+                //take left col value.
+                if (i != 0 && j != 0)
+                    grid[i][j] += Math.min(grid[i - 1][j], grid[i][j - 1]);
+            }
+        }
+
+        return grid[grid.length - 1][grid[0].length - 1];
     }
 }

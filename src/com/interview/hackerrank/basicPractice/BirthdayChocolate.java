@@ -2,7 +2,7 @@ package com.interview.hackerrank.basicPractice;
 
 public class BirthdayChocolate {
 
-    //https://www.hackerrank.com/challenges/the-birthday-bar/problem
+    //https://www.hackerrank.com/challenges/birthday-cake-candles/problem
     //this doesn;t pass all test case
     private static void solve() {
         //int[] s = {1, 2, 1, 3, 2};

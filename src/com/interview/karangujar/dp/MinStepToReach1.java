@@ -1,7 +1,5 @@
 package com.interview.karangujar.dp;
 
-import java.util.Arrays;
-
 public class MinStepToReach1 {
 
     /*
@@ -20,7 +18,7 @@ public class MinStepToReach1 {
     1. how many steps does it take to reduce ‘2’ to ‘1’???
     Ans : 1 => dp[2] = 1
 
-    2. how many steps does it take to reduce ‘2’ to ‘1’???
+    2. how many steps does it take to reduce ‘3’ to ‘1’???
     Ans : 3 => 3 - 2 = 1 , dp[3] = 1
 
     3. how many steps does it take to reduce ‘4’ to ‘1’???
@@ -54,7 +52,7 @@ public class MinStepToReach1 {
 
         System.out.println(dp[n]);
 
-     //https://stackoverflow.com/questions/40695701/sort-the-array-with-absolute-value-only-and-show-real-value
+        //https://stackoverflow.com/questions/40695701/sort-the-array-with-absolute-value-only-and-show-real-value
     /* int[] arr = {9, -2, 10, 3, -5, 34, -22, 7};
 
         Integer[] array = new Integer[arr.length];

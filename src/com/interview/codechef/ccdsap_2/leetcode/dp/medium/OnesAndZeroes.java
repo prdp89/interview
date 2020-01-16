@@ -10,12 +10,14 @@ public class OnesAndZeroes {
         int m = 5, n = 3;
 
         System.out.println(findMaxForm(strs, m, n));
+
+        System.out.println(findMaxForm_BottomUpDP(strs, m, n));
     }
 
     private static int findMaxForm( String[] strs, int m, int n ) {
-        int[][][] dp = new int[m+1][n + 1][strs.length];
+        int[][][] dp = new int[m + 1][n + 1][strs.length];
 
-        return findMaxFormStartingWith(strs, m, n, 0, dp );
+        return findMaxFormStartingWith(strs, m, n, 0, dp);
     }
 
     //it use include-exclude principle
@@ -25,7 +27,7 @@ public class OnesAndZeroes {
             return 0;
         }
 
-        if(dp[m][n][begin] > 0)
+        if (dp[m][n][begin] > 0)
             return dp[m][n][begin];
 
         int countByAddingString = 0;
@@ -55,5 +57,34 @@ public class OnesAndZeroes {
             }
         }
         return count;
+    }
+
+    //This problem is an example of Knapsack1 -> com.interview.codechef.ccdsap_2.atcoder.educationalDPContest
+    //After using this approach, the above 3D dp has been reduce to 2D DP.
+    public static int findMaxForm_BottomUpDP( String[] strs, int m, int n ) {
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (String str : strs) {
+            int one = 0;
+            int zero = 0;
+
+            for (char c : str.toCharArray()) {
+                if (c == '1')
+                    one++;
+                else
+                    zero++;
+            }
+
+            //similar to bottom up dp knapsack; using inclusive-exclusive principle
+
+            // dp[i][j] = the max number of strings that can be formed with i 0's and j 1's
+            // from the first few strings up to the current string s
+            // Catch: have to go from bottom right to top left
+            for (int i = m; i >= zero; i--)
+                for (int j = n; j >= one; j--)
+                    dp[i][j] = Math.max(dp[i][j], dp[i - zero][j - one] + 1);
+        }
+
+        return dp[m][n];
     }
 }

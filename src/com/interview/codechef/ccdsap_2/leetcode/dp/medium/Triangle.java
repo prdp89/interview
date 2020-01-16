@@ -41,6 +41,35 @@ public class Triangle {
         listList.add(list3);
 
         System.out.println(minimumTotal(listList));
+
+        System.out.println(bottonUPDp(listList));
+    }
+
+    private static int bottonUPDp( List<List<Integer>> listList ) {
+
+        int rowNum = listList.size();
+        int[] dp = new int[rowNum];
+
+        //moving in bottom up manner; storing last row values..
+        for (int i = 0; i < listList.get(rowNum - 1).size(); i++) {
+            dp[i] = listList.get(rowNum - 1).get(i);
+        }
+
+        //for each row..
+        for (int row = rowNum - 2; row >= 0; row--) {// for each layer
+
+            //if we select : listList.get(row).get(col) or list[i][j]
+            //then we have option to pick list[i+1][j] list[i+1][j+1]
+            //These options are already calculated and present in dp[] array.
+            for (int col = 0; col <= row; col++) {
+
+                dp[col] = Math.min(dp[col], dp[col + 1])
+                        + listList.get(row).get(col);
+            }
+        }
+
+        //min will be present at dp[0]
+        return dp[0];
     }
 
     private static int minimumTotal( List<List<Integer>> triangle ) {

@@ -1,7 +1,5 @@
 package com.interview.hackerrank.InterviewPreprationKit;
 
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -9,7 +7,10 @@ import java.util.Arrays;
 public class LilysHomeWork {
 
     public static void main( String[] args ) {
-        int[] a = {2, 5, 3, 1};
+        //int[] a = {2, 5, 3, 1};
+
+        //int[] a = {1,1,1,2,2};
+        int [] a = {2,1,3,1,2};
         GfG g = new GfG();
         System.out.println(GfG.minSwaps(a));
     }
@@ -23,25 +24,20 @@ public class LilysHomeWork {
             // Create two arrays and use as pairs where first
             // array is element and second array
             // is position of first element
-            ArrayList<Pair<Integer, Integer>> arrpos =
-                    new ArrayList<Pair<Integer, Integer>>();
+            ArrayList<Pair> arrpos =
+                    new ArrayList<Pair>();
             for (int i = 0; i < n; i++)
-                arrpos.add(new Pair<Integer, Integer>(arr[i], i));
+                arrpos.add(new Pair(arr[i], i));
 
             // Sort the array by array element values to
             // get right position of every element as the
             // elements of second array.
             arrpos.sort(( o1, o2 ) -> {
-                if (o1.getKey() > o2.getKey())
-                    return -1;
-
-                    // We can change this to make it then look at the
-                    // words alphabetical order
-                else if (o1.getKey().equals(o2.getKey()))
-                    return 0;
-
-                else
-                    return 1;
+                // We can change this to make it then look at the
+                // words alphabetical order
+                // We can change this to make it then look at the
+                // words alphabetical order
+                return Integer.compare(o1.getKey(), o2.getKey());
             });
 
             // To keep track of visited elements. Initialize
@@ -68,6 +64,7 @@ public class LilysHomeWork {
 
                     // move to next node
                     j = arrpos.get(j).getValue();
+
                     cycle_size++;
                 }
 
@@ -79,6 +76,24 @@ public class LilysHomeWork {
 
             // Return result
             return ans;
+        }
+    }
+
+    static class Pair {
+        int key;
+        int value;
+
+        public Pair( int key, int value ) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public int getKey() {
+            return key;
+        }
+
+        public int getValue() {
+            return value;
         }
     }
 }

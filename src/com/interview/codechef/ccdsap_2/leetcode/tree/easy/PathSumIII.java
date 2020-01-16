@@ -6,6 +6,7 @@ import com.interview.tree.Node;
 public class PathSumIII {
 
     private static int count = 0;
+    private static int cnt;
 
     //https://leetcode.com/problems/path-sum-iii/
     public static void main( String[] args ) {
@@ -40,33 +41,33 @@ public class PathSumIII {
         return 0;
     }
 
-    //ref : https://leetcode.com/problems/path-sum-iii/discuss/91889/Simple-Java-DFS
+    //https://leetcode.com/problems/path-sum-iii/discuss/268961/Java-DFS-easy-understanding
     private static int pathSum( Node root, int sum ) {
-        if (root == null)
-            return 0;
+        cnt = 0;
 
-        int pathImLeading = count(root, sum);
+        find(root, sum);
 
-        //since sum can exist on any path; so checking each node's left/right
-        int leftPathSum = pathSum(root.left, sum);
-
-        int rightPathSum = pathSum(root.right, sum);
-
-        return leftPathSum + rightPathSum + pathImLeading;
+        return cnt;
     }
 
-    private static int count( Node node, int sum ) {
-        if (node == null)
-            return 0;
+    private static void find( Node root, int sum ) {
+        if (root == null)
+            return;
 
-        //similar to try logic above
-        int isMe = (node.data == sum) ? 1 : 0;
+        path(root, sum);
 
-        //we need to add left and right as well; they can also contribute in sum
-        int leftBrother = count(node.left, sum - node.data);
+        find(root.left, sum);
+        find(root.right, sum);
+    }
 
-        int rightBrother = count(node.right, sum - node.data);
+    private static void path( Node root, int sum ) {
+        if (root == null)
+            return;
 
-        return isMe + leftBrother + rightBrother;
+        if (sum - root.data == 0)
+            cnt++;
+
+        path(root.left, sum - root.data);
+        path(root.right, sum - root.data);
     }
 }

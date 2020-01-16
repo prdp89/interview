@@ -2,16 +2,23 @@ package com.interview.array;
 
 /**
  * Date 03/04/2016
- * @author Tushar Roy
  *
+ * @author Tushar Roy
+ * <p>
  * Given an array of size n + 1 with elements from 1 to n. One element is duplicated mulitiple times.
  * Find that element in O(1) space. Array cannot be changed.
- *
+ * <p>
  * Reference
  * https://leetcode.com/problems/find-the-duplicate-number/
  */
 public class DuplicateNumberDetection {
-    public int findDuplicate(int[] nums) {
+    public static void main( String args[] ) {
+        int[] input = {1, 3, 4, 2, 2};// {2,1,3,4,3,3};
+        DuplicateNumberDetection dd = new DuplicateNumberDetection();
+        System.out.println(dd.findDuplicate(input));
+    }
+
+    public int findDuplicate( int[] nums ) {
         if (nums.length == 0 || nums.length == 1) {
             return -1;
         }
@@ -30,11 +37,5 @@ public class DuplicateNumberDetection {
         }
 
         return fast;
-    }
-
-    public static void main(String args[]) {
-        int[] input = {2,1,3,4,3,3};
-        DuplicateNumberDetection dd = new DuplicateNumberDetection();
-        System.out.println(dd.findDuplicate(input));
     }
 }

@@ -2,6 +2,7 @@ package com.interview.codechef.ccdsap_2.leetcode.arrays.mergeintervals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 
 //https://www.programcreek.com/2014/08/leetcode-rearrange-string-k-distance-apart-java/
@@ -33,12 +34,11 @@ public class ReorganizeKDistance {
         //sort the chars by frequency
         PriorityQueue<Character> queue = new PriorityQueue<>(( c1, c2 ) -> {
             if (map.get(c2).intValue() != map.get(c1).intValue()) {
-                return map.get(c2) - map.get(c1);
+                return map.get(c2) - map.get(c1); //descending order of frequency
             } else {
-                return c1.compareTo(c2);
+                return c1.compareTo(c2); //ascending order of character
             }
         });
-
 
         for (char c : map.keySet())
             queue.offer(c);

@@ -1,7 +1,9 @@
 package com.interview.hackerrank.basicPractice;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class ElectronicsShop {
 

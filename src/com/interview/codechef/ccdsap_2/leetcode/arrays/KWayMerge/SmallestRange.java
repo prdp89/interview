@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 public class SmallestRange {
 
     //explanation :https://www.youtube.com/watch?v=Fqal25ZgEDo
-    //https://leetcode.com/problems/smallest-range/
+    //https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/
     public static void main( String[] args ) {
         int[][] arr = {{4, 10, 15, 24, 26},
                 {0, 9, 12, 20},

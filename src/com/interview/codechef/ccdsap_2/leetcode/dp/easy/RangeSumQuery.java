@@ -13,6 +13,7 @@ public class RangeSumQuery {
         solve(new int[]{-2, 0, 3, -5, 2, 1});
     }
 
+    //almost same as MaximumSubArray
     //https://leetcode.com/problems/range-sum-query-immutable/discuss/75192/Java-simple-O(n)-init-and-O(1)-query-solution
     private static void solve( int[] nums ) {
         if (nums.length != 0) {
