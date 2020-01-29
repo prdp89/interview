@@ -1,7 +1,9 @@
 package com.interview.codechef.ccdsap_2.leetcode.contests.contest150;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class FarLandPossible {
 
@@ -14,8 +16,77 @@ public class FarLandPossible {
 
         System.out.println(maxDistanceBruteForce(grid));
 
-        //optimal solution here:
-        //https://leetcode.com/problems/as-far-from-land-as-possible/discuss/360996/A-very-typical-O(v)-BFS-JAVA-17-ms-faster-than-100.00
+        bfsSolution(grid);
+    }
+
+    /*
+    1. Push all land cells into the queue.
+    2. BFS from the land cells, the traverse level is exactly the manhattan distance.
+     */
+    //ref : https://leetcode.com/problems/as-far-from-land-as-possible/discuss/396770/C%2B%2B-BFS-Solution-O(m*n)-Time-O(1)-Space.
+    private static void bfsSolution( int[][] grid ) {
+        int m = grid.length;
+        int n = grid[0].length;
+
+        Queue<Point> lands = new LinkedList<Point>();
+
+        for (int i = 0; i < m; i++)
+            for (int j = 0; j < n; j++)
+                if (grid[i][j] == 1) {
+                    grid[i][j] = -1;
+                    lands.offer(new Point(i, j));
+                }
+
+        int dist = 1;
+        int level_len = lands.size();
+
+        while (!lands.isEmpty()) {
+
+            Point node = lands.poll();
+            level_len--;
+
+            int i = node.x;
+            int j = node.y;
+
+            //checking in Top, Bottom, Left, Right Direction
+            if (i + 1 < m && grid[i + 1][j] == 0) {
+                lands.offer(new Point(i + 1, j));
+                grid[i + 1][j] = dist;
+            }
+
+            if (i - 1 >= 0 && grid[i - 1][j] == 0) {
+                lands.offer(new Point(i - 1, j));
+                grid[i - 1][j] = dist;
+            }
+
+            if (j + 1 < n && grid[i][j + 1] == 0) {
+                lands.offer(new Point(i, j + 1));
+                grid[i][j + 1] = dist;
+            }
+
+            if (j - 1 >= 0 && grid[i][j - 1] == 0) {
+                lands.offer(new Point(i, j - 1));
+                grid[i][j - 1] = dist;
+            }
+
+            //if land array is empty; fill it with default size..
+            if (level_len == 0) {
+                level_len = lands.size();
+                dist++;
+            }
+        }
+
+        int max_dist = 0;
+
+        for (int i = 0; i < m; i++)
+            for (int j = 0; j < n; j++)
+                if (grid[i][j] != -1) //bcz -1 denotes to Land and we are finding a water cell whose distance is Maximized
+                    max_dist = Math.max(max_dist, grid[i][j]);
+
+        if (max_dist == 0)
+            max_dist = -1;
+
+        System.out.println(max_dist);
     }
 
     /*

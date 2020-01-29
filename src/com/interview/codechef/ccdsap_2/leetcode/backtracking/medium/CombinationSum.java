@@ -10,9 +10,10 @@ public class CombinationSum {
 
     //https://leetcode.com/problems/combination-sum/
     public static void main( String[] args ) {
-        int[] arr = {2, 3, 6, 7};
-        int target = 7;
-        combinationSum(arr, target);
+        int[] arr = {1, 2, 3};
+        int target = 4;
+
+        System.out.println(combinationSum(arr, target));
     }
 
     private static List<List<Integer>> combinationSum( int[] candidates, int target ) {

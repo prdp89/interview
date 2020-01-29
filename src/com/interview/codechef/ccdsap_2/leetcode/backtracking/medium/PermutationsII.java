@@ -48,10 +48,10 @@ public class PermutationsII {
             if (used[i])
                 continue;
 
-            used[i] = true;
-
             if (i > 0 && nums[i - 1] == nums[i] && !used[i - 1])
                 continue;
+
+            used[i] = true;
 
             list.add(nums[i]);
 
@@ -62,7 +62,7 @@ public class PermutationsII {
             used[i] = false;
 
             list.remove(list.size() - 1);
-           // swap(nums, i, index);
+            // swap(nums, i, index);
         }
     }
 
@@ -77,10 +77,7 @@ public class PermutationsII {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
 
-
         boolean[] used = new boolean[nums.length + 1];
-
-        //dfs(nums, res, list, 0);
 
         Arrays.sort(nums);
         dfsTryII(nums, res, list, 0, used);

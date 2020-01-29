@@ -37,7 +37,7 @@ public class MaximumBinaryTree {
         Node root = Node.newNode(maxNumber);
         // recursively set the left node of the node with maximum
         // number using numbers to its left in the input array
-        if (maxIndex > 0) {
+            if (maxIndex > 0) {
             int[] leftNums = new int[maxIndex];
 
             for (int i = 0; i < maxIndex; i++) {

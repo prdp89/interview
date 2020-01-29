@@ -12,6 +12,8 @@ public class SerializeDeserializeBST {
 
     //This program can be easily Solved by Serialising to PreOrder traversal
     //Then deserialisation using BSTFromPreOrderTraversal {really easy}
+
+    //read optimal sol here: https://leetcode.com/problems/serialize-and-deserialize-bst/discuss/93175/Java-PreOrder-%2B-Queue-solution
     public static void main( String[] args ) {
 
         BinaryTree bt = new BinaryTree();

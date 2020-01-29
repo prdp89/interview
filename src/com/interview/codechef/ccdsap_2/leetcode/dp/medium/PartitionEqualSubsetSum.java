@@ -26,6 +26,31 @@ public class PartitionEqualSubsetSum {
 
         Map<Integer, Boolean> map = new HashMap<>();
         System.out.println(splitMethod2(0, arr, sum / 2, map));
+
+        System.out.println("bottonUp : " + bottonUp(arr, sum / 2));
+    }
+
+    //This pattern is again based on Inclusion-Exclusion principle
+    //The same pattern has been used in Knapsack1 -> bottomup-Dp solution and CoinChangeTotalWays
+    private static boolean bottonUp( int[] arr, int target ) {
+
+        boolean[] dp = new boolean[target + 1];
+
+        dp[0] = true;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            //inner loop is same as KnapSack1; bcz we cant duplicate values..
+            //This is different from : CoinChangeTotalWays
+            for (int j = target; j >= arr[i]; j--) {
+
+                //for (int j = amount; j >= arr[i]; j--) {
+
+                dp[j] = dp[j] || dp[j - arr[i]];
+            }
+        }
+
+        return dp[target];
     }
 
     private static boolean splitMethod2( int start, int[] nums, int target, Map<Integer, Boolean> map ) {

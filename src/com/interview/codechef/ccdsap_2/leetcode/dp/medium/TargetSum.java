@@ -12,7 +12,7 @@ public class TargetSum {
         HashMap<String, Integer> map = new HashMap<>();
         System.out.println(solve(arr, 0, 0, sum, map));
 
-        System.out.println("bottom up : " + bottonUpDP(arr, sum));
+        System.out.println("bottom up" + bottonUpDP(arr, sum));
     }
 
 
