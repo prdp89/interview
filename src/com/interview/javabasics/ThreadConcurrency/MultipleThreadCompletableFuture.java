@@ -16,7 +16,9 @@ public class MultipleThreadCompletableFuture {
     private void procesar() {
         ExecutorService es = Executors.newFixedThreadPool(4);
         List<Runnable> tasks = getTasks();
-        CompletableFuture<?>[] futures = tasks.stream().map(task -> CompletableFuture.runAsync(task, es)).toArray(CompletableFuture[]::new);
+        CompletableFuture<?>[] futures = tasks.stream()
+                .map(task -> CompletableFuture.runAsync(task, es))
+                .toArray(CompletableFuture[]::new);
         CompletableFuture.allOf(futures).join();
         es.shutdown();
 

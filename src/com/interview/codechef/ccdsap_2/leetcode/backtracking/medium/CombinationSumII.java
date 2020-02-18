@@ -43,6 +43,10 @@ public class CombinationSumII {
 
         for (int i = start; i < nums.length; i++) {
 
+            //Only this line change will make this solution work :)
+            if (i > start && nums[i] == nums[i - 1])
+                continue;
+
             tempList.add(nums[i]);
 
             backtrack(tempList, nums, target - nums[i], i + 1); // i + 1 because we cannot reuse same elements

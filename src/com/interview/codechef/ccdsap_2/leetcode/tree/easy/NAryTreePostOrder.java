@@ -50,9 +50,9 @@ public class NAryTreePostOrder {
             if (null != root.children) {
                 for (int i = 0; i <= root.children.size() - 1; i++)
                     stack.add(root.children.get(i));
-            } else {
+            } /*else {
                 list.add(0, stack.pop().val);
-            }
+            }*/
         }
 
         return list;

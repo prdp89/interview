@@ -7,11 +7,11 @@ public class RottenOranges {
 
     //https://leetcode.com/problems/rotting-oranges/
     public static void main( String[] args ) {
-       /* int[][] grid = {{2, 1, 1},
-                {0, 1, 1},
-                {1, 0, 1}};*/ //op -1
+        int[][] grid = {{2, 1, 1},
+                {1, 1, 0},
+                {0, 1, 1}}; //op: 4
 
-        int[][] grid = {{0, 2}};
+        //int[][] grid = {{0, 2}};
 
         System.out.println(bfsSolution(grid));
     }

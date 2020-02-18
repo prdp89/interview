@@ -7,6 +7,8 @@ public class MaxLengthSubArrayRepeated {
         int[] a = {1, 2, 3, 2, 1};
         int[] b = {3, 2, 1, 4, 7};
         System.out.println(findLength(a, b));
+
+        System.out.println("Bottom Up : " + findLengthBottomUp(a, b));
     }
 
     private static int findLength( int[] A, int[] B ) {
@@ -38,5 +40,42 @@ public class MaxLengthSubArrayRepeated {
 
         max[0] = Math.max(max[0], dp[i][j]);
         return dp[i][j];
+    }
+
+    private static int findLengthBottomUp( int[] a, int[] b ) {
+        int m = a.length, n = b.length;
+
+        if (m == 0 || n == 0)
+            return 0;
+
+        int[][] dp = new int[m + 1][n + 1];
+
+        int max = 0;
+
+        for (int i = m - 1; i >= 0; i--)
+            for (int j = n - 1; j >= 0; j--)
+                max = Math.max(max
+                        , dp[i][j] = a[i] == b[j] ? 1 + dp[i + 1][j + 1] : 0);
+
+        return max;
+    }
+
+    //didn't understood properly...
+    public int findLengthBottomUpSpaceOptimal( int[] a, int[] b ) {
+        int m = a.length, n = b.length;
+
+        if (m == 0 || n == 0)
+            return 0;
+
+        int[] dp = new int[n + 1];
+
+        int max = 0;
+
+        for (int i = m - 1; i >= 0; i--)
+            for (int j = 0; j < n; j++)
+                max = Math.max(max
+                        , dp[j] = a[i] == b[j] ? 1 + dp[j + 1] : 0);
+
+        return max;
     }
 }

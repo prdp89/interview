@@ -34,8 +34,6 @@ public class PermutationsII {
     }
 
     //solution : https://leetcode.com/problems/permutations-ii/discuss/18594/Really-easy-Java-solution-much-easier-than-the-solutions-with-very-high-vote
-    //But didn't get properly
-    //below code is not working
     private static void dfsTryII( int[] nums, List<List<Integer>> res, List<Integer> list, int index, boolean used[] ) {
 
         if (index >= nums.length) {

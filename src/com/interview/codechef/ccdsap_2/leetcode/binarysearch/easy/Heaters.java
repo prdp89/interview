@@ -45,8 +45,13 @@ public class Heaters {
 
         int res = 0;
         for (int house : houses) {
+
+            //Ceiling: https://www.geeksforgeeks.org/treeset-ceiling-method-in-java-with-examples/
             int dist1 = set.ceiling(house) == null ? Integer.MAX_VALUE : set.ceiling(house) - house;
+
+            //Floor: https://www.geeksforgeeks.org/treeset-floor-method-in-java-with-examples/
             int dist2 = set.floor(house) == null ? Integer.MAX_VALUE : house - set.floor(house);
+
             res = Math.max(res, Math.min(dist1, dist2));
         }
 

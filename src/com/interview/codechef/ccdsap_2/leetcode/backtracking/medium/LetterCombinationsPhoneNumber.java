@@ -34,6 +34,7 @@ public class LetterCombinationsPhoneNumber {
             return;
         }
 
+        //Compare this logic with BraceExpansion :)
         int num = digits.charAt(start) - '0';
 
         for (int i = 0; i < map[num].length; i++) {

@@ -75,7 +75,7 @@ public class FirstLastPositionElement {
                 //we want to move hi to the left
                 hi = mid;
         }
-        return lo;
+        return lo; //or return hi will work..
     }
 
     private static int[] searchRangeOPtimal( int[] nums, int target ) {

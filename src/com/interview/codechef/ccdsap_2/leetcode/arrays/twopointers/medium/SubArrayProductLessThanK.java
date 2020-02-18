@@ -21,7 +21,7 @@ public class SubArrayProductLessThanK {
                 pro /= nums[i++];
             }
 
-                cnt += j - i + 1;
+            cnt += j - i + 1;
         }
         return cnt;
     }

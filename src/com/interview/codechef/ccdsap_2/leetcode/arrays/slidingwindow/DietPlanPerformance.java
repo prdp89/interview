@@ -3,6 +3,24 @@ package com.interview.codechef.ccdsap_2.leetcode.arrays.slidingwindow;
 public class DietPlanPerformance {
 
     //https://leetcode.com/contest/weekly-contest-152/problems/diet-plan-performance/
+
+    /*
+    A dieter consumes calories[i] calories on the i-th day. For every consecutive sequence of k days, they look at T, the total calories consumed during that sequence of k days:
+
+    If T < lower, they performed poorly on their diet and lose 1 point;
+    If T > upper, they performed well on their diet and gain 1 point;
+    Otherwise, they performed normally and there is no change in points.
+    Return the total number of points the dieter has after all calories.length days.
+
+    Note that: The total points could be negative.
+
+    Input: calories = [6,5,0,0], k = 2, lower = 1, upper = 5
+    Output: 0
+    Explanation: calories[0] + calories[1] > upper, calories[2] + calories[3] < lower, total points = 0.
+
+    calories[1] + calories[2] == upper : no point gain
+     */
+
     public static void main( String[] args ) {
       /*  int[] calories = {1, 2, 3, 4, 5};
         int k = 1, lower = 3, upper = 3;*/

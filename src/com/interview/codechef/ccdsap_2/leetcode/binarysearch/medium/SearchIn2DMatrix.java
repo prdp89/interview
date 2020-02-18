@@ -13,7 +13,7 @@ public class SearchIn2DMatrix {
         System.out.println(searchMatrix(matrix, target));
     }
 
-    //look in this too : https://github.com/bephrem1/backtobackswe/blob/master/Sorting%2C%20Searching%2C%20%26%20Heaps/SearchA2DMatrix/SearchA2DMatrix.java
+    //look in this too : https://github.com/bephrem1/backtobackswe/blob/master/Sorting%2C%20Searching%2C%20%26%20Heaps/SearchA2DMatrix/ContinuousSortVariant.java
     private static boolean searchMatrix( int[][] matrix, int target ) {
         if (matrix == null || matrix.length == 0) {
             return false;

@@ -33,7 +33,7 @@ public class DiceRollWithTargetSum {
             int[] temp = new int[target + 1];
 
             //this loop is same as inner loop of Knapsack1
-            for (int j = i; j <= target; j++) {
+            for (int j = 0; j <= target; j++) {
 
                 for (int faces = 1; faces <= f; faces++) {
 
