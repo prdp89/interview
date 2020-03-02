@@ -37,6 +37,8 @@ public class JumpGame {
         System.out.println(jumpGame.jump(nums));
        /* int[] nums1 = {3, 0, 2, 0, 0, 1}; //{2,3,1,1,4};
         System.out.println(jumpGame.canJump(nums1));*/
+
+        System.out.println(canJumpAgain(new int[]{2, 3, 1, 1, 4}));
     }
 
     public boolean canJump( int[] nums ) {
@@ -53,7 +55,7 @@ public class JumpGame {
 
     //https://leetcode.com/problems/jump-game/
     //No need to scan whole array when already know we can reach the end.
-    public boolean canJumpAgain( int[] nums ) {
+    private static boolean canJumpAgain( int[] nums ) {
         int dis = 0;
         for (int i = 0; i <= dis; i++) {
 

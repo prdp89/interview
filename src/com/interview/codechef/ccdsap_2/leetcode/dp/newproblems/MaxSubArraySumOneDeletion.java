@@ -34,7 +34,7 @@ public class MaxSubArraySumOneDeletion {
             oneDelete = Math.max(oneDelete + arr[i], noDelete);
 
             //https://leetcode.com/submissions/detail/288875284/
-            noDelete = Math.max(noDelete + arr[i], arr[i]); //same as MaxSumSubArray DP problem
+            noDelete = Math.max(noDelete + arr[i], arr[i]); //same as MaximumSubArray DP problem
 
             max = Math.max(max, Math.max(oneDelete, noDelete)); //just maintaining max of 2 states above
         }

@@ -30,7 +30,8 @@ public class NumberOfIslands {
     private static void bfsSolution( char[][] grid ) {
         int m = grid.length;
 
-        if (grid.length == 0) System.out.println('0');
+        if (grid.length == 0)
+            System.out.println('0');
 
         int n = grid[0].length;
 
