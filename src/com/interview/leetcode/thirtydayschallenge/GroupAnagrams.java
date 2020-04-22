@@ -37,6 +37,7 @@ public class GroupAnagrams {
         return list;
     }
 
+    //done by me :)
     private static List<List<String>> groupAnagrams( String[] strs ) {
         List<List<String>> list = new ArrayList<>();
 

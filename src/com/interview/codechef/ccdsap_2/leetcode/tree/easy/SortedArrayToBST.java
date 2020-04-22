@@ -5,6 +5,7 @@ import com.interview.tree.Node;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//This is easy: com.interview.tree.SortedArrayToBST
 public class SortedArrayToBST {
 
     //https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/

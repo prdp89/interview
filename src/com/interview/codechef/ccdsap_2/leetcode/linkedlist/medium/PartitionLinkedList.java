@@ -36,9 +36,13 @@ public class PartitionLinkedList {
             if (head.val < x) {
                 smallerLast.next = head;
                 smallerLast = head; //bcz we have assign address/value or other properties as well
+                //or we can write :
+                //smallerLast = smallerLast.next;
             } else {
                 greaterLast.next = head;
                 greaterLast = head;
+                // //or we can write :
+                //greaterLast = greaterLast.next;
             }
             head = head.next;
         }

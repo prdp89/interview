@@ -7,9 +7,11 @@ public class AsteroidCollision {
 
     //https://leetcode.com/problems/asteroid-collision/
     public static void main( String[] args ) {
-        int[] arr = {-2, -2, 1, -1}; //{10, 2, -5}; // {-2, -1, 1, 2};
+        int[] arr = {10, 2, -5};
 
-        System.out.println(Arrays.toString(solveTry(arr)));
+        //System.out.println(Arrays.toString(solveTry(arr)));
+
+        System.out.println(Arrays.toString(solveOPtimal(arr)));
     }
 
     //passes 191/250 test cases.. :(
@@ -46,6 +48,34 @@ public class AsteroidCollision {
         return res;
     }
 
+    //Runtime: 5 ms, faster than 69.53% of Java online
+    private static int[] solveOPtimal( int[] arr ) {
+
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] > 0) {
+                stack.push(arr[i]);
+            } else {
+
+                while (!stack.isEmpty() && stack.peek() > 0 && stack.peek() < Math.abs(arr[i]))
+                    stack.pop();
+
+                if (stack.isEmpty() || stack.peek() < 0) //if the rightmost asteriod destroyed all..
+                    stack.push(arr[i]);
+                else if (stack.peek() == Math.abs(arr[i])) //if both asteroid are equal
+                    stack.pop();
+            }
+        }
+
+        int[] res = new int[stack.size()];
+        for (int i = stack.size() - 1; i >= 0; i--) {
+            res[i] = stack.pop();
+        }
+
+        return res;
+    }
     /*
      public int[] asteroidCollision(int[] a) {
         LinkedList<Integer> s = new LinkedList<>(); // use LinkedList to simulate stack so that we don't need to reverse at end.

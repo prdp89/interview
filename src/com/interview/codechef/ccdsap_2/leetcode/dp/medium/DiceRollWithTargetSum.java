@@ -32,7 +32,7 @@ public class DiceRollWithTargetSum {
 
             int[] temp = new int[target + 1];
 
-            //this loop is same as inner loop of Knapsack1
+            //this loop is same as loop of CoinChangeMinCoins
             for (int j = 0; j <= target; j++) {
 
                 for (int faces = 1; faces <= f; faces++) {
@@ -41,8 +41,8 @@ public class DiceRollWithTargetSum {
                     /*if (j >= faces)
                         dp[j] = dp[j] + dp[j - f];*/
 
-                    //so we are now calculating for each faces w.r.t Target
-                    if (j >= faces) //each looping target should be greater than dice face
+                    //now compare this line with : if (coins[j] <= i) {}
+                    if (faces <= j)
                         temp[j] = (temp[j] + dp[j - faces]) % 1000000007;
                 }
             }
@@ -76,7 +76,7 @@ public class DiceRollWithTargetSum {
 
         int res = 0;
         for (int i = 1; i <= face; i++) {
-            //if (target >= i)
+            //see here: only one recursive call, no include-exclude principle
             res = (res + recursive(dice - 1, face, target - i)) % 1000000007;
         }
 

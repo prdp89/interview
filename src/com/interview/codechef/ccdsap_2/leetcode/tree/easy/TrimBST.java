@@ -19,6 +19,7 @@ public class TrimBST {
         trimBST(head, 1, 3);
     }
 
+    //recursion is similar to : RangeSumBST
     private static Node trimBST( Node root, int L, int R ) {
 
         if (root == null)

@@ -80,7 +80,7 @@ public class InvertBinaryTree {
         if (n != null) {
             System.out.println(prefix + (isLeft ? "|-- " : "\\-- ") + n.data);
             print(prefix + (isLeft ? "|   " : "    "), n.left, true);
-            print(prefix + (isLeft ? "|   " : "    "), n.right, false);
+                print(prefix + (isLeft ? "|   " : "    "), n.right, false);
         }
     }
 }

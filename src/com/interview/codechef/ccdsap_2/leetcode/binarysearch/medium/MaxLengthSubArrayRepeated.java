@@ -9,6 +9,7 @@ public class MaxLengthSubArrayRepeated {
         System.out.println(findLength(a, b));
 
         System.out.println("Bottom Up : " + findLengthBottomUp(a, b));
+        System.out.println("Bottom Up Space Optimized : " + findLengthBottomUpSpaceOptimal(a, b));
     }
 
     private static int findLength( int[] A, int[] B ) {
@@ -42,6 +43,8 @@ public class MaxLengthSubArrayRepeated {
         return dp[i][j];
     }
 
+    //yayy.. solved it :) 38 MS
+    //got hint from: findMaxForm_BottomUpDP_BasedOnRecursion
     private static int findLengthBottomUp( int[] a, int[] b ) {
         int m = a.length, n = b.length;
 
@@ -52,16 +55,22 @@ public class MaxLengthSubArrayRepeated {
 
         int max = 0;
 
-        for (int i = m - 1; i >= 0; i--)
-            for (int j = n - 1; j >= 0; j--)
-                max = Math.max(max
-                        , dp[i][j] = a[i] == b[j] ? 1 + dp[i + 1][j + 1] : 0);
+        for (int i = 1; i <= m; i++)
+            for (int j = 1; j <= n; j++) {
+                if (a[i - 1] == b[j - 1]) {
+                    dp[i][j] = 1 + dp[i - 1][j - 1];
+                    max = Math.max(max, dp[i][j]);
+                }
+            }
 
         return max;
     }
 
-    //didn't understood properly...
-    public int findLengthBottomUpSpaceOptimal( int[] a, int[] b ) {
+    //Yayy solved it..
+    //36MS and space optimized..
+
+    //This solution is based on simple inclusion-exclusion principle: Knapsack1.java
+    private static int findLengthBottomUpSpaceOptimal( int[] a, int[] b ) {
         int m = a.length, n = b.length;
 
         if (m == 0 || n == 0)
@@ -71,10 +80,14 @@ public class MaxLengthSubArrayRepeated {
 
         int max = 0;
 
-        for (int i = m - 1; i >= 0; i--)
-            for (int j = 0; j < n; j++)
+        //THis loop is almost same as Knapsack1 - bottom Up DP
+        //some motivation from OnesAndZeros
+        for (int i = 1; i <= m; i++) {
+            for (int j = n; j > 0; j--) {
                 max = Math.max(max
-                        , dp[j] = a[i] == b[j] ? 1 + dp[j + 1] : 0);
+                        , dp[j] = a[i - 1] == b[j - 1] ? 1 + dp[j - 1] : 0);
+            }
+        }
 
         return max;
     }

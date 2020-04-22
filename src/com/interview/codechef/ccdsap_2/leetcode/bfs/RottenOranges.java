@@ -17,7 +17,7 @@ public class RottenOranges {
     }
 
     //solved in  3 ms, faster than 32.07% of Java online
-    //almost same as FarLandPossible in com.interview.codechef.ccdsap_2.leetcode.contests.contest150
+    //almost same as FarLandPossible in com.interview.leetcode.contests.contest150
 
     private static int bfsSolution( int[][] grid ) {
         int m = grid.length;

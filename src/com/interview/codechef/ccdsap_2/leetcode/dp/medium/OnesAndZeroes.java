@@ -12,6 +12,8 @@ public class OnesAndZeroes {
         System.out.println(findMaxForm(strs, m, n));
 
         System.out.println(findMaxForm_BottomUpDP(strs, m, n));
+
+        System.out.println(findMaxForm_BottomUpDP_BasedOnRecursion(strs, m, n));
     }
 
     private static int findMaxForm( String[] strs, int m, int n ) {
@@ -57,6 +59,33 @@ public class OnesAndZeroes {
             }
         }
         return count;
+    }
+
+    //This solution is similar to Recursive pattern and easy to understand..
+    private static int findMaxForm_BottomUpDP_BasedOnRecursion( String[] strs, int m, int n ) {
+        int[][][] dp = new int[strs.length + 1][m + 1][n + 1];
+
+        for (int i = 1; i <= strs.length; i++) {
+
+            for (int j = 0; j <= m; j++) {
+
+                for (int k = 0; k <= n; k++) {
+
+                    int zeros = countZeroesIn(strs[i-1]);
+
+                    int ones = strs[i-1].length() - zeros;
+                    int res = dp[i-1][j][k];
+
+                    //similar to knapsack
+                    if (zeros <= j && ones <= k)
+                        res = Math.max(res, dp[i-1][j - zeros][k - ones] + 1);
+
+                    dp[i][j][k] = res;
+                }
+            }
+        }
+
+        return dp[strs.length][m][n];
     }
 
     //This problem is an example of Knapsack1 -> com.interview.codechef.ccdsap_2.atcoder.educationalDPContest

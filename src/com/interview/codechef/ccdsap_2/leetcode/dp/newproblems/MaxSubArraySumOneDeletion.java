@@ -29,6 +29,7 @@ public class MaxSubArraySumOneDeletion {
 
         int oneDelete = 0, noDelete = arr[0], max = arr[0];
 
+        //see carefully: we start the loop with 1 : that means by exclusion we can pick 1st element and delete the zero-th
         for (int i = 1; i < n; i++) {
 
             oneDelete = Math.max(oneDelete + arr[i], noDelete);
