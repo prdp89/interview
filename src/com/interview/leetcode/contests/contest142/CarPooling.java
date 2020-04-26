@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 
 public class CarPooling {
 
+    //https://leetcode.com/problems/car-pooling/
     public static void main( String[] args ) {
         int[][] trips = {{3, 5, 7}, {2, 1, 5}};
         int capacity = 3;

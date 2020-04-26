@@ -31,31 +31,6 @@ public class NumbersSmallerThanCurrent {
         return dp;
     }
 
-    private static int[] smallerNumbersThanCurrentBSTry( int[] nums ) {
-        int[] dp = new int[nums.length];
-
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < nums.length; i++)
-            list.add(nums[i]);
-
-        Collections.sort(list);
-
-        HashSet<Integer> dp_1 = new HashSet<>(list);
-
-        list = new ArrayList<>(dp_1);
-
-        TreeMap<Integer, Integer> set = new TreeMap<>();
-        for (int i = 0; i < list.size(); i++) {
-            set.put(list.get(i), i);
-        }
-
-        for (int i = 0; i < nums.length; i++) {
-            dp[i] = set.ceilingEntry(nums[i]).getValue();
-        }
-
-        return dp;
-    }
-
     //similar to PeakIndexMountainArray
     private static int[] smallerNumbersThanCurrentOptimal( int[] nums ) {
         int[] numsCopy = Arrays.copyOf(nums, nums.length);

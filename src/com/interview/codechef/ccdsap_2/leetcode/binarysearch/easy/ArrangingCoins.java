@@ -2,7 +2,7 @@ package com.interview.codechef.ccdsap_2.leetcode.binarysearch.easy;
 
 public class ArrangingCoins {
 
-    //https://leetcode.com/problems/arranging-coins/
+    //https:www.leetcode.com/problems/arranging-coins/
     public static void main( String[] args ) {
         int n = 8;
 
