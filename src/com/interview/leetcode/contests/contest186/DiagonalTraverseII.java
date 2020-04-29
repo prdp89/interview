@@ -1,8 +1,6 @@
 package com.interview.leetcode.contests.contest186;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class DiagonalTraverseII {
 
@@ -25,7 +23,45 @@ public class DiagonalTraverseII {
         List<Integer> list4 = new ArrayList<>(Arrays.asList(12, 13, 14, 15, 16));
         listList.add(list4);
 
-        findDiagonalOrder(listList);
+        //findDiagonalOrder(listList);
+
+        System.out.println(Arrays.toString(findDiagonalOrderOptimal(listList)));
+    }
+
+    //Runtime: 36 ms, faster than 50.00% of Java
+    private static int[] findDiagonalOrderOptimal( List<List<Integer>> nums ) {
+        int n = 0, maxKey = 0;
+
+        Map<Integer, List<Integer>> map = new HashMap<>();
+
+        //starting from last row, bcz starting values of each row can be filled easily..
+        for (int r = nums.size() - 1; r >= 0; r--) {
+
+            for (int c = 0; c < nums.get(r).size(); c++) {
+
+                map.putIfAbsent(r + c, new ArrayList<>());
+                map.get(r + c).add(nums.get(r).get(c));
+                maxKey = Math.max(maxKey, r + c);
+                n++;
+            }
+        }
+
+        int[] ans = new int[n];
+        int i = 0;
+
+        //now filling according to key index of row and column.
+        for (int key = 0; key <= maxKey; key++) {
+            List<Integer> list = map.get(key);
+
+            if (list == null)
+                continue;
+
+            for (int item : list) {
+                ans[i++] = item;
+            }
+        }
+
+        return ans;
     }
 
     private static int[] findDiagonalOrder( List<List<Integer>> nums ) {

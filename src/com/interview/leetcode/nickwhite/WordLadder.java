@@ -66,6 +66,7 @@ public class WordLadder {
                 replaceIthChar[i] = ch;
                 String replacedSTR = String.valueOf(replaceIthChar);
 
+                //if word list contain this String then we do not want to revisit it..
                 if (wordList.remove(replacedSTR))
                     possibleStrings.add(replacedSTR);
             }
