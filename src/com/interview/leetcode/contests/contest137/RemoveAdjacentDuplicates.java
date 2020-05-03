@@ -10,7 +10,9 @@ public class RemoveAdjacentDuplicates {
     public static void main( String[] args ) {
         String str = "abbaca";
 
-        System.out.println(solve(str));
+        //System.out.println(solve(str));
+
+        System.out.println(removeDuplicates(str));
     }
 
     //don't know why HashSet Memory exceeds. Logic is correct
@@ -33,7 +35,7 @@ public class RemoveAdjacentDuplicates {
     }
 
     //Another method; Instead of Set using Stack
-    public String removeDuplicates( String S ) {
+    private static String removeDuplicates( String S ) {
         Stack<Character> stack = new Stack<>();
 
         for (char s : S.toCharArray()) {
@@ -46,8 +48,22 @@ public class RemoveAdjacentDuplicates {
         StringBuilder sb = new StringBuilder();
 
         for (char s : stack)
-            sb.append(s);
+          sb.append(s);
 
         return sb.toString();
+    }
+
+    public String removeDuplicatesTwoPOinters( String s ) {
+        int i = 0, n = s.length();
+        char[] res = s.toCharArray();
+
+        for (int j = 0; j < n; ++j, ++i) {
+
+            res[i] = res[j];
+
+            if (i > 0 && res[i - 1] == res[i]) // count = 2
+                i -= 2;
+        }
+        return new String(res, 0, i);
     }
 }
