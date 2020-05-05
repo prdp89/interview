@@ -9,6 +9,7 @@ public class GroupAnagrams {
         String[] str = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
         groupAnagramsOptimal(str);
+        groupAnagramsMostOptimal(str);
     }
 
     //Time: O(N K LOG K)
@@ -65,7 +66,7 @@ public class GroupAnagrams {
     }
 
     //TIME : O( N K )
-    private List<List<String>> groupAnagramsMostOptimal( String[] strs ) {
+    private static List<List<String>> groupAnagramsMostOptimal( String[] strs ) {
         if (strs.length == 0)
             return new ArrayList();
 
@@ -92,6 +93,6 @@ public class GroupAnagrams {
 
             ans.get(key).add(s);
         }
-        return new ArrayList(ans.values());
+        return new ArrayList(ans.values()); //ans.values() : Collection<List>
     }
 }

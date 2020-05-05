@@ -10,6 +10,7 @@ public class KClosestElementToX {
     //question is same as : ccdsap_2.leetcode.binarysearch.medium.KClosestElements
     //Trying PQ approach in this part
 
+    //https://leetcode.com/problems/find-k-closest-elements/
     public static void main( String[] args ) {
         int[] arr = {1, 2, 3, 4, 5};
         int k = 4, x = 3;

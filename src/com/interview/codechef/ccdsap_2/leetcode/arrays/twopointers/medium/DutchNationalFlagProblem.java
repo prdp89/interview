@@ -45,6 +45,7 @@ public class DutchNationalFlagProblem {
                     a[mid] = a[hi];
                     a[hi] = temp;
                     hi--; ///why not mid++ bcz that element could be zero as well..
+                    //mid++;
                     break;
                 }
             }

@@ -29,10 +29,10 @@ public class PrisonCellAfterNDays {
 
             cells = cells2;
 
-            //If current N is already seen at : 8
-            //Current N = 3
-            // 8 - 3 = 5 means current state repeat after each 5 steps..
-            //So finally you can MOD the current N with that value to not repeat the same 5 steps./
+            /*
+            let's say N = 1000, we know after every 14 days, same prison state will come....
+            so, if I do N%14 = 6 (which means until the last 6th day, my states will repeat....)
+             */
 
             //This prevent us recomputing..
             if (seen.containsKey(Arrays.toString(cells))) {
