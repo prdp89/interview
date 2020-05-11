@@ -1,16 +1,23 @@
 package com.interview.leetcode.nickwhite;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MinTimeDifference {
 
     //https://leetcode.com/problems/minimum-time-difference/
     public static void main( String[] args ) {
-
+        List<String> list = new ArrayList<>(Arrays.asList("10:00am", "11:45pm", "5:00am", "12:01am"));
+        System.out.println(findMinDifference(list));
     }
 
     private static int findMinDifference( List<String> timePoints ) {
+
+
         boolean[] mark = new boolean[24 * 60]; //24 hour * 60 minutes
+
+        List<Integer> timeList = new ArrayList<>();
 
         int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
 
@@ -18,7 +25,14 @@ public class MinTimeDifference {
             String[] t = time.split(":");
 
             int h = Integer.parseInt(t[0]);
-            int m = Integer.parseInt(t[1]);
+
+            int m = Integer.parseInt(t[1].substring(0, 2));//Integer.parseInt(t[1]);
+
+            boolean isPM = t[1].substring(2).equalsIgnoreCase("pm");
+
+            if (isPM) {
+                h += 12;
+            }
 
             if (mark[h * 60 + m]) {
                 return 0;
@@ -28,6 +42,8 @@ public class MinTimeDifference {
             max = Math.max(max, h * 60 + m);
 
             mark[h * 60 + m] = true;
+
+            timeList.add(h * 60 + m);
         }
 
         int minDiff = Integer.MAX_VALUE, prev = 0;
@@ -50,6 +66,5 @@ public class MinTimeDifference {
         }
 
         return minDiff;
-
     }
 }
