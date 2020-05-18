@@ -54,6 +54,8 @@ public class CombinationSum {
 
     //Method ------------------ 2
     //Runtime: 6 ms, faster than 30.24% of Java
+
+    //Runtime: 5 ms, faster than 39.07% of Java
     private static void backtrack( List<Integer> tempList, int[] nums, int target, int start ) {
 
         //This condition is also imp. otherwise we get stackoverflow
@@ -62,8 +64,10 @@ public class CombinationSum {
 
         if (target == 0) {
             lists.add(new ArrayList<>(tempList));
-            return;
+            //return; //work without return as well
         }
+
+        //else : work with else too
 
         for (int i = start; i < nums.length; i++) {
             tempList.add(nums[i]);

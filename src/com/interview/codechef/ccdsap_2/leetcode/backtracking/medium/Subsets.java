@@ -39,6 +39,7 @@ public class Subsets {
             //return; //is not needed bcz this will again backtrack from first level stack itself, and generate wrong result
         }
 
+        //with using else part here, won't work..
         for (int i = index; i < nums.length; i++) {
             list.add(nums[i]);
 
@@ -51,6 +52,7 @@ public class Subsets {
     }
 
     //https://leetcode.com/problems/subsets-ii/
+    //check this too :     //using template: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
     private static void dfsSubsetII( int[] nums, List<Integer> list, List<List<Integer>> listList, int index ) {
         if (index >= 0) {
             List<Integer> temp = new ArrayList<>(list);
@@ -62,6 +64,11 @@ public class Subsets {
         }
 
         for (int i = index; i < nums.length; i++) {
+
+            //or
+            /*if (i > index && nums[i] == nums[i - 1])
+                continue;*/
+
             list.add(nums[i]);
 
             //we are using i+1 instead of index + 1

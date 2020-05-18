@@ -5,6 +5,7 @@ import java.util.List;
 
 public class BuildArray {
 
+    //https://leetcode.com/problems/build-an-array-with-stack-operations/
     public static void main( String[] args ) {
         int[] arr = {2, 3, 4};
         int n = 4;

@@ -105,6 +105,8 @@ public class EditDistance {
     }
 
     //explanation in diary.
+    //https://leetcode.com/submissions/detail/340264642/
+
     private static int editDistanceBottomUpDP( String s, String t ) {
         int dp[][] = new int[s.length() + 1][t.length() + 1];
 

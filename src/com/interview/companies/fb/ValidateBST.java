@@ -20,6 +20,7 @@ public class ValidateBST {
 
     }
 
+    //similar logic as : MinABSBST
     private static boolean isValidBST( Node root ) {
 
         Stack<Node> stack = new Stack<>();

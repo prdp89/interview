@@ -74,8 +74,6 @@ public class CoinChangeMinCoins {
 
         int[] dp = new int[amount + 1]; //+1 bcz we need to find answer for amount only
 
-        Arrays.fill(dp, Integer.MAX_VALUE);
-
         //to make zero-th amount -> 0 value coin is used
         dp[0] = 0;
 
@@ -96,16 +94,34 @@ public class CoinChangeMinCoins {
 
         for (int i = 1; i <= amount; i++) {
 
-            // For each coin we are given
+            int min = Integer.MAX_VALUE;
+
             for (int j = 0; j < coins.length; j++) {
-                // If it is less than or equal to the sub problem amount
-                if (coins[j] <= i) {
-                    // Try it. See if it gives us a more optimal solution
-                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1); //+1 for choosing that coin[j]
-                }
+
+                if (coins[j] <= i && dp[i - coins[j]] != -1)
+                    min = Math.min(min, dp[i - coins[j]] + 1); //+1 bcz we are picking current coin
             }
+
+            dp[i] = min == Integer.MAX_VALUE ? -1 : min;
         }
 
+        return dp[amount] > amount ? -1 : dp[amount];
+    }
+
+    public int coinChange_Using_combination_technique( int[] coins, int amount ) {
+        int[] dp = new int[amount + 1];
+
+        Arrays.fill(dp, amount + 1);
+        dp[0] = 0;
+
+        for (int j = 0; j < coins.length; j++) {
+
+            for (int i = 0; i <= amount; i++) {
+
+                if (i - coins[j] >= 0)
+                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+            }
+        }
         return dp[amount] > amount ? -1 : dp[amount];
     }
 }

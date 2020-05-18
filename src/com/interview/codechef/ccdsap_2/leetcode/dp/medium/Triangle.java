@@ -58,7 +58,7 @@ public class Triangle {
         //for each row..
         for (int row = rowNum - 2; row >= 0; row--) {// for each layer
 
-            //if we select : listList.get(row).get(col) or list[i][j]
+            //if we select : listList.get(x).get(col) or list[i][j]
             //then we have option to pick list[i+1][j] list[i+1][j+1]
             //These options are already calculated and present in dp[] array.
             for (int col = 0; col <= row; col++) {

@@ -1,6 +1,6 @@
 package com.interview.codechef.ccdsap_2.leetcode.dp.medium;
 
-//https://leetcode.com/problems/out-of-boundary-paths/
+    //https://leetcode.com/problems/out-of-boundary-paths/
 public class OutOfBoundaryPaths {
 
     //This problem helps in finding ways for out of Array object placement.

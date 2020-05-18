@@ -33,7 +33,7 @@ public class ThreeSumClosest {
                 }
 
                 //checking what is smaller : Sum - Target or
-                    if (Math.abs(target - sum) < Math.abs(target - res)) {
+                if (Math.abs(target - sum) < Math.abs(target - res)) {
                     res = sum;
                 }
             }

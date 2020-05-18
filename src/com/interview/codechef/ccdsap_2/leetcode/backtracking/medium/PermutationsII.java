@@ -41,6 +41,7 @@ public class PermutationsII {
             res.add(new ArrayList<>(list));
         }
 
+        //same as Permutations second template
         for (int i = 0; i < nums.length; i++) {
 
             if (used[i])

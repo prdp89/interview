@@ -28,11 +28,11 @@ public class MinTimeDifference {
 
             int m = Integer.parseInt(t[1].substring(0, 2));//Integer.parseInt(t[1]);
 
-            boolean isPM = t[1].substring(2).equalsIgnoreCase("pm");
+           /* boolean isPM = t[1].substring(2).equalsIgnoreCase("pm");
 
             if (isPM) {
                 h += 12;
-            }
+            }*/
 
             if (mark[h * 60 + m]) {
                 return 0;
@@ -43,7 +43,7 @@ public class MinTimeDifference {
 
             mark[h * 60 + m] = true;
 
-            timeList.add(h * 60 + m);
+            //timeList.add(h * 60 + m);
         }
 
         int minDiff = Integer.MAX_VALUE, prev = 0;

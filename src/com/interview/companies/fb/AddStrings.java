@@ -19,7 +19,7 @@ public class AddStrings {
 
             int sum = carry;
             if (i >= 0) { //doing i-- or --i here won't work; think why?
-                //can also do : num1.charAt(i--) - 'a'
+                //sum += (num1.charAt(i--) - '0');
                 sum += Character.getNumericValue(num1.charAt(i--));
             }
 

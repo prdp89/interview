@@ -2,6 +2,7 @@ package com.interview.codechef.ccdsap_2.leetcode.backtracking.medium;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Permutations {
 
@@ -47,5 +48,24 @@ public class Permutations {
         int temp = nums[i];
         nums[i] = nums[index];
         nums[index] = temp;
+    }
+
+    //using template: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
+    private void backtrack_One_MOre_WAY( List<List<Integer>> list, Set<Integer> tmpSet, int[] nums ) {
+        if (tmpSet.size() == nums.length) {
+            list.add(new ArrayList<>(tmpSet));
+        } else {
+            for (int i = 0; i < nums.length; i++) {
+
+                if (tmpSet.contains(nums[i]))
+                    continue; // element already exists, skip
+
+                tmpSet.add(nums[i]);
+
+                backtrack_One_MOre_WAY(list, tmpSet, nums);
+
+                tmpSet.remove(tmpSet.size() - 1);
+            }
+        }
     }
 }

@@ -2,7 +2,6 @@ package com.interview.codechef.ccdsap_2.leetcode.arrays.mergeintervals;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.PriorityQueue;
 
 //https://www.programcreek.com/2014/08/leetcode-rearrange-string-k-distance-apart-java/

@@ -6,13 +6,16 @@ public class OpenTheLOck {
 
     //https://leetcode.com/problems/open-the-lock/
     public static void main( String[] args ) {
-        String[] deadEnds = {"8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"};
-        String target = "8888";
+        String[] deadEnds = {"0201","0101","0102","1212","2002"};
+        String target = "0202";
 
         System.out.println(openLock(deadEnds, target));
     }
 
     //almost similar to com.interview.leetcode.nickwhite.WordLadder
+
+    //After modification by me : TIme : Runtime: 169 ms, faster than 26.51% of Java
+    //PRevious Time : 420MS
     private static int openLock( String[] deadends, String target ) {
 
         HashSet<String> wordList = new HashSet<>(Arrays.asList(deadends));
@@ -26,26 +29,31 @@ public class OpenTheLOck {
 
         int level = 0;
 
+        int size = queue.size();
+
         while (!queue.isEmpty()) {
 
-            int size = queue.size();
-            while (size-- > 0) {
+            //while (size-- > 0) {
+            size--;
 
-                String str = queue.poll();
+            String str = queue.poll();
 
-                if (wordList.contains(str)) {
-                    continue;
-                }
-
-                if (str.equals(target))
-                    return level;
-
-                for (String neighbour : findNeighbours(str, wordList, visited)) {
-                    queue.offer(neighbour);
-                }
+            if (wordList.contains(str)) {
+                continue;
             }
 
-            level++;
+            if (str.equals(target))
+                return level;
+
+            for (String neighbour : findNeighbours(str, wordList, visited)) {
+                queue.offer(neighbour);
+            }
+            //}
+
+            if (size == 0) {
+                level++;
+                size = queue.size();
+            }
         }
 
         return -1;

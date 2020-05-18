@@ -46,6 +46,7 @@ public class LongestContinuousSubArray {
 
             treeMap.put(nums[j], 1 + treeMap.getOrDefault(nums[j], 0));
 
+            //this is like constrained sliding window
             if (treeMap.lastEntry().getKey() - treeMap.firstEntry().getKey() > limit) {
                 treeMap.put(nums[i], treeMap.get(nums[i]) - 1);
 

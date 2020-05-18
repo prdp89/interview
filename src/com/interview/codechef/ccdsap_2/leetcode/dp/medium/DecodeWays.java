@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class DecodeWays {
 
+    //https://leetcode.com/problems/decode-ways/
     public static void main( String[] args ) {
         System.out.println(numDecodings("226"));
 

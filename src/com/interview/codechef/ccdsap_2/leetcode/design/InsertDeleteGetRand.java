@@ -2,6 +2,8 @@ package com.interview.codechef.ccdsap_2.leetcode.design;
 
 import java.util.*;
 
+//https://leetcode.com/problems/insert-delete-getrandom-o1/
+
 public class InsertDeleteGetRand {
 
     private Set<Integer> set;

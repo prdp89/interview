@@ -28,7 +28,7 @@ public class VideoStitching {
 
             for (int[] c : clips) {
 
-                if (c[0] <= i && i <= c[1])
+                if (i >= c[0] && i <= c[1])
                     dp[i] = Math.min(dp[i], dp[c[0]] + 1);
             }
         }

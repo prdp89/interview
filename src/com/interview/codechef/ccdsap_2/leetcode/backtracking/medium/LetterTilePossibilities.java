@@ -9,7 +9,8 @@ public class LetterTilePossibilities {
     public static void main( String[] args ) {
         //String str = "AAB"; //op :8
         String str = "AAABBC";
-        numTilePossibilities(str);
+
+        System.out.println(numTilePossibilities(str));
     }
 
     private static int numTilePossibilities( String tiles ) {
@@ -26,7 +27,6 @@ public class LetterTilePossibilities {
 
     //we are generating Permutation of combination means
     // , for each length of string we are generating Permutation of String
-
     private static void numTilePossibilitiesHelper( char[] chars, int index, HashSet<String> list ) {
 
         //when we found atleast one char, add it to the HashSet

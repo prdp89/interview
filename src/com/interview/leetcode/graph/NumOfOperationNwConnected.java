@@ -6,6 +6,7 @@ public class NumOfOperationNwConnected {
 
     private static int[] rank;
 
+    //this UNION-FIND same as ConnectCityMinCost
     //https://leetcode.com/problems/number-of-operations-to-make-network-connected/
     public static void main( String[] args ) {
         int[][] connections = {

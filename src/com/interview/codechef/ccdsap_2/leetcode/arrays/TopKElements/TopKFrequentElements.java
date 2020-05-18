@@ -13,6 +13,8 @@ public class TopKFrequentElements {
         //topKFrequent(arr, k).forEach(System.out::println);
 
         topKFrequentTreeMap(arr, k).forEach(System.out::println);
+
+        topKFrequentPQ(arr, k).forEach(System.out::println);
     }
 
     //ref: https://leetcode.com/problems/top-k-frequent-elements/discuss/81635/3-Java-Solution-using-Array-MaxHeap-TreeMap
@@ -92,4 +94,28 @@ public class TopKFrequentElements {
     }
 
     //----------------------------------------------------
+
+    //O(N LOG K)
+    public static List<Integer> topKFrequentPQ( int[] nums, int k ) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+
+        PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
+                new PriorityQueue<>(( a, b ) -> (a.getValue() - b.getValue()));
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            maxHeap.offer(entry);
+
+            if (maxHeap.size() > k)
+                maxHeap.poll();
+        }
+
+        List<Integer> res = new ArrayList<>();
+        while (res.size() < k) {
+            Map.Entry<Integer, Integer> entry = maxHeap.poll();
+            res.add(0, entry.getKey());
+        }
+        return res;
+    }
 }

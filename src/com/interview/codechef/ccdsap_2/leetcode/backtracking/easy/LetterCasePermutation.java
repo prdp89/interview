@@ -19,6 +19,8 @@ public class LetterCasePermutation {
 
         list.forEach(System.out::println);
 
+        System.out.println("BFS");
+
         List<String> listStr = letterCasePermutationBFS(str);
 
         listStr.forEach(System.out::println);

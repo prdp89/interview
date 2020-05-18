@@ -6,6 +6,7 @@ public class SnapshotArray {
 
     //https://leetcode.com/contest/weekly-contest-148/problems/snapshot-array/
 
+    //https://leetcode.com/problems/snapshot-array/discuss/350574/Java-Two-codes-w-analysis-store-difference-by-HashMap-and-TreeMap-respectively.
     //passed : 43 / 71 test cases passed.
     int[] arr = null;
     HashMap<Integer, int[]> map = null;

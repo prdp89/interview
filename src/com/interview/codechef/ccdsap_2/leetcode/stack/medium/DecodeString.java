@@ -7,8 +7,9 @@ public class DecodeString {
 
     //https://leetcode.com/problems/decode-string/
     public static void main( String[] args ) {
-        String str = "3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
+        //String str = "3[z]2[2[y]pq4[2[jk]e1[f]]]ef";
 
+        String str = "3[zk]";
         System.out.println(solveTr(str));
     }
 
@@ -35,19 +36,26 @@ public class DecodeString {
 
             } else if (str.charAt(i) == ']') { //get string inside [..]
 
-                String bracketString = "";
+                //String bracketString = "";
+
+                StringBuilder sb = new StringBuilder();
+
 
                 //instead of reverse string append the string in inserted order
                 while (!characterStack.isEmpty() && !Objects.equals(characterStack.peek(), "[")) {
-                    bracketString = characterStack.pop() + bracketString;
+                    //bracketString = characterStack.pop() + bracketString;
+                    //sb.append(characterStack.pop());
+
+                    sb = sb.insert(0, characterStack.pop());
                 }
 
                 //pop [ from the stack and get Number after that
                 characterStack.pop();
                 int num = Integer.valueOf(characterStack.pop());
 
-                String val = bracketString;
-                StringBuilder sb = new StringBuilder();
+                String val = sb.toString();
+
+                sb = new StringBuilder();
 
                 //repeat string num times
                 while (num-- > 0) {

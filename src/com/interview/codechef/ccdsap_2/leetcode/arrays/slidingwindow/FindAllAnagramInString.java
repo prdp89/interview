@@ -10,6 +10,9 @@ public class FindAllAnagramInString {
     //https://leetcode.com/problems/find-all-anagrams-in-a-string/
     public static void main( String[] args ) {
         findAnagrams("cbaebabacd", "abc").forEach(System.out::println);
+
+        System.out.println("again:");
+        findAnagramsAgain("cbaebabacd", "abc").forEach(System.out::println);
     }
 
     private static List<Integer> findAnagrams( String s, String p ) {
@@ -55,6 +58,48 @@ public class FindAllAnagramInString {
                 hash[s.charAt(left)]++;
                 left++;
 
+            }
+        }
+
+        return list;
+    }
+
+    //done by me...
+    //Runtime: 4 ms, faster than 99.07% of Java
+    //same pattern as : LongestSubstringWithoutRepetChar
+    private static List<Integer> findAnagramsAgain( String s, String p ) {
+        List<Integer> list = new ArrayList<>();
+
+        if (s == null || s.length() == 0 || p == null || p.length() == 0)
+            return list;
+
+        int[] hash = new int[256]; //character hash
+
+        //record each character in p to hash
+        for (char c : p.toCharArray()) {
+            hash[c]++;
+        }
+
+        //two points, initialize count to p's length
+        int left = 0, right = 0, count = p.length();
+
+        while (right < s.length()) {
+            if (hash[s.charAt(right++)]-- > 0) {
+                count--;
+            }
+
+            while (count == 0) {
+
+                if (right - left == p.length()) {
+                    list.add(left);
+                }
+
+                hash[s.charAt(left)]++;
+                if (hash[s.charAt(left)] > 0) {
+                    count++;
+                }
+
+                left++;
             }
         }
 

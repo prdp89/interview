@@ -42,6 +42,7 @@ public class KeysAndRooms {
             int room = queue.poll();
             for (int j : rooms.get(room)) {
                 queue.offer(j);
+
                 visited.add(j);
 
                 //if we are able to visit all rooms

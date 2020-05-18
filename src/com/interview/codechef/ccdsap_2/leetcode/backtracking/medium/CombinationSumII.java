@@ -43,6 +43,7 @@ public class CombinationSumII {
 
         for (int i = start; i < nums.length; i++) {
 
+            //same as Subsets template II, checking duplicate in standard way
             //Only this line change will make this solution work :)
             if (i > start && nums[i] == nums[i - 1])
                 continue;

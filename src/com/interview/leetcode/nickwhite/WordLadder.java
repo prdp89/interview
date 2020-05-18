@@ -15,6 +15,8 @@ public class WordLadder {
     }
 
     //Runtime: 57 ms, faster than 61.26% of Java
+
+    //After little modification by me: Runtime: 56 ms, faster than 63.31% of Java
     private static int ladderLength( String beginWord, String endWord, List<String> wordList ) {
 
         int levelLen = 1;
@@ -26,27 +28,31 @@ public class WordLadder {
         Queue<String> queue = new LinkedList<>();
 
         queue.offer(beginWord);
+        int size = queue.size();
 
         while (!queue.isEmpty()) {
 
             //in RottenOranges example we do BFS in 4 directions
             // but here we can traverse in N direction like tree LevelOrderTraversal
 
-            int size = queue.size();
-            while (size-- > 0) {
+            size--;
+            // while (size-- > 0) {
 
-                //For every string in Queue we have to find its match in Dictionary(wordlist)
-                String str = queue.poll();
-                if (str.equals(endWord))
-                    return levelLen;
+            //For every string in Queue we have to find its match in Dictionary(wordlist)
+            String str = queue.poll();
+            if (str.equals(endWord))
+                return levelLen;
 
-                //For string STR we are finding its possible neighbours in WordList
-                for (String neighbour : neighbour(str, set)) {
-                    queue.offer(neighbour);
-                }
+            //For string STR we are finding its possible neighbours in WordList
+            for (String neighbour : neighbour(str, set)) {
+                queue.offer(neighbour);
             }
+            // }
 
-            levelLen++;
+            if (size == 0) {
+                levelLen++;
+                size = queue.size();
+            }
         }
 
         return 0;

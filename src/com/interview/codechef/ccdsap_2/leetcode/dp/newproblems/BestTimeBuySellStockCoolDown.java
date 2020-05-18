@@ -60,4 +60,34 @@ public class BestTimeBuySellStockCoolDown {
         // sell[length] >= buy[length] is always greater than buying
         return sell[length];
     }
+
+    //https://leetcode.com/submissions/detail/233329407/
+    private static int recurse( int[] prices, int index, int[] dp ) {
+
+        if (index == prices.length - 1) {
+            return 0;
+        }
+
+        if (index < dp.length && dp[index] != -1)
+            return dp[index];
+
+        int profit = 0, min = Integer.MAX_VALUE;
+
+        for (int m = index; m < prices.length; m++) {
+
+            min = Math.min(min, prices[m]);//picking at min prices
+
+            int diff = prices[m] - min;//diff. for current min. picked stock profit
+
+            if (diff > 0) {
+                diff += recurse(prices, m + 2, dp);
+            }
+            profit = Math.max(profit, diff);
+        }
+
+        if (index < dp.length)
+            dp[index] = profit;
+
+        return profit;
+    }
 }

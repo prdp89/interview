@@ -51,6 +51,7 @@ public class CustomSortString {
         return sb.toString();
     }
 
+    //Time and space: O(T.length())
     private static String customSortStringOPtimal( String S, String T ) {
         int[] count = new int[26];
         for (char c : T.toCharArray()) {

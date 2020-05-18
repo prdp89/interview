@@ -12,6 +12,7 @@ public class MinRemoveValidParan {
         System.out.println(minRemoveToMakeValid(str));
     }
 
+    //similar to MinimumAddParnanValid
     //Runtime: 19 ms, faster than 51.31% of Java
     private static String minRemoveToMakeValid( String s ) {
         Stack<Integer> stack = new Stack<>();

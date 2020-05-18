@@ -1,6 +1,5 @@
 package com.interview.codechef.ccdsap_2.leetcode.arrays.TopKElements;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -15,7 +14,7 @@ public class ConnectRopes {
 
             int n = scanner.nextInt();
 
-            PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(a -> a));
+            PriorityQueue<Integer> pq = new PriorityQueue<>(( a, b ) -> b - a);
 
             while (n-- > 0) {
                 pq.add(scanner.nextInt());

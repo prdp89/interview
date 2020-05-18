@@ -19,6 +19,8 @@ public class ShortestPathInGrid {
     }
 
     //Runtime: 27 ms, faster than 37.34% of Java
+
+    //After little modification by me : Runtime: 27 ms, faster than 39.97% of Java
     private static int shortestPath( int[][] grid, int k ) {
         int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
@@ -31,36 +33,42 @@ public class ShortestPathInGrid {
         boolean[][][] visited = new boolean[n][m][k + 1];
         int res = 0;
 
+        int size = queue.size();
+
         while (!queue.isEmpty()) {
-            int size = queue.size();
 
-            while (size-- > 0) {
-                int[] item = queue.poll();
-                int r = item[0], c = item[1], currK = item[2];
+            size--;
 
-                if (r == n - 1 && c == m - 1)
-                    return res;
+            // while (size-- > 0) {
+            int[] item = queue.poll();
+            int r = item[0], c = item[1], currK = item[2];
 
-                for (int[] dir : dirs) {
-                    int nextR = dir[0] + r;
-                    int nextC = dir[1] + c;
+            if (r == n - 1 && c == m - 1)
+                return res;
 
-                    int nextK = currK;
+            for (int[] dir : dirs) {
+                int nextR = dir[0] + r;
+                int nextC = dir[1] + c;
 
-                    if (nextR >= 0 && nextR < n && nextC >= 0 && nextC < m) {
+                int nextK = currK;
 
-                        if (grid[nextR][nextC] == 1)
-                            nextK++;
+                if (nextR >= 0 && nextR < n && nextC >= 0 && nextC < m) {
 
-                        if (nextK <= k && !visited[nextR][nextC][nextK]) {
-                            visited[nextR][nextC][nextK] = true;
-                            queue.offer(new int[]{nextR, nextC, nextK});
-                        }
+                    if (grid[nextR][nextC] == 1)
+                        nextK++;
+
+                    if (nextK <= k && !visited[nextR][nextC][nextK]) {
+                        visited[nextR][nextC][nextK] = true;
+                        queue.offer(new int[]{nextR, nextC, nextK});
                     }
                 }
             }
+            // }
 
-            res++;
+            if (size == 0) {
+                size = queue.size();
+                res++;
+            }
         }
 
         return -1;

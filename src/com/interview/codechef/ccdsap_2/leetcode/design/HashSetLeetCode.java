@@ -5,7 +5,8 @@ import java.util.List;
 
 public class HashSetLeetCode {
 
-    private List<Integer>[] lists;
+    //load factor(L) = 10000 / numBuckets = 0.7
+    private LinkedList[] lists;
     private int numBuckets = 13000;
 
     /**

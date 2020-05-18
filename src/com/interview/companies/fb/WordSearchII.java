@@ -85,8 +85,13 @@ public class WordSearchII {
 
                 char ch = board[posx][posy];
 
-                if (node != null && node.next[ch - 'a'] != null)
+                if (node != null && node.next[ch - 'a'] != null) {
+                    node = node.next[ch - 'a'];
                     queue.offer(node.next[ch - 'a']);
+
+                  /*  if (node.next[ch - 'a'].isWord)
+                        resList.add(node.word);*/
+                }
             }
         }
 

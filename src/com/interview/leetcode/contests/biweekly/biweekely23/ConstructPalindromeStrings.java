@@ -32,7 +32,7 @@ public class ConstructPalindromeStrings {
     //If we have 2 odd occur of Char then we can also form atmost N string length
     //Eg:
     /*
-    aabc, K=1 | aabc
+    aabc, K=1 | aabc ... see here we cannot make it..
     aabc, K=2 | aba, c
     aabc, K=3 | aa, b, c
     aabc, K=4 | a, a, b, c

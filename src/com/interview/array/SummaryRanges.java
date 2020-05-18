@@ -6,17 +6,18 @@ import java.util.List;
 
 /**
  * Date 10/19/2016
- * @author Tushar Roy
  *
+ * @author Tushar Roy
+ * <p>
  * Given a sorted integer array without duplicates, return the summary of its ranges.
  * For example, given [0,1,2,4,5,7], return ["0->2","4->5","7"].
- *
+ * <p>
  * Solution -
  * Just check if num[i] + 1 != num[i + 1]. If its not equal means you need to add previous range to result
  * and start a new range.
- * 
+ * <p>
  * Time complexity O(n)
- *
+ * <p>
  * https://leetcode.com/problems/summary-ranges/
  */
 
@@ -24,7 +25,37 @@ import java.util.List;
 
 
 public class SummaryRanges {
-    public List<String> summaryRanges(int[] nums) {
+
+    private static List<String> summaryRangeEasy( int[] nums ) {
+        List<String> list = new ArrayList();
+        if (nums.length == 1) {
+            list.add(nums[0] + "");
+            return list;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int a = nums[i];
+
+            while (i + 1 < nums.length && (nums[i + 1] - nums[i]) == 1) {
+                i++;
+            }
+
+            //if start and end num is same., no need to create a range
+            if (a != nums[i]) {
+                list.add(a + "->" + nums[i]);
+            } else {
+                list.add(a + "");
+            }
+        }
+        return list;
+    }
+
+    public static void main( String[] args ) {
+        SummaryRanges summaryRanges = new SummaryRanges();
+        System.out.println(summaryRanges.summaryRanges(new int[]{0, 1, 2, 4, 5, 7}));
+    }
+
+    public List<String> summaryRanges( int[] nums ) {
         if (nums.length == 0) {
             return Collections.EMPTY_LIST;
         }
@@ -53,15 +84,10 @@ public class SummaryRanges {
         return result;
     }
 
-    private String makeRange(int a, int b) {
+    private String makeRange( int a, int b ) {
         if (a == b) {
             return String.valueOf(a);
         }
         return a + "->" + b;
-    }
-
-    public static void main( String[] args ) {
-        SummaryRanges summaryRanges = new SummaryRanges();
-        System.out.println(summaryRanges.summaryRanges(new int[]{0,1,2,4,5,7}));
     }
 }

@@ -40,6 +40,8 @@ public class CarPooling {
         //Sorting acc. to Starting Distance
         Arrays.sort(trips, Comparator.comparing(trip -> trip[1]));
 
+        // PriorityQueue<int[]> pq1 = new PriorityQueue<>((a,b) -> a[2] - b[2]);
+
         PriorityQueue<int[]> pq = new PriorityQueue<>(Comparator.comparing(trip -> trip[2]));
 
         for (int[] trip : trips) {
