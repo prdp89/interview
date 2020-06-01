@@ -40,9 +40,11 @@ public class MaximumHistogram {
 
     public static void main( String args[] ) {
         MaximumHistogram mh = new MaximumHistogram();
-        int input[] = {2, 2, 2, 6, 1, 5, 4, 2, 2, 2, 2};
+        //int input[] = {2, 2, 2, 6, 1, 5, 4, 2, 2, 2, 2};
+
+        int input[] = {6, 2, 5, 4, 5, 1, 6};
         int maxArea = mh.maxHistogram(input);
-        //System.out.println(maxArea);
+        System.out.println(maxArea);
         assert maxArea == 12;
     }
 

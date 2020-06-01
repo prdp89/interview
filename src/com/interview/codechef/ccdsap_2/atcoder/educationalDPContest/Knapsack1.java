@@ -55,8 +55,8 @@ public class Knapsack1 {
         } else {  //try to get maximumValue of either by picking the currentItem or not picking currentItem
             rem = Math.max(nap(i - 1, j - w[i]) + v[i], nap(i - 1, j));
         }
-
         dp[i][j] = rem;
+
 
         return rem;
     }
