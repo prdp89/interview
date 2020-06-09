@@ -10,10 +10,12 @@ public class CombinationSum {
 
     //https://leetcode.com/problems/combination-sum/
     public static void main( String[] args ) {
-        int[] arr = {1, 2, 3};
-        int target = 4;
+        int[] arr = {2, 3, 5};
+        int target = 8;
 
         System.out.println(combinationSum(arr, target));
+
+        System.out.println(sum_dp_total_ways(target, arr));
     }
 
     private static List<List<Integer>> combinationSum( int[] candidates, int target ) {
@@ -76,5 +78,31 @@ public class CombinationSum {
 
             tempList.remove(tempList.size() - 1);
         }
+    }
+
+    //not working..
+    private static int sum_dp_total_ways( int totalWeight, int[] arr ) {
+        //bcz we have to calculate for total weight of items
+        int[] dp = new int[totalWeight + 1];
+
+        dp[0] = 1;
+
+        //Loop until all items are evaluated
+        for (int i = 0; i < arr.length; i++) {
+
+            int[] tempTarget = new int[totalWeight + 1];
+
+            for (int j = totalWeight; j >= arr[i]; j--) {
+
+                if (dp[j] != 0) {
+                    tempTarget[j - arr[i]] += dp[j];
+                }
+                   /* dp[j] = Math.max(dp[j]
+                            , arr[i] + dp[j - arr[i]]);*/
+            }
+            dp = tempTarget;
+        }
+
+        return dp[totalWeight];
     }
 }

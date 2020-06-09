@@ -30,7 +30,7 @@ public class TinuURL {
 
         do {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < longUrl.length(); i++) {
                 //Returns a {@code double} value with a positive sign, greater
                 // than or equal to {@code 0.0} and less than {@code 1.0}.
                 int r = (int) (Math.random() * charSet.length());

@@ -1,5 +1,7 @@
 package com.interview.codechef.ccdsap_2.leetcode.binarysearch.easy;
 
+import java.util.HashSet;
+
 public class SmallestLetterGreaterTarget {
 
     //https://leetcode.com/problems/find-smallest-letter-greater-than-target/
@@ -17,6 +19,18 @@ public class SmallestLetterGreaterTarget {
 
         //method_1(letters, target);
         method_2(letters, target);
+
+        int[] nums = {1, 2, 2, 4};
+        HashSet<Integer> set = new HashSet();
+        for (int num : nums) {
+            set.add(num);
+        }
+
+        int j=0;
+        for (int num : set) {
+            nums[j++] = num;
+        }
+
     }
 
     //this method is smiliar to UpperBound In an array
