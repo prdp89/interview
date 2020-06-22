@@ -32,9 +32,28 @@ public class SearchInsertPosition {
         // (2) From the invariant, we know that the index is between [low, high+1], so low <= high+1. Following from (1), now we know low == high+1.
         // (3) Following from (2), the index is between [low, high+1] = [low, low], which means that low is the desired index
         //     Therefore, we return low as the answer. You can also return high+1 as the result, since low == high+1
-        System.out.println(end >= 0 &&  arr[end] < target ? end + 1 : 0);
+        System.out.println(end >= 0 && arr[end] < target ? end + 1 : 0);
 
         //or we can return
         //return start;
+    }
+
+    //done by me :)
+    public int searchInsert( int[] nums, int target ) {
+        int low = 0, high = nums.length - 1;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                low = mid + 1;
+            } else {
+                high = mid; //all elements prev of high are smaller
+            }
+        }
+
+        return target > nums[low] ? low + 1 : low;
     }
 }

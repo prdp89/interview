@@ -1,7 +1,5 @@
 package com.interview.leetcode.binarysearch;
 
-import java.util.HashSet;
-
 public class MinInSortedRotatedArray {
 
     //https://leetcode.com/explore/learn/card/binary-search/126/template-ii/949/
@@ -27,16 +25,16 @@ public class MinInSortedRotatedArray {
     }
 
     //https://leetcode.com/explore/learn/card/binary-search/144/more-practices/1031/
-    public int findMinII(int[] nums) {
+    public int findMinII( int[] nums ) {
 
         int start = 0, end = nums.length - 1;
 
-        while(start < end) {
+        while (start < end) {
             int mid = start + (end - start) / 2;
 
-            if(nums[mid] < nums[end])
+            if (nums[mid] < nums[end])
                 end = mid;
-            else if(nums[mid] > nums[end])
+            else if (nums[mid] > nums[end])
                 start = mid + 1;
             else
                 end--;
