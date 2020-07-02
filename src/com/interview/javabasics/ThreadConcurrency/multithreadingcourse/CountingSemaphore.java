@@ -3,6 +3,7 @@ package com.interview.javabasics.ThreadConcurrency.multithreadingcourse;
 public class CountingSemaphore {
 
     public static void main( String[] args ) throws InterruptedException {
+        //Allow one thread to run at a time..
         final CountingSemaphoreImpl cs = new CountingSemaphoreImpl(1);
 
         Thread t1 = new Thread(() -> {

@@ -1,4 +1,4 @@
-package com.interview.javabasics.ThreadConcurrency;
+package com.interview.javabasics.ThreadConcurrency.multithreadingcourse;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
