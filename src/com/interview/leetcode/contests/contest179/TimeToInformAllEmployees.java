@@ -4,6 +4,7 @@ import java.util.*;
 
 public class TimeToInformAllEmployees {
 
+    //https://leetcode.com/problems/time-needed-to-inform-all-employees/
     public static void main( String[] args ) {
         int n = 6, headID = 2, manager[] = {2, 2, -1, 2, 2, 2}, informTime[] = {0, 0, 1, 0, 0, 0};
 

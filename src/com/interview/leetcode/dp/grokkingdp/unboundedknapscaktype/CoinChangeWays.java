@@ -69,5 +69,5 @@ public class CoinChangeWays {
         return dp[n - 1][total];
     }
 
-    //1D Dp : com.interview.codechef.ccdsap_2.leetcode.dp.medium --> bottomUpDp
+    //1D Dp : com.interview.codechef.ccdsap_2.leetcode.dp.medium --> CoinChangeTotalWays --> bottomUpDp
 }

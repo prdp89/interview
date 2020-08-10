@@ -15,11 +15,9 @@ public class DiceRollWithTargetSum {
         System.out.println(recursive(d, f, T));
 
         System.out.println("bottomUp : " + bottomUp(d, f, T));
-    }
 
-    //similar to CoinChangeTotalWays
-    //only diff. is in place is coin[] array we have dices and,
-    //one extra param : f faces to loop through to generate target sum.
+        System.out.println("trying : " + dice_try_1D_DP(d, f, T));
+    }
 
     //Runtime: 18 ms, faster than 48.52% of Java
     private static int bottomUp( int dices, int f, int target ) {
@@ -54,6 +52,10 @@ public class DiceRollWithTargetSum {
         return dp[target];
     }
 
+    //similar to CoinChangeTotalWays
+    //only diff. is in place is coin[] array we have dices and,
+    //one extra param : f faces to loop through to generate target sum.
+
     //this backtrack is same as : CombinationSum --> method-2
     //We have 2 states here : 1. number of dice we roll 2. Target we want to achieve
     //Runtime: 318 ms, faster than 5.01% of Java online submissions
@@ -83,5 +85,36 @@ public class DiceRollWithTargetSum {
         memo.put(str, res);
 
         return res;
+    }
+
+    //Runtime: 29 ms, faster than 52.29% of Java
+    //using combination ways of : countChange_1D_DP CoinChangeMin --> com.interview.leetcode.dp.grokkingdp.unboundedknapscaktype
+    private static int dice_try_1D_DP( int dice, int face, int target ) {
+        int[] dp = new int[target + 1];
+
+        dp[0] = 1;
+
+        for (int d = 1; d <= dice; d++) {
+
+            int[] dp1 = new int[target + 1];
+
+            for (int i = 1; i <= face; i++) {
+
+                for (int t = i; t <= target; t++) {
+                    int include = 0, exclude = 0;
+
+                    if (i > 0)
+                        exclude = dp1[t]; //exclude the coin
+
+                    if (t >= i) {
+                        dp1[t] = dp[t - i] + exclude; //using dp picking prev dice state
+                    }
+                }
+            }
+
+            dp = dp1;
+        }
+
+        return dp[target];
     }
 }

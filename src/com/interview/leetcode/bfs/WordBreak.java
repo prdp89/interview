@@ -1,8 +1,6 @@
 package com.interview.leetcode.bfs;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class WordBreak {
 
@@ -22,8 +20,35 @@ public class WordBreak {
     //Read solution of : vegito2002
 
     private static boolean wordBreak( String s, List<String> wordDict ) {
+        int max_len = -1;
 
+        for (String word : wordDict)
+            max_len = Math.max(max_len, word.length());
 
+        Set<String> wordDictSet = new HashSet(wordDict);
+        Queue<Integer> queue = new LinkedList<>();
+
+        boolean[] visited = new boolean[s.length()];
+
+        queue.add(0);
+        visited[0] = true;
+
+        while (!queue.isEmpty()) {
+
+            int start = queue.remove();
+
+            for (int end = start + 1; end <= s.length() && end - start <= max_len; end++) {
+
+                if (wordDictSet.contains(s.substring(start, end)) && !(end < s.length() && visited[end])) {
+                    if (end == s.length()) {
+                        return true;
+                    }
+
+                    queue.add(end);
+                    visited[end] = true;
+                }
+            }
+        }
 
         return false;
     }

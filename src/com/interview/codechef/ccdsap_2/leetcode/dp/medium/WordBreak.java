@@ -41,7 +41,7 @@ public class WordBreak {
     }
 
     //Runtime: 3 ms, faster than 88.64% of Java o
-    //this patter is same as CoinChangeMinCoins OR LongestIncreasingSubsequence
+    //this patter is same as LongestIncreasingSubsequence
     //https://leetcode.com/problems/word-break/discuss/43790/Java-implementation-using-DP-in-two-ways
     private static boolean workdBreadDP( String s, Set<String> set ) {
 

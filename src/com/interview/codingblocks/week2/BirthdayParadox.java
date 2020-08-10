@@ -27,7 +27,7 @@ public class BirthdayParadox {
         //probability of 2 people having same b'day : 1/365
         //probability of 2 people having different b'day : 1 - probability of 2 people having same b'day => 1 - 1/365 = 364/365
         //for 3 person having different b'day => 365/365 * 364/365 * 363/365 .....1/365
-        //so Probability , Prob = 1-1/356 = 364/365 = 0.9972
+        //so Probability , NumberOfSubArraysOddSum = 1-1/356 = 364/365 = 0.9972
 
         //res : X number of pairs have different b'day
         //cnt : min. number of pairs such that all of them have different b'day with probability <= P

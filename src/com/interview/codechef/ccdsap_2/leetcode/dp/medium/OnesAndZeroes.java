@@ -71,14 +71,14 @@ public class OnesAndZeroes {
 
                 for (int k = 0; k <= n; k++) {
 
-                    int zeros = countZeroesIn(strs[i-1]);
+                    int zeros = countZeroesIn(strs[i - 1]);
 
-                    int ones = strs[i-1].length() - zeros;
-                    int res = dp[i-1][j][k];
+                    int ones = strs[i - 1].length() - zeros;
+                    int res = dp[i - 1][j][k];
 
-                    //similar to knapsack
+                    //similar to ZeroOneKnapsack
                     if (zeros <= j && ones <= k)
-                        res = Math.max(res, dp[i-1][j - zeros][k - ones] + 1);
+                        res = Math.max(res, dp[i - 1][j - zeros][k - ones] + 1);
 
                     dp[i][j][k] = res;
                 }
@@ -88,9 +88,8 @@ public class OnesAndZeroes {
         return dp[strs.length][m][n];
     }
 
-    //This problem is an example of Knapsack1 -> com.interview.codechef.ccdsap_2.atcoder.educationalDPContest
     //After using this approach, the above 3D dp has been reduce to 2D DP.
-    public static int findMaxForm_BottomUpDP( String[] strs, int m, int n ) {
+    private static int findMaxForm_BottomUpDP( String[] strs, int m, int n ) {
         int[][] dp = new int[m + 1][n + 1];
 
         for (String str : strs) {

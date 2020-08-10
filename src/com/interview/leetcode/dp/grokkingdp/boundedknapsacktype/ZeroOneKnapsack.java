@@ -69,7 +69,7 @@ public class ZeroOneKnapsack {
         return dp[(n - 1) % 2][capacity];
     }
 
-    public int solveKnapsack( int[] profits, int[] weights, int capacity ) {
+    private int solveKnapsack( int[] profits, int[] weights, int capacity ) {
         Integer[][] dp = new Integer[profits.length][capacity + 1];
         return this.knapsackRecursive(dp, profits, weights, capacity, 0);
     }

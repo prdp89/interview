@@ -24,6 +24,7 @@ public class LastStoneWeightII {
 
             for (int j = sum / 2; j >= stones[i]; j--) {
 
+                //SubsetSumCount : Calculating Max Subset sum count..
                 dp[j] = Math.max(dp[j]
                         , stones[i] + dp[j - stones[i]]);
             }

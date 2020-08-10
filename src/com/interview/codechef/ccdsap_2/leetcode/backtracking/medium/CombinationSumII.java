@@ -25,21 +25,21 @@ public class CombinationSumII {
     }
 
     //Method-----------------1--------------
-    //128 / 172 test cases passed.
+    //Runtime: 4 ms, faster than 75.35% of Java
     //correct code with only 1 line diff. inside for loop:
     //https://leetcode.com/problems/combination-sum-ii/discuss/16861/Java-solution-using-dfs-easy-understand
     private static void backtrack( List<Integer> tempList, int[] nums, int target, int start ) {
 
-        if (target < 0 || start >= nums.length)
-            return;
-
         if (target == 0) {
             //same logic working in Method-2 but not here...
-            if (!lists.contains(tempList))
-                lists.add(new ArrayList<>(tempList));
+            // if (!lists.contains(tempList))
+            lists.add(new ArrayList<>(tempList));
 
             return;
         }
+
+        if (target < 0 || start >= nums.length)
+            return;
 
         for (int i = start; i < nums.length; i++) {
 
