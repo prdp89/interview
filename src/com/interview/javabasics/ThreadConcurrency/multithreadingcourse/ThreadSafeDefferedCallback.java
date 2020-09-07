@@ -12,7 +12,11 @@ public class ThreadSafeDefferedCallback {
     Design and implement a thread-safe class that allows registeration of callback methods
     that are executed after a user specified time interval in seconds has elapsed.
 
-    Here's another test-case, which first submits a callback that should get executed after eight seconds. Three seconds later another call back is submitted which should be executed after only one second. The callback being submitted later should execute first. The test run would timeout if run in the browser since the callback service is a perpetual thread but from the output you can observe the callback submitted second execute first.
+    Here's another test-case, which first submits a callback that should get executed after eight seconds.
+    Three seconds later another call back is submitted which should be executed after only one second.
+
+    The callback being submitted later should execute first. The test run would timeout if run in the browser
+    since the callback service is a perpetual thread but from the output you can observe the callback submitted second execute first.
      */
     public static void main( String[] args ) throws InterruptedException {
         DeferredCallbackExecutor.runLateThenEarlyCallback();

@@ -2,7 +2,7 @@ package com.interview.leetcode.contests._new_weekely.weekely197;
 
 public class SubstringWithOnlyOnes {
 
-    //https://leetcode.com/contest/weekly-contest-197/problems/number-of-good-pairs
+    //https://leetcode.com/contest/weekly-contest-197/problems/number-of-substrings-with-only-1s/
     public static void main( String[] args ) {
         String s = "000";
         System.out.println(numSub(s));

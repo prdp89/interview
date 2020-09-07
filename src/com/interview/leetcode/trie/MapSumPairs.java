@@ -12,6 +12,8 @@ public class MapSumPairs {
     }
 
     //https://leetcode.com/problems/map-sum-pairs/
+
+    //Read this too: https://leetcode.com/problems/map-sum-pairs/solution/
     public static void main( String[] args ) {
         MapSumPairs mapSumPairs = new MapSumPairs();
 
@@ -22,6 +24,11 @@ public class MapSumPairs {
         System.out.println(mapSumPairs.sum("ap"));
     }
 
+    /*
+    Time Complexity: Every insert operation is O(K),
+    where KK is the length of the key. Every sum operation is O(K).
+
+     */
     public void insert( String key, int val ) {
         Trie node = root;
         createTrie(node, key, val);
@@ -62,6 +69,8 @@ public class MapSumPairs {
         queue.offer(node);
 
         int sum = 0;
+
+        //This is like Level order traversal
         while (!queue.isEmpty()) {
             int size = queue.size();
 
@@ -70,7 +79,7 @@ public class MapSumPairs {
 
                 sum += curr.weight;
 
-                for (int i = 25; i >= 0; i--) {
+                for (int i = 0; i < 26; i++) {
                     if (curr.next[i] != null)
                         queue.offer(curr.next[i]);
                 }

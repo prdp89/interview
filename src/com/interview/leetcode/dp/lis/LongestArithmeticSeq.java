@@ -15,7 +15,7 @@ public class LongestArithmeticSeq {
     /*
     0 -> {{}}
     1 -> {{3, 2}}  max = 2
-    2 -> {{6, 2}, {3,3}} (adding 2 from previous)} max = 3
+    2 -> {{6, 2}, {3,3 }} (adding 2 from previous)} max = 3
     3 -> {{9, 2}, {6, 3}} (adding 2 from previous) , {3, 4} (adding 3 from previous)} max = 4
     */
     public int longestArithSeqLength( int[] A ) {

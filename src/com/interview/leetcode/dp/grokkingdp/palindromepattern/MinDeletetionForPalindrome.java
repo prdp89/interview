@@ -7,7 +7,7 @@ public class MinDeletetionForPalindrome {
 
     Example 1:
 
-    Input: "abdbca"
+        Input: "abdbca"
     Output: 1
     Explanation: By removing "c", we get a palindrome "abdba".
      */

@@ -52,4 +52,29 @@ public class MaxNonOverlapArrWithTarget {
 
         return dp[N];
     }
+
+    public int maxNonOverlapping_another( int[] nums, int target ) {
+        int sum = 0;
+        int count = 0;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int lastIndex = -1;
+
+        for (int i = 0; i < nums.length; i++) {
+            // calculate cumulative sum
+            sum += nums[i];
+
+            // check if there is subarray ending at index i & it starts after lastIndex
+            if (map.containsKey(sum - target) && map.get(sum - target) >= lastIndex) {
+                count++;
+                lastIndex = i;
+            }
+
+            map.put(sum, i);
+        }
+
+        return count;
+
+    }
 }

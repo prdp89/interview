@@ -24,7 +24,8 @@ public class LongestWordInDictionary {
         return bfs();
     }
 
-    //BFS like N way search
+    //BFS like N way search (Level Order Traversal)
+    //Runtime: 7 ms, faster than 89.02% of Java
     private static String bfs() {
         Queue<TrieNode> queue = new LinkedList<>();
         queue.offer(root);
@@ -39,20 +40,21 @@ public class LongestWordInDictionary {
                 TrieNode node = queue.poll();
 
                 //consider NODE level may have 26 different children..
-                //we have to start from 25th level, reason:
-                //1. It is optimal to start from deepest node of ROOT
-                //2. Anyways we are covering by level, if anything doesn't match, we can level up later on.
-                for (int i = 25; i >= 0; i--) {
+                for (int i = 0; i < 26; i++) {
 
                     //here we cannot search like StreamOfCharacters, bcz in that program we know what ? to search
                     //and in this we are searching each level by level.
 
                     if (node.next[i] != null && node.next[i].isWord) {
-                        //if (node.next[i].word.length() > res.length()) //no need of this condition..
-                        {
+                        if (node.next[i].word.length() > res.length()) {
                             res = node.next[i].word;
-                            queue.offer(node.next[i]);
+
+                        } else if (node.next[i].word.length() == res.length()
+                                && node.next[i].word.compareTo(res) < 0) {
+                            res = node.next[i].word;
                         }
+
+                        queue.offer(node.next[i]);
                     }
                 }
             }

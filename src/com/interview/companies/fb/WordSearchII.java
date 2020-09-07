@@ -22,24 +22,54 @@ public class WordSearchII {
         findWords(board, words).forEach(System.out::println);
     }
 
+    //Runtime: 8 ms, faster than 99.06% of Java
     private static List<String> findWords( char[][] board, String[] words ) {
 
         List<String> resList = new ArrayList<>();
-        // boolean[][] visited = new boolean[board.length][board[0].length];
 
         for (String item : words) {
             createTrie(item);
         }
 
-        TrieNode trieNode = root;
+        TrieNode node = root;
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                if (trieNode.next[board[i][j] - 'a'] != null)
-                    searchTrie(trieNode, resList, board, i, j);
+
+                //bfs: passing 18/36 test cases..
+                //searchTrie_bfs(board, i, j, resList);
+
+                dfs(board, i, j, node, resList);
             }
         }
 
         return resList;
+    }
+
+    private static void dfs( char[][] board, int i, int j, TrieNode node, List<String> resList ) {
+        char c = board[i][j]; // get the current character from the board at i, j
+
+        if (c == '*' || node.next[c - 'a'] == null)
+            return;
+
+        node = node.next[c - 'a'];
+
+        if (node.word != null) {   // found one words add in the result list
+            resList.add(node.word);
+            node.word = null;     // de-duplicate remove the word from trie
+        }
+
+        board[i][j] = '*'; // update the character of at i , j no need for visited array
+
+        if (i > 0)
+            dfs(board, i - 1, j, node, resList); // up
+        if (j > 0)
+            dfs(board, i, j - 1, node, resList); // left
+        if (i < board.length - 1)
+            dfs(board, i + 1, j, node, resList); // down
+        if (j < board[0].length - 1)
+            dfs(board, i, j + 1, node, resList); // right
+
+        board[i][j] = c; // backtrack the character
     }
 
     private static void createTrie( String word ) {
@@ -53,49 +83,77 @@ public class WordSearchII {
 
             node = node.next[ch - 'a'];
         }
+
         node.isWord = true;
         node.word = word;
     }
 
-    private static void searchTrie( TrieNode trieNode, List<String> resList, char[][] board, int i, int j ) {
+    //16 / 36 test cases passed.
+    private static void searchTrie_bfs( char[][] board, int i, int j, List<String> resList ) {
+
+        TrieNode trieNode = root;
+
+        boolean[][] visited = new boolean[board.length][board[0].length];
 
         char chars = board[i][j];
 
-        board[i][j] = '$';
+        Queue<Wrapper> queue = new LinkedList<>();
+        queue.offer(new Wrapper(trieNode, i, j));
 
-        Queue<TrieNode> queue = new LinkedList<>();
-        queue.offer(trieNode.next[chars - 'a']);
+        visited[i][j] = true;
 
-        int[][] dirs = {{0, -1}, {-1, 0}, {0, 1}, {1, 0}};
+        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         while (!queue.isEmpty()) {
 
-            TrieNode node = queue.poll();
+            int size = queue.size();
 
-            if (node != null && node.isWord) {
-                resList.add(node.word);
-                node.word = null;
-            }
+            while (size-- > 0) {
 
-            for (int[] dir : dirs) {
-                int posx = i + dir[0];
-                int posy = j + dir[1];
+                Wrapper node = queue.poll();
 
-                if (posx < 0 || posy < 0 || posx >= board.length || posy >= board[0].length)
-                    continue;
+                for (int[] dir : dirs) {
 
-                char ch = board[posx][posy];
+                    int posx = node.x + dir[0];
+                    int posy = node.y + dir[1];
 
-                if (node != null && node.next[ch - 'a'] != null) {
-                    node = node.next[ch - 'a'];
-                    queue.offer(node.next[ch - 'a']);
+                    TrieNode temp = node.node;
 
-                  /*  if (node.next[ch - 'a'].isWord)
-                        resList.add(node.word);*/
+                    if (posx < 0 || posy < 0 || posx >= board.length
+                            || posy >= board[0].length
+                            || visited[posx][posy])
+                        continue;
+
+                    char ch = board[posx][posy];
+
+                    if (temp != null && temp.next[ch - 'a'] != null) {
+
+                        if (temp.next[ch - 'a'].isWord) {
+                            if (!resList.contains(temp.next[ch - 'a'].word))
+                                resList.add(temp.next[ch - 'a'].word);
+
+                            temp.word = null;
+                            visited[posx][posy] = true;
+                        } else {
+                            temp = temp.next[ch - 'a'];
+                            queue.offer(new Wrapper(temp, posx, posy));
+                        }
+                    }
                 }
             }
         }
 
         board[i][j] = chars;
+    }
+
+    private static class Wrapper {
+        TrieNode node;
+        int x, y;
+
+        Wrapper( TrieNode node, int x, int y ) {
+            this.x = x;
+            this.y = y;
+            this.node = node;
+        }
     }
 
     private static class TrieNode {

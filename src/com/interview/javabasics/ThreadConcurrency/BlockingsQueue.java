@@ -12,7 +12,7 @@ public class BlockingsQueue {
     //code: https://www.javatpoint.com/java-multithreading-interview-questions
 
     //Producing and consuming runs in parallel
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws InterruptedException {
         BlockingQueue sharedQueue = new LinkedBlockingQueue();
 
         //Creating Producer and Consumer Thread
@@ -22,6 +22,9 @@ public class BlockingsQueue {
         //Starting producer and Consumer thread
         prod.start();
         cons.start();
+
+        //prod.join();
+        //cons.join();
 
         System.out.println("finished");
     }

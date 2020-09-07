@@ -62,7 +62,7 @@ public class ReadWriteLock {
         Thread.sleep(3000);
         tReader2.start();
         Thread.sleep(1000);
-        //t2.start();
+       // t2.start();
         tReader1.join();
         tReader2.join();
         //t2.join();

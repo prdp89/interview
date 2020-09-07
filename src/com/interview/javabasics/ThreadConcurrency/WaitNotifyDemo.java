@@ -12,6 +12,8 @@ public class WaitNotifyDemo {
 
         thread1.start();
         thread2.start();
+
+        System.out.println("main thread exiting..");
     }
 
     private static class SharedObject {

@@ -16,7 +16,7 @@ public class RodCutting {
             return 0;
 
         int lengthCount = lengths.length;
-        int[][] dp = new int[lengthCount][n + 1];
+                int[][] dp = new int[lengthCount][n + 1];
 
         // process all rod lengths for all prices
         for (int i = 0; i < lengthCount; i++) {
