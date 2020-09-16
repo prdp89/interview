@@ -4,8 +4,9 @@ public class NumOfGoodPairs {
 
     //https://leetcode.com/contest/weekly-contest-197/problems/number-of-good-pairs
     public static void main( String[] args ) {
-        int[] arr = {1, 2, 3};
+        int[] arr = {1, 2, 3, 1, 1, 3};
         System.out.println(numIdenticalPairs(arr));
+        System.out.println(numIdenticalPairs_optimal(arr));
     }
 
     private static int numIdenticalPairs( int[] nums ) {
