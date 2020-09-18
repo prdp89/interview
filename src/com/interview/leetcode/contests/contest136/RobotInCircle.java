@@ -5,7 +5,8 @@ public class RobotInCircle {
     //https://leetcode.com/contest/weekly-contest-136/problems/robot-bounded-in-circle/
     public static void main( String[] args ) {
         String str = "GGLLGG";
-        System.out.println(solve(str));
+        //System.out.println(solve(str));
+        System.out.println(isRobotBounded_optimal(str));
     }
 
     private static boolean solve( String str ) {
@@ -24,6 +25,59 @@ public class RobotInCircle {
             }
         }
         return x == 0 && y == 0;
+    }
+
+    //Runtime: 0 ms, faster than 100.00% of Java
+    //https://leetcode.com/problems/robot-bounded-in-circle/discuss/850969/My-Java-Solution-with-the-thought-process
+    private static boolean isRobotBounded_optimal( String instructions ) {
+        if (instructions.length() == 0)
+            return false;
+
+        int x = 0;
+        int y = 0;  // initial points of the robot
+        String directions = "North"; // initial direction of robot
+        /*
+                    North
+            West                East
+                    South
+
+        */
+        for (char ch : instructions.toCharArray()) {
+            if (ch == 'G') {
+                if (directions.equals("North"))
+                    y += 1;
+                else if (directions.equals("South"))
+                    y -= 1;
+                else if (directions.equals("East"))
+                    x += 1;
+                else
+                    x -= 1;
+            } else if (ch == 'L') {
+                if (directions.equals("North"))
+                    directions = "West";
+                else if (directions.equals("West"))
+                    directions = "South";
+                else if (directions.equals("South"))
+                    directions = "East";
+                else directions = "North";
+            } else if (ch == 'R') {
+                if (directions.equals("North"))
+                    directions = "East";
+                else if (directions.equals("East"))
+                    directions = "South";
+                else if (directions.equals("South"))
+                    directions = "West";
+                else directions = "North";
+            }
+        }
+
+        if (x == 0 && y == 0)
+            return true;
+
+        if (directions.equals("North"))
+            return false;
+
+        return true;
     }
 
     //ref: https://leetcode.com/problems/robot-bounded-in-circle/discuss/291116/Python-Easy-to-understand-use-complex-number-to-keep-direction

@@ -10,6 +10,8 @@ public class NumbersSmallerThanCurrent {
         System.out.println(Arrays.toString(smallerNumbersThanCurrent(arr)));
     }
 
+    //one more solution in Submission result: Using Binary Search..
+
     //Runtime: 1 ms, faster than 99.52% of Java
     //https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/discuss/524996/JAVA-beats-100-O(n)
     private static int[] smallerNumbersThanCurrent( int[] nums ) {
